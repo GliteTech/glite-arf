@@ -103,8 +103,6 @@ Before you run ARF on anything that matters:
   key. LLM providers typically let you set monthly spend limits; use them.
 * **Enable branch protection on `main`.** Require PRs and passing CI. ARF's workflow assumes this;
   without it, an agent push can overwrite history.
-* **Review every PR before merging.** Do not auto-merge ARF PRs. The verificator layer catches shape
-  mistakes; only a human catches "the model fabricated these results".
 * **Keep `project/budget.json` tight.** The budget gate only works if the number in the file
   reflects what you are actually willing to spend.
 * **Treat external content as untrusted.** Papers, web pages, datasets pulled from the open internet
