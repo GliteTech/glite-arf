@@ -62,42 +62,55 @@ Read before starting:
    `continue anyway` to overwrite it or anything else to cancel." Only proceed on the exact string
    `continue anyway`.
 
-6. Install Python dependencies:
+6. Ensure `uv` is installed:
+   * Run `uv --version`. If it exits `0`, move on.
+   * If `uv` is missing, propose the official Astral installer:
+     * macOS or Linux → `curl -LsSf https://astral.sh/uv/install.sh | sh`
+     * Windows (PowerShell) →
+       `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`
+   * Show the exact command and ask: "Install uv with `<command>`? Type `yes` to run it or anything
+     else to cancel." Run the command only on the exact string `yes`. On anything else, print the
+     manual install instructions from <https://docs.astral.sh/uv/> and exit so the user can install
+     it themselves, then re-run `/setup-project`.
+   * After install, confirm `uv --version` now exits `0`. If not, exit with
+     `uv install did not register on PATH. Open a new shell and re-run /setup-project.`
+
+7. Install Python dependencies:
 
    ```bash
-   uv run python -m arf.scripts.utils.run_with_logs uv sync
+   uv sync
    ```
 
-7. Install pre-commit hooks:
+8. Install pre-commit hooks:
 
    ```bash
    uv run pre-commit install
    ```
 
-8. Ensure git LFS is installed and configured:
-   * Run `git lfs version`. If it exits `0`, run `git lfs install` and move on.
-   * If `git lfs` is missing, detect the platform with `uname -s`:
-     * `Darwin` → propose `brew install git-lfs`
-     * `Linux` (check `/etc/os-release` for `ID=ubuntu` or `ID=debian`) → propose
-       `sudo apt-get install -y git-lfs`
-     * Any other platform → print the manual instructions from <https://git-lfs.com/> and exit with
-       `Install git-lfs manually, then re-run /setup-project.`
-   * Show the user the exact command and ask: "Install git-lfs with `<command>`? Type `yes` to run
-     it or anything else to cancel." Run the command only on the exact string `yes`.
-   * After install, run `git lfs install` to register hooks.
+9. Ensure git LFS is installed and configured:
+    * Run `git lfs version`. If it exits `0`, run `git lfs install` and move on.
+    * If `git lfs` is missing, detect the platform with `uname -s`:
+        * `Darwin` → propose `brew install git-lfs`
+        * `Linux` (check `/etc/os-release` for `ID=ubuntu` or `ID=debian`) → propose
+          `sudo apt-get install -y git-lfs`
+        * Any other platform → print the manual instructions from <https://git-lfs.com/> and exit
+          with `Install git-lfs manually, then re-run /setup-project.`
+    * Show the user the exact command and ask: "Install git-lfs with `<command>`? Type `yes` to
+      run it or anything else to cancel." Run the command only on the exact string `yes`.
+    * After install, run `git lfs install` to register hooks.
 
-9. Run `python3 doctor.py` and surface its output verbatim to the user. If `doctor.py` reports any
-   blocker (non-zero exit), print `Fix the blockers above and re-run /setup-project.` and exit. Do
-   not proceed to Phase 3.
+10. Run `python3 doctor.py` and surface its output verbatim to the user. If `doctor.py` reports any
+    blocker (non-zero exit), print `Fix the blockers above and re-run /setup-project.` and exit.
+    Do not proceed to Phase 3.
 
 ### Phase 3: Project description and budget
 
-10. Invoke the `create-project-description` skill by printing:
-    `Next, I will run /create-project-description to create project/description.md and project/budget.json. Press enter to continue.`
-    and wait for the user. Then delegate the entire dialogue to that skill — do not ask its
-    questions here.
+11. Invoke the `create-project-description` skill by printing a short notice such as "Next, I will
+    run /create-project-description to create project/description.md and project/budget.json.
+    Press enter to continue." and waiting for the user. Then delegate the entire dialogue to that
+    skill — do not ask its questions here.
 
-11. After `create-project-description` returns, confirm both files exist:
+12. After `create-project-description` returns, confirm both files exist:
 
     ```bash
     uv run python -u -m arf.scripts.verificators.verify_project_description
@@ -109,9 +122,9 @@ Read before starting:
 
 ### Phase 4: Customize meta/
 
-12. Read `project/description.md` into context so subsequent sub-skills inherit it.
+13. Read `project/description.md` into context so subsequent sub-skills inherit it.
 
-13. For each of the four sub-skills below, in this order:
+14. For each of the four sub-skills below, in this order:
     * Print `Running /<skill-name> to populate meta/<area>/.`
     * Invoke the sub-skill with `project/description.md` as its argument.
     * When the sub-skill returns, print the count of entries that were added.
@@ -124,7 +137,7 @@ Read before starting:
 
 ### Phase 5: Wrap-up
 
-14. Print a summary to the user with:
+15. Print a summary to the user with:
     * The number of entries added in each of `meta/categories/`, `meta/metrics/`,
       `meta/task_types/`, `meta/asset_types/`.
     * The list of files now present under `project/`.

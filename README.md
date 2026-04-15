@@ -105,12 +105,11 @@ CITATION.cff    Academic citation metadata
 ## Bootstrap a new project
 
 1. **Fork** this repo on GitHub, clone locally.
-2. **Install `uv`** if you do not have it yet, then run `uv sync`.
-3. **Run `/setup-project`** in Claude Code (or its Codex equivalent). The skill shows the safety
-   acknowledgement, installs the rest of the toolchain (pre-commit hooks, git LFS), validates the
-   environment with `doctor.py`, guides you through `project/description.md` and
-   `project/budget.json`, and populates `meta/` with the project's categories, metrics, task types,
-   and any extra asset types.
+2. **Run `/setup-project`** in Claude Code (or its Codex equivalent). The skill shows the safety
+   acknowledgement, installs everything it needs (`uv`, Python dependencies, pre-commit hooks, git
+   LFS) with explicit consent for each installer, validates the environment with `doctor.py`, guides
+   you through `project/description.md` and `project/budget.json`, and populates `meta/` with the
+   project's categories, metrics, task types, and any extra asset types.
 
 When setup finishes, run `/create-task` for your first task (typically a literature survey), then
 `/execute-task <task_id>`. Use `/human-brainstorm` after each completed task to turn its
