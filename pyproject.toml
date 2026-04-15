@@ -44,11 +44,16 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/GliteTech/glite-automatic-research-framework"
-Repository = "https://github.com/GliteTech/glite-automatic-research-framework"
-Issues = "https://github.com/GliteTech/glite-automatic-research-framework/issues"
-Documentation = "https://github.com/GliteTech/glite-automatic-research-framework/tree/main/arf/docs"
+Homepage = "https://github.com/GliteTech/glite-arf"
+Repository = "https://github.com/GliteTech/glite-arf"
+Issues = "https://github.com/GliteTech/glite-arf/issues"
+Documentation = "https://github.com/GliteTech/glite-arf/tree/main/arf/docs"
 Company = "https://glite.ai"
+
+[tool.uv]
+override-dependencies = [
+    "cryptography>=46.0.7",
+]
 
 [build-system]
 requires = ["hatchling"]
