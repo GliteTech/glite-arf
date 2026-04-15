@@ -15,6 +15,16 @@ mistakes AI agents reliably make.
 
 Fork this repo to bootstrap a new Glite ARF project.
 
+## ⚠️ Read this before you run it
+
+Glite ARF runs AI agents (Claude Code, Codex CLI) **autonomously** with high permissions on your
+machine and GitHub account: shell execution, file writes, `git push`, paid LLM API calls, and —
+optionally — provisioning remote GPU machines on vast.ai that cost real money.
+
+ARF's verificators, task isolation, and PR-gated workflow contain mistakes — they do not eliminate
+them. Before you fork, read [Autonomy and Safety](arf/docs/explanation/safety.md) to understand what
+you are consenting to.
+
 ## Who made this
 
 Glite ARF is built and maintained by [Glite](https://glite.ai), an AI tutoring company based in

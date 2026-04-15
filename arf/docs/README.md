@@ -6,6 +6,12 @@ isolation. Every artifact has a specification. Every step is logged. Every outpu
 verificator before it can be committed, catching mistakes AI agents reliably make. Completed work is
 frozen so later runs can build on it without breaking it.
 
+## Read This First
+
+* [**Autonomy and Safety**](explanation/safety.md) — ARF runs AI agents with high permissions on
+  your machine and GitHub account. Read what that means and what you must do on your side before
+  forking.
+
 ## Why ARF?
 
 * [Two Hundred Hypotheses, One Framework](blog/two-hundred-hypotheses.md) — the story behind the
@@ -23,6 +29,8 @@ frozen so later runs can build on it without breaking it.
   how downstream tasks correct prior work
 * [Remote Machines](explanation/remote_machines.md) — how tasks spin up GPU instances, track costs,
   and tear them down
+* [Autonomy and Safety](explanation/safety.md) — risks of running autonomous agents and how ARF
+  contains them
 
 ## Walkthrough
 
