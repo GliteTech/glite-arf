@@ -1,0 +1,11 @@
+name = "research-internet"
+description = "Conduct structured internet research and write the task's `research_internet.md`."
+developer_instructions = """
+Read the linked `research-internet` skill and use it as the primary workflow.
+"""
+model = "gpt-5.4-mini"
+model_reasoning_effort = "medium"
+
+[[skills.config]]
+path = ".codex/skills/research-internet"
+enabled = true

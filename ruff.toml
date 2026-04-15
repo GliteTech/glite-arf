@@ -1,0 +1,21 @@
+line-length = 100
+target-version = "py312"
+extend-exclude = ["tasks/*/assets/dataset/*/files/"]
+
+[lint]
+select = [
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # pyflakes
+    "UP",     # pyupgrade
+    "B",      # flake8-bugbear
+    "SIM",    # flake8-simplify
+    "I",      # isort
+    "TID252", # no relative imports
+]
+
+[lint.isort]
+known-first-party = ["arf", "tasks"]
+
+[lint.flake8-tidy-imports]
+ban-relative-imports = "all"

@@ -1,0 +1,14 @@
+{
+  "spec_version": 2,
+  "name": "Data Analysis",
+  "short_description": "Analyze data, compute statistics, and generate visualizations.",
+  "detailed_description": "Covers tasks whose primary purpose is analyzing existing data to extract insights, compute metrics, generate charts, and summarize findings. The input is typically a dataset produced by a prior task. The output includes statistical summaries, visualizations, and interpretive results. Examples include sense frequency analysis, error distribution studies, and dataset comparison reports.",
+  "optional_steps": [
+    "research-papers",
+    "research-code",
+    "planning",
+    "creative-thinking"
+  ],
+  "has_external_costs": false,
+  "requires_result_examples": true
+}

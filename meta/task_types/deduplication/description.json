@@ -1,0 +1,8 @@
+{
+  "spec_version": 2,
+  "name": "Deduplication",
+  "short_description": "Scan for and resolve duplicate assets across tasks.",
+  "detailed_description": "Covers tasks that identify duplicate papers, suggestions, or other assets that accumulated from parallel task execution. Uses the corrections mechanism to mark duplicates without modifying completed task folders. The output is correction files that downstream aggregators use to filter duplicates. This is typically run at project checkpoints.",
+  "optional_steps": ["research-code", "planning"],
+  "has_external_costs": false
+}

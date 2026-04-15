@@ -1,0 +1,8 @@
+{
+  "spec_version": 2,
+  "name": "Download Paper",
+  "short_description": "Download one or more research papers and register them as paper assets.",
+  "detailed_description": "Covers tasks that find, download, and summarize academic papers. Each paper becomes a paper asset with metadata, PDF file, and detailed summary. This is typically a focused task downloading a specific set of papers identified by prior research or brainstorming. The output is paper assets following the paper asset specification.",
+  "optional_steps": [],
+  "has_external_costs": false
+}

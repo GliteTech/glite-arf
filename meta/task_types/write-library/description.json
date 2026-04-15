@@ -1,0 +1,8 @@
+{
+  "spec_version": 2,
+  "name": "Write Library",
+  "short_description": "Create a reusable Python library for use by downstream tasks.",
+  "detailed_description": "Covers tasks that produce shared Python code registered as library assets. Libraries provide data loaders, scorers, utilities, or other reusable functionality. Code lives in the task's code/ directory and is referenced via module_paths in the library asset. Examples include building a data loader, creating an evaluation scorer, or implementing shared preprocessing utilities.",
+  "optional_steps": ["research-internet", "research-code", "planning"],
+  "has_external_costs": false
+}

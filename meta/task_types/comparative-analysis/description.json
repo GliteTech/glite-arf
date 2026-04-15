@@ -1,0 +1,8 @@
+{
+  "spec_version": 2,
+  "name": "Comparative Analysis",
+  "short_description": "Compare multiple approaches, models, versions, or configurations.",
+  "detailed_description": "Covers tasks that systematically compare two or more alternatives along defined dimensions. This includes comparing model architectures, dataset versions, evaluation methods, or experimental configurations. The output is comparative tables, charts, and recommendations. Examples include comparing fine-tuned models vs LLMs on a benchmark, analyzing which evaluation dataset best measures capability, or comparing preprocessing strategies.",
+  "optional_steps": ["research-papers", "research-code", "planning", "creative-thinking", "compare-literature"],
+  "has_external_costs": false
+}

@@ -1,0 +1,18 @@
+{
+  "spec_version": 2,
+  "name": "Build/Train Model",
+  "short_description": "Build, train, or fine-tune a machine learning model.",
+  "detailed_description": "Covers tasks that involve designing, implementing, training, and evaluating ML models. This includes fine-tuning pretrained models, training from scratch, and hyperparameter optimization. Typically requires GPU compute and produces trained model checkpoints, evaluation metrics, and analysis. Examples include fine-tuning a pretrained model, training a bi-encoder, or implementing a new architecture from scratch.",
+  "optional_steps": [
+    "research-papers",
+    "research-internet",
+    "research-code",
+    "planning",
+    "setup-machines",
+    "teardown",
+    "creative-thinking",
+    "compare-literature"
+  ],
+  "has_external_costs": true,
+  "requires_result_examples": true
+}

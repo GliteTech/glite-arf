@@ -1,0 +1,8 @@
+{
+  "spec_version": 2,
+  "name": "Brainstorming",
+  "short_description": "Record decisions and outcomes from a brainstorming session.",
+  "detailed_description": "Covers tasks that capture the results of brainstorming sessions between human researchers and AI agents. The primary output is a set of suggestions for future tasks, decisions about project direction, and documented rationale. No research or planning steps are needed since the brainstorming session itself drives the content.",
+  "optional_steps": [],
+  "has_external_costs": false
+}

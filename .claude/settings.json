@@ -1,0 +1,63 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(*)",
+      "Edit(*)",
+      "Edit(./.claude/**)",
+      "Write(*)",
+      "Write(./.claude/**)",
+      "Glob(*)",
+      "Grep(*)",
+      "Bash(*)",
+      "WebFetch(*)",
+      "WebSearch(*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Edit(*.md)|Write(*.md)",
+            "command": "/check-markdown-style"
+          },
+          {
+            "type": "command",
+            "if": "Edit(*.py)|Write(*.py)",
+            "command": "/check-python-style"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run python arf/scripts/hooks/check_run_with_logs.py"
+          }
+        ]
+      },
+      {
+        "matcher": "WebSearch|WebFetch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run python arf/scripts/hooks/log_web_activity.py"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run python arf/scripts/hooks/verify_logs_on_stop.py"
+          }
+        ]
+      }
+    ]
+  }
+}

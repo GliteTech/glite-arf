@@ -1,0 +1,18 @@
+{
+  "spec_version": 2,
+  "name": "Experiment Run",
+  "short_description": "Run a designed experiment combining training, inference, and evaluation.",
+  "detailed_description": "Covers tasks that execute a complete experimental pipeline: data preparation, model training or inference, prediction generation, and evaluation against benchmarks. This type combines multiple activities into a single coherent experiment. Examples include testing LLM zero-shot performance across multiple models, running ablation studies, or comparing prompting strategies.",
+  "optional_steps": [
+    "research-papers",
+    "research-internet",
+    "research-code",
+    "planning",
+    "setup-machines",
+    "teardown",
+    "creative-thinking",
+    "compare-literature"
+  ],
+  "has_external_costs": true,
+  "requires_result_examples": true
+}

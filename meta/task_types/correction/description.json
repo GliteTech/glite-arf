@@ -1,0 +1,8 @@
+{
+  "spec_version": 2,
+  "name": "Correction",
+  "short_description": "Correct aggregated artifacts from earlier completed tasks.",
+  "detailed_description": "Covers tasks whose main purpose is correcting mistakes in the effective aggregated view of earlier completed-task outputs. Typical outputs are correction files, and sometimes replacement assets created in the current task and referenced by those corrections. The default optional step list is empty because many correction tasks are straightforward, but the execute-task orchestrator may still add research or planning when the correction request is complex.",
+  "optional_steps": [],
+  "has_external_costs": false
+}

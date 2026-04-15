@@ -1,0 +1,8 @@
+{
+  "spec_version": 2,
+  "name": "Download Dataset",
+  "short_description": "Download one or more datasets and register them as dataset assets.",
+  "detailed_description": "Covers tasks that download datasets from external sources, verify their integrity, document their structure and statistics, and register them as dataset assets. The primary output is one or more dataset assets in the standard format. Examples include downloading evaluation benchmarks, training corpora, or challenge test sets.",
+  "optional_steps": ["planning"],
+  "has_external_costs": false
+}

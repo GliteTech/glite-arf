@@ -1,0 +1,18 @@
+{
+  "spec_version": 2,
+  "name": "Baseline Evaluation",
+  "short_description": "Run a baseline or benchmark evaluation against standard datasets.",
+  "detailed_description": "Covers tasks that implement and evaluate a known baseline method on standard benchmarks. The goal is establishing a reference point for comparison, not inventing new methods. Baselines may be simple heuristics, published systems, or standard model architectures. Results must be compared against published numbers.",
+  "optional_steps": [
+    "research-papers",
+    "research-internet",
+    "research-code",
+    "planning",
+    "setup-machines",
+    "teardown",
+    "creative-thinking",
+    "compare-literature"
+  ],
+  "has_external_costs": true,
+  "requires_result_examples": true
+}

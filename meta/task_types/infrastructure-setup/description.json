@@ -1,0 +1,8 @@
+{
+  "spec_version": 2,
+  "name": "Infrastructure Setup",
+  "short_description": "Set up environments, tools, dependencies, or infrastructure.",
+  "detailed_description": "Covers tasks that install dependencies, configure environments, set up remote machines, or create tooling needed by downstream tasks. The primary output is working infrastructure rather than research results. Examples include installing a lexical resource or knowledge base, configuring GPU environments, testing remote machine lifecycles, or setting up evaluation frameworks.",
+  "optional_steps": ["research-internet", "research-code", "planning"],
+  "has_external_costs": false
+}

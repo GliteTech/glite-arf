@@ -1,0 +1,8 @@
+{
+  "spec_version": 2,
+  "name": "Literature Survey",
+  "short_description": "Survey and summarize academic literature on a specific topic.",
+  "detailed_description": "Covers tasks that systematically search for, download, and summarize research papers on a topic. Unlike download-paper tasks which target specific known papers, literature surveys cast a wide net to discover papers across a research area. The output is a collection of paper assets plus a synthesis document. Examples include surveying recent approaches to a problem, collecting papers on a new technique, or mapping a research landscape.",
+  "optional_steps": ["research-papers", "research-internet", "research-code", "planning"],
+  "has_external_costs": true
+}

@@ -1,0 +1,8 @@
+{
+  "spec_version": 2,
+  "name": "Feature Engineering",
+  "short_description": "Extract, compute, or generate features from data for model training.",
+  "detailed_description": "Covers tasks that create new features from existing data. This includes extracting linguistic features, computing statistical measures, generating LLM-based features, or deriving meta-features from model outputs. The output is typically enriched data files or feature extraction code that downstream model training tasks consume. Examples include computing word frequency features, generating LLM embeddings, or extracting phonological distance measures.",
+  "optional_steps": ["research-papers", "research-internet", "research-code", "planning", "creative-thinking"],
+  "has_external_costs": true
+}

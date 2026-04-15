@@ -1,0 +1,11 @@
+name = "download-paper"
+description = "Resolve paper identifiers, fetch accessible full-text files, and prepare paper inputs."
+developer_instructions = """
+Read the linked `download_paper` skill and use it as the primary workflow.
+"""
+model = "gpt-5.4-mini"
+model_reasoning_effort = "medium"
+
+[[skills.config]]
+path = ".codex/skills/download_paper"
+enabled = true

@@ -1,0 +1,11 @@
+name = "research-code"
+description = "Review libraries and prior task outputs to write implementation-oriented code research."
+developer_instructions = """
+Read the linked `research-code` skill and use it as the primary workflow.
+"""
+model = "gpt-5.4-mini"
+model_reasoning_effort = "medium"
+
+[[skills.config]]
+path = ".codex/skills/research-code"
+enabled = true

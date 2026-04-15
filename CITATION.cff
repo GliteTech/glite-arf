@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use Glite ARF in your research, please cite it as below."
+title: "Glite Autonomous Research Framework (Glite ARF)"
+abstract: >-
+  Glite ARF is a file-based, verification-first framework for running
+  AI-driven research projects. Each task runs in isolation, every artifact
+  follows a versioned specification, every step is logged, and verificator
+  scripts block commits that violate structure. Completed tasks are frozen
+  so later work can build on them without breaking them.
+type: software
+authors:
+  - name: "Glite Tech Ltd"
+    address: "16 Theobalds Road"
+    city: "London"
+    post-code: "WC1X 8PL"
+    country: "GB"
+    website: "https://glite.ai"
+  - family-names: "Philippov"
+    given-names: "Vassili"
+    affiliation: "Glite Tech Ltd"
+repository-code: "https://github.com/GliteTech/glite-automatic-research-framework"
+url: "https://glite.ai"
+license: Apache-2.0
+keywords:
+  - artificial-intelligence
+  - research-framework
+  - reproducibility
+  - autonomous-agents
+  - claude-code
+  - codex
+  - llm
+version: "0.1.0"
+date-released: "2026-04-10"

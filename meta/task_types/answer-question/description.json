@@ -1,0 +1,14 @@
+{
+  "spec_version": 2,
+  "name": "Answer Question",
+  "short_description": "Answer one or more research questions and register the results as answer assets.",
+  "detailed_description": "Covers tasks whose primary deliverable is a well-supported answer to a specific free-form question. The question may be answered through existing papers, internet research, prior project findings, or new code experiments, with the final output stored as one or more answer assets. Examples include clarifying a framework design choice, resolving a methodological uncertainty, or determining whether an implementation claim is supported by evidence.",
+  "optional_steps": [
+    "research-papers",
+    "research-internet",
+    "research-code",
+    "planning",
+    "creative-thinking"
+  ],
+  "has_external_costs": true
+}

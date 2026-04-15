@@ -1,0 +1,8 @@
+{
+  "spec_version": 2,
+  "name": "Internet Research",
+  "short_description": "Research a specific question using internet sources, documentation, and online resources.",
+  "detailed_description": "Covers tasks whose primary purpose is answering a research question by searching the internet, reading documentation, forums, blog posts, and other online resources. The output is typically a structured research document, not code or datasets. This type is appropriate when the task goal is knowledge gathering rather than asset production. Examples include investigating API capabilities, comparing tool options, or understanding a technology landscape.",
+  "optional_steps": ["planning"],
+  "has_external_costs": true
+}

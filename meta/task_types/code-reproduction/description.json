@@ -1,0 +1,17 @@
+{
+  "spec_version": 2,
+  "name": "Code Reproduction",
+  "short_description": "Reproduce results from an existing paper or codebase.",
+  "detailed_description": "Covers tasks that reproduce published results by running the original code or reimplementing the method. The goal is verifying that results can be replicated and understanding the method deeply. This involves finding code repositories, setting up environments, running training or inference, and comparing outputs to published numbers. Compare-literature is critical for validating reproduction fidelity.",
+  "optional_steps": [
+    "research-papers",
+    "research-internet",
+    "research-code",
+    "planning",
+    "setup-machines",
+    "teardown",
+    "compare-literature"
+  ],
+  "has_external_costs": true,
+  "requires_result_examples": true
+}
