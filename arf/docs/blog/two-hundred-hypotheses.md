@@ -114,8 +114,10 @@ destroy a project. After four projects and four rewrites, these are the ones tha
 * **Every asset type has a specification, verified before commit.**
 * **Subagents are isolated from each other's context.**
 
-Now let me walk you through what each of those means in practice, by walking a single experiment
-through the framework end to end.
+Here's how those rules show up — first inside a single task, then in the outer loop that creates
+tasks in the first place.
+
+### Inside one task
 
 It starts with a *suggestion*: a hypothesis to test, a dataset to try, a library to benchmark. A
 human picks a suggestion and converts it into a *task*.
@@ -143,8 +145,8 @@ and each phase writes to a known place.
 
 ![Task lifecycle — the nine main steps every task passes through](images/task_lifecycle.png)
 
-Every shell command the agent runs is wrapped in a helper that captures stdout, stderr, exit code, and
-timestamp into a log file the agent cannot skip or fake. Every asset a task produces — a paper
+Every shell command the agent runs is wrapped in a helper that captures stdout, stderr, exit code,
+and timestamp into a log file the agent cannot skip or fake. Every asset a task produces — a paper
 summary, a dataset, a model, a prediction file — follows a per-type specification that gets verified
 by a script before the task is allowed to be called done.
 
@@ -153,13 +155,36 @@ run an *aggregator* — a Python script that reads every task folder, applies th
 and gives you the one canonical answer. Stale summary files stop being a problem, because you stop
 writing them. The aggregator *is* the summary.
 
-Zoom out one level and there's a second loop: the research lifecycle. Each round of tasks produces
-suggestions — new hypotheses, new datasets to try, new techniques to benchmark. A brainstorming
-session (human plus AI) reviews the full pool of suggestions, picks the highest-value ones, and
-converts them into the next batch of tasks. The pool grows every round — each cycle produces more
-ideas than it consumes.
+### The loop outside the loop
+
+Zoom out one level. Each round of tasks produces suggestions — new hypotheses, new datasets to try,
+new techniques to benchmark. A brainstorming session (human plus AI) reviews the full pool of
+suggestions, picks the highest-value ones, and converts them into the next batch of tasks. The pool
+grows every round — each cycle produces more ideas than it consumes.
 
 ![Research lifecycle — suggestions feed brainstorm, brainstorm creates tasks, tasks produce more suggestions](images/research_waterfall.png)
+
+But why is the human still in the middle of that loop? Why isn't the brainstorm itself an agent?
+
+Because in April 2026, the agents aren't smart enough yet. Not for this part.
+
+[METR](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/) has been
+measuring how long a software task an LLM can finish reliably — they call it the *time horizon*, the
+length of an expert-hour task the model can complete with 50% or 80% success. The trend climbs
+steeply. Today's frontier models sit somewhere around an hour, maybe an hour and a half at the 80%
+bar. A few years ago it was seconds.
+
+![Time horizon of software tasks different LLMs can complete 80% of the time — chart from METR, with data through early 2026](images/metr_autonomous_horizon.png)
+
+A research project is not an hour. It is months. Even a single shared-task season is weeks. The gap
+between "what one agent can finish reliably" and "what one research project asks for" is still two
+orders of magnitude.
+
+I see it in practice. Hand an agent a paper and ask it to reproduce the method — fine, that lands.
+Ask it to decide which paper to reproduce next, or when to abandon a line of work — that's where it
+wobbles. The strategic call is where modern agents are weakest.
+
+Maybe in two years. Maybe in five. Until then, the brainstorm has me in it.
 
 ## Creativity comes from limitations
 
