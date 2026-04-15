@@ -52,7 +52,9 @@ this full-time, [we are hiring](https://jobs.glite.ai).
 
 * Want a generic task runner — use Make, Just, or a workflow orchestrator instead
 * Are building a production application — Glite ARF is a research harness, not a deployment tool
-* Need a web UI or dashboard — Glite ARF writes files and leaves rendering to GitHub
+* Want to keep LLM spend low — ARF runs dozens of autonomous agents per task and burns tokens
+  heavily; plan on a top-tier Claude (Max) or Codex (ChatGPT Pro) subscription, or a generous API
+  budget
 * Do not want to commit to rigid structural rules — the point of the framework is the rules
 
 ## What Glite ARF gives you
