@@ -104,22 +104,20 @@ CITATION.cff    Academic citation metadata
 
 ## Bootstrap a new project
 
-Follow the full walkthrough at [`arf/docs/tutorial/`](arf/docs/tutorial/). Short version:
-
 1. **Fork** this repo on GitHub, clone locally.
-2. **Install deps** — `uv sync`, then `uv run pre-commit install`.
-3. **Validate the environment** — `python3 doctor.py`. Fix every failure before continuing.
-4. **Create project description** — run the `/create-project-description` skill in Claude Code (or
-   its Codex equivalent). It produces `project/description.md` and `project/budget.json`.
-5. **Customize `meta/`** — before running any task, add your project's categories, metrics, task
-   types, and any extra asset types. Running tasks with missing metadata creates rework.
-6. **Create your first task** — run `/create-task`. Typically the first task is a literature survey.
-7. **Execute the task** — run `/execute-task <task_id>`. The skill creates a worktree on branch
-   `task/<task_id>`, runs every mandatory stage, writes logs, runs verificators, and opens a PR.
-8. **Brainstorm next tasks** — run `/human-brainstorm`. It reads the completed task's
-   `suggestions.json` and helps you accept, reject, or defer each candidate into new task folders.
-9. **Inspect results** — open `overview/README.md` (regenerate with
-   `uv run python -m arf.scripts.overview.materialize`).
+2. **Install `uv`** if you do not have it yet, then run `uv sync`.
+3. **Run `/setup-project`** in Claude Code (or its Codex equivalent). The skill shows the safety
+   acknowledgement, installs the rest of the toolchain (pre-commit hooks, git LFS), validates the
+   environment with `doctor.py`, guides you through `project/description.md` and
+   `project/budget.json`, and populates `meta/` with the project's categories, metrics, task types,
+   and any extra asset types.
+
+When setup finishes, run `/create-task` for your first task (typically a literature survey), then
+`/execute-task <task_id>`. Use `/human-brainstorm` after each completed task to turn its
+`suggestions.json` into new task folders, and open `overview/README.md` to inspect aggregated
+results.
+
+Follow the full walkthrough at [`arf/docs/tutorial/`](arf/docs/tutorial/).
 
 ## Key rules (enforced by verificators)
 
