@@ -8,7 +8,7 @@ description: >-
 ---
 # Setup Project
 
-**Version**: 1
+**Version**: 2
 
 ## Goal
 
@@ -88,29 +88,42 @@ Read before starting:
    ```
 
 9. Ensure git LFS is installed and configured:
-    * Run `git lfs version`. If it exits `0`, run `git lfs install` and move on.
-    * If `git lfs` is missing, detect the platform with `uname -s`:
-        * `Darwin` → propose `brew install git-lfs`
-        * `Linux` (check `/etc/os-release` for `ID=ubuntu` or `ID=debian`) → propose
-          `sudo apt-get install -y git-lfs`
-        * Any other platform → print the manual instructions from <https://git-lfs.com/> and exit
-          with `Install git-lfs manually, then re-run /setup-project.`
-    * Show the user the exact command and ask: "Install git-lfs with `<command>`? Type `yes` to
-      run it or anything else to cancel." Run the command only on the exact string `yes`.
-    * After install, run `git lfs install` to register hooks.
+   * Run `git lfs version`. If it exits `0`, run `git lfs install` and move on.
+   * If `git lfs` is missing, detect the platform with `uname -s`:
+     * `Darwin` → propose `brew install git-lfs`
+     * `Linux` (check `/etc/os-release` for `ID=ubuntu` or `ID=debian`) → propose
+       `sudo apt-get install -y git-lfs`
+     * Any other platform → print the manual instructions from <https://git-lfs.com/> and exit with
+       `Install git-lfs manually, then re-run /setup-project.`
+   * Show the user the exact command and ask: "Install git-lfs with `<command>`? Type `yes` to run
+     it or anything else to cancel." Run the command only on the exact string `yes`.
+   * After install, run `git lfs install` to register hooks.
 
-10. Run `python3 doctor.py` and surface its output verbatim to the user. If `doctor.py` reports any
-    blocker (non-zero exit), print `Fix the blockers above and re-run /setup-project.` and exit.
-    Do not proceed to Phase 3.
+10. Ensure `direnv` trusts the repo's `.envrc`:
+    * If `.envrc` does not exist in the repo root, skip this step.
+    * Run `direnv status 2>&1`. If the output contains `Found RC allowed 1`, the file is already
+      trusted — move on.
+    * If `direnv` is not installed (`command -v direnv` fails), tell the user that `doctor.py` will
+      block on this, point them at `brew install direnv` on macOS or
+      `sudo apt-get install -y direnv` on Debian/Ubuntu, remind them to add the shell hook per
+      <https://direnv.net/docs/hook.html>, and exit so they can install it themselves.
+    * If the `.envrc` is not allowed, ask: "Allow direnv to load this repo's `.envrc`? This lets
+      direnv activate the project's virtualenv automatically. Type `yes` to run `direnv allow` or
+      anything else to cancel." Run `direnv allow` only on the exact string `yes`. On cancel, print
+      `doctor.py will block until you run direnv allow manually.` and exit.
+
+11. Run `python3 doctor.py` and surface its output verbatim to the user. If `doctor.py` reports any
+    blocker (non-zero exit), print `Fix the blockers above and re-run /setup-project.` and exit. Do
+    not proceed to Phase 3.
 
 ### Phase 3: Project description and budget
 
-11. Invoke the `create-project-description` skill by printing a short notice such as "Next, I will
-    run /create-project-description to create project/description.md and project/budget.json.
-    Press enter to continue." and waiting for the user. Then delegate the entire dialogue to that
-    skill — do not ask its questions here.
+12. Invoke the `create-project-description` skill by printing a short notice such as "Next, I will
+    run /create-project-description to create project/description.md and project/budget.json. Press
+    enter to continue." and waiting for the user. Then delegate the entire dialogue to that skill —
+    do not ask its questions here.
 
-12. After `create-project-description` returns, confirm both files exist:
+13. After `create-project-description` returns, confirm both files exist:
 
     ```bash
     uv run python -u -m arf.scripts.verificators.verify_project_description
@@ -122,9 +135,9 @@ Read before starting:
 
 ### Phase 4: Customize meta/
 
-13. Read `project/description.md` into context so subsequent sub-skills inherit it.
+14. Read `project/description.md` into context so subsequent sub-skills inherit it.
 
-14. For each of the four sub-skills below, in this order:
+15. For each of the four sub-skills below, in this order:
     * Print `Running /<skill-name> to populate meta/<area>/.`
     * Invoke the sub-skill with `project/description.md` as its argument.
     * When the sub-skill returns, print the count of entries that were added.
@@ -137,7 +150,7 @@ Read before starting:
 
 ### Phase 5: Wrap-up
 
-15. Print a summary to the user with:
+16. Print a summary to the user with:
     * The number of entries added in each of `meta/categories/`, `meta/metrics/`,
       `meta/task_types/`, `meta/asset_types/`.
     * The list of files now present under `project/`.
