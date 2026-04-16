@@ -895,11 +895,11 @@ def _seed_codex_jsonl(
 
 
 def test_cwd_to_encoded_path_is_public_and_matches_internal_helper() -> None:
-    cwd: str = "/Users/example/glite-automatic-research-framework"
+    cwd: str = "/Users/example/glite-arf"
     public: str = capture_task_sessions_module.cwd_to_encoded_path(cwd=cwd)
     private: str = capture_task_sessions_module._cwd_to_encoded_path(cwd=cwd)
     assert public == private
-    assert public == "-Users-example-glite-automatic-research-framework"
+    assert public == "-Users-example-glite-arf"
 
 
 def test_discover_session_files_task_target_finds_content_matched_jsonl(

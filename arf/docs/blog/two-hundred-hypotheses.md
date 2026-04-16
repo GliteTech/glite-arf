@@ -238,8 +238,8 @@ the compute bill is not small.
 If any of this sounds like something you'd try, here is the practical path.
 
 **1. Fork the repo.** The framework lives at
-[github.com/GliteTech/glite-automatic-research-framework](https://github.com/GliteTech/glite-automatic-research-framework).
-Fork it — it's an Apache-2.0 template that's meant to be forked, not installed.
+[github.com/GliteTech/glite-arf](https://github.com/GliteTech/glite-arf). Fork it — it's an
+Apache-2.0 template that's meant to be forked, not installed.
 
 **2. Read the docs in this order.** Start with `arf/README.md` for the fundamental principles and
 glossary. Then the top-level `CLAUDE.md` for the hard rules every task has to follow. Then

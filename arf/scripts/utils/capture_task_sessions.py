@@ -266,9 +266,8 @@ def cwd_to_encoded_path(*, cwd: str) -> str:
     """Public wrapper around the Claude Code project-path encoding rule.
 
     Converts an absolute filesystem path (e.g.
-    ``/Users/me/glite-automatic-research-framework``) into the
-    encoded directory name under ``~/.claude/projects/`` by replacing
-    every ``/`` with ``-``.
+    ``/Users/me/glite-arf``) into the encoded directory name under
+    ``~/.claude/projects/`` by replacing every ``/`` with ``-``.
 
     Public so that callers outside this module (notably the ``self-analyze``
     skill, via the CLI) do not need to re-derive the encoding rule.
