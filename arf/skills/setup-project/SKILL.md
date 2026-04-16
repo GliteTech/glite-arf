@@ -2,13 +2,14 @@
 name: "setup-project"
 description: >-
   One-shot interactive onboarding for a newly forked Glite ARF template. Shows
-  the safety acknowledgement, installs dependencies, runs doctor.py, then
-  chains into create-project-description and the four meta/ sub-skills. Use
-  once per fork, right after cloning.
+  the safety acknowledgement, installs dependencies, runs doctor.py, chains
+  into create-project-description, provisions the paid services the project
+  declared, then invokes the four meta/ sub-skills. Use once per fork, right
+  after cloning.
 ---
 # Setup Project
 
-**Version**: 2
+**Version**: 3
 
 ## Goal
 
@@ -133,11 +134,63 @@ Read before starting:
     If either verificator reports errors, stop and tell the user to re-run
     `/create-project-description` to fix them before continuing.
 
-### Phase 4: Customize meta/
+### Phase 4: Paid service provisioning
 
-14. Read `project/description.md` into context so subsequent sub-skills inherit it.
+Paid services are declared by `create-project-description` in `project/budget.json` under
+`available_services`. Canonical slugs are `openai_api`, `anthropic_api`, `vast_ai` (see
+`arf/scripts/verificators/common/project_budget.py` for the alias map). This phase verifies
+credentials only for services that are actually declared, and lets the user drop a service from the
+project when they do not want to provide credentials.
 
-15. For each of the four sub-skills below, in this order:
+14. Load `project/budget.json`, read `available_services`. If the list is empty, print
+    `No paid services declared; skipping provisioning.` and advance to Phase 5.
+
+15. For each slug in `available_services`, dispatch to the matching block below. After any block
+    that edits `project/budget.json`, re-run
+    `uv run python -u -m arf.scripts.verificators.verify_project_budget` and fix any errors before
+    continuing.
+
+    **`openai_api`**:
+    * Read `.env`. If it contains a non-empty `OPENAI_API_KEY=` line, print
+      `OPENAI_API_KEY present in .env — ok.` and move on.
+    * Otherwise ask: "This project declares `openai_api` but no OPENAI_API_KEY is set. Paste the key
+      now, type `skip` to remove `openai_api` from `project/budget.json` (you will use a different
+      LLM provider or local models), or type `cancel` to stop setup."
+    * On a pasted key: sanity-check it is non-empty and at least 20 characters long. Append
+      `OPENAI_API_KEY=<pasted>` to `.env`; create `.env` with that single line if the file does not
+      exist. Confirm with `grep -c "^OPENAI_API_KEY=" .env`. Never echo the pasted key.
+    * On `skip`: edit `project/budget.json` to drop `"openai_api"` from `available_services`. Re-run
+      `verify_project_budget`.
+    * On `cancel`: print `Setup paused. Re-run /setup-project when ready.` and exit.
+
+    **`vast_ai`**:
+    * Run `uv run vastai show user 2>&1`. If it exits `0` and prints a username, print
+      `vastai authenticated — ok.` and move on.
+    * Otherwise ask: "This project declares `vast_ai` but vastai is not authenticated. Paste your
+      vast.ai API key now, type `create` for account signup instructions, type `skip` to remove
+      `vast_ai` from `project/budget.json` (all training will run locally; `/setup-remote-machine`
+      will refuse to run until `vast_ai` is re-added), or type `cancel` to stop setup."
+    * On a pasted key: run `uv run vastai set api-key <pasted>`, then re-check with
+      `vastai show user`. Never echo the pasted key.
+    * On `create`: print the signup URL <https://cloud.vast.ai/create_account> and the key page
+      <https://cloud.vast.ai/account/>, then re-ask the question. Loop until the user pastes a key,
+      types `skip`, or types `cancel`.
+    * On `skip`: edit `project/budget.json` to drop `"vast_ai"` from `available_services`. Re-run
+      `verify_project_budget`. Tell the user that `/setup-remote-machine` will now refuse to run.
+    * On `cancel`: as above.
+
+    **`anthropic_api`**: tell the user Anthropic credentials are managed by the Claude Code or Codex
+    CLI they are running, no key file is needed, and move on. Nothing else to do.
+
+    **Any other slug**: tell the user the service is declared but `/setup-project` has no
+    provisioning block for it, so credentials for it must be handled manually. Do not exit; move on
+    to the next slug.
+
+### Phase 5: Customize meta/
+
+16. Read `project/description.md` into context so subsequent sub-skills inherit it.
+
+17. For each of the four sub-skills below, in this order:
     * Print `Running /<skill-name> to populate meta/<area>/.`
     * Invoke the sub-skill with `project/description.md` as its argument.
     * When the sub-skill returns, print the count of entries that were added.
@@ -148,9 +201,10 @@ Read before starting:
     * `/add-task-type project/description.md`
     * `/add-asset-type project/description.md`
 
-### Phase 5: Wrap-up
+### Phase 6: Wrap-up
 
-16. Print a summary to the user with:
+18. Print a summary to the user with:
+    * The final `available_services` list from `project/budget.json` after Phase 4 edits.
     * The number of entries added in each of `meta/categories/`, `meta/metrics/`,
       `meta/task_types/`, `meta/asset_types/`.
     * The list of files now present under `project/`.
@@ -165,7 +219,9 @@ Read before starting:
 * Either `git lfs install` ran successfully, or the user declined the install prompt and the skill
   exited with manual install instructions.
 * `project/description.md` exists and passes `verify_project_description`.
-* `project/budget.json` exists and passes `verify_project_budget`.
+* `project/budget.json` exists and passes `verify_project_budget` both before and after Phase 4.
+* Phase 4 either verified credentials for every slug in `available_services`, or the user explicitly
+  dropped the slug and `verify_project_budget` still passes.
 * Each of `/add-category`, `/add-metric`, `/add-task-type`, `/add-asset-type` was invoked and the
   user saw its result.
 * The wrap-up summary was printed with the `/create-task` pointer.
@@ -175,7 +231,10 @@ Read before starting:
 * NEVER proceed past Phase 1 without the exact acknowledgement string. Any other reply ends the
   skill.
 * NEVER skip `python3 doctor.py`. Blockers must be surfaced to the user.
+* NEVER echo a pasted API key back to the chat or to any log.
 * NEVER write anything to `meta/` directly from this skill. Delegate to the sub-skills.
-* NEVER run a system package manager (`brew`, `apt-get`, etc.) without showing the exact command and
-  getting the explicit `yes` confirmation in the same turn.
-* NEVER create a `tasks/tXXXX_*` folder as part of setup. See `CLAUDE.md` rule 0.
+* NEVER edit `project/budget.json` `available_services` without re-running `verify_project_budget`
+  afterwards.
+
+(Framework-wide rule: no `tasks/tXXXX_*` folders for any setup or infrastructure work — see
+`CLAUDE.md` rule 0.)
