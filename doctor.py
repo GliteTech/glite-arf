@@ -146,25 +146,11 @@ def check_env_variable(var_name: str) -> Ok | Error:
 
 def check_deps_installed() -> Ok | Error:
     try:
-        import openai  # noqa: F401
+        import pydantic  # noqa: F401
 
-        return Ok("Dependencies seem to be installed (openai is available)")
+        return Ok("Dependencies seem to be installed (pydantic is available)")
     except ImportError:
-        return Error("openai can't be imported, dependencies are likely not installed")
-
-
-def check_env_file() -> Ok | Error:
-    env_path = REPO_ROOT / ".env"
-    if not env_path.exists():
-        return Error(".env file does not exist")
-
-    content = env_path.read_text()
-    for line in content.splitlines():
-        line = line.strip()
-        if line.startswith("OPENAI_API_KEY=") and len(line) > len("OPENAI_API_KEY="):
-            return Ok("OPENAI_API_KEY is set in .env")
-
-    return Error("OPENAI_API_KEY is not set in .env (copy from .env.example and fill in)")
+        return Error("pydantic can't be imported, dependencies are likely not installed")
 
 
 def check_precommit_installed() -> Ok | Error:
@@ -252,16 +238,6 @@ CHECKS: list[Check | Assertion] = [
         check_deps_installed,
         help_text="Install dependencies. Run:\n  uv sync",
     ),
-    # Configuration
-    Check(
-        ".env file has OPENAI_API_KEY",
-        check_env_file,
-        help_text=(
-            "Create .env from the template and add your API key:\n"
-            "  cp .env.example .env\n"
-            "  # Edit .env and add your OPENAI_API_KEY"
-        ),
-    ),
     Check(
         "Git LFS is installed",
         check_git_lfs_installed,
@@ -289,15 +265,6 @@ CHECKS: list[Check | Assertion] = [
         partial(check_executable, "mypy"),
         help_text=(
             "mypy should be available after uv sync. Try:\n  uv sync\n  source .venv/bin/activate"
-        ),
-    ),
-    Assertion(
-        "vastai CLI is available",
-        partial(check_executable, "vastai"),
-        help_text=(
-            "Install the Vast.ai CLI for remote GPU machine management:\n"
-            "  pip install vastai\n"
-            "  vastai set api-key <your-key>"
         ),
     ),
 ]
