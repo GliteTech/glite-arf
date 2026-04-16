@@ -14,28 +14,11 @@ cd <project-name>
 
 ## Step 2: Set Up the Environment
 
-```bash
-# Create .env from template and fill in your API key
-cp .env.example .env
-# Edit .env: add your OPENAI_API_KEY (and any optional keys)
-
-# Install all dependencies (creates .venv and uv.lock)
-uv sync
-
-# Allow direnv (loads .env and activates .venv automatically)
-direnv allow
-
-# Set up Git LFS for large files (paper PDFs, datasets, etc.)
-git lfs install
-
-# Install pre-commit hooks
-uv run pre-commit install
-
-# Verify everything works
-python3 doctor.py
-```
-
-All checks in `doctor.py` should pass before proceeding.
+Run `/setup-project` in Claude Code (or its Codex equivalent). The skill captures the safety
+acknowledgement, detects or installs `uv`, runs `uv sync`, installs pre-commit hooks, allows
+`direnv`, initializes Git LFS, and runs `doctor.py`. API keys for paid services (OpenAI, vast.ai)
+are provisioned later in Phase 4 of the skill, only for services your project actually declares in
+`project/budget.json`.
 
 ## Step 3: Customize Project Identity
 
