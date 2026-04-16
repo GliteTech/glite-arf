@@ -9,7 +9,7 @@ description: >-
 ---
 # Setup Project
 
-**Version**: 4
+**Version**: 5
 
 ## Goal
 
@@ -205,15 +205,21 @@ project when they do not want to provide credentials.
     * `add-task-type`
     * `add-asset-type`
 
-### Phase 6: Wrap-up
+### Phase 6: Wrap-up and first tasks
 
 18. Print a summary to the user with:
     * The final `available_services` list from `project/budget.json` after Phase 4 edits.
     * The number of entries added in each of `meta/categories/`, `meta/metrics/`,
       `meta/task_types/`, `meta/asset_types/`.
     * The list of files now present under `project/`.
-    * The exact next command:
-      `Run /create-task to create your first task. See arf/docs/tutorial/ for the full walkthrough.`
+
+19. Print one line — `Running /human-brainstorm to plan first tasks.` — then immediately read
+    `arf/skills/human-brainstorm/SKILL.md` and follow every step of that skill's dialogue inline in
+    this conversation until its own `Done When` is satisfied. The project is brand-new so
+    aggregators will return empty results for tasks, suggestions, and metrics — that is expected.
+    The brainstorm session should focus on translating the project description and research
+    questions into concrete first tasks (typically a literature survey, dataset download, or
+    baseline experiment). See `arf/docs/tutorial/` for the recommended first-task patterns.
 
 ## Done When
 
@@ -228,7 +234,8 @@ project when they do not want to provide credentials.
   dropped the slug and `verify_project_budget` still passes.
 * Each of `/add-category`, `/add-metric`, `/add-task-type`, `/add-asset-type` was invoked and the
   user saw its result.
-* The wrap-up summary was printed with the `/create-task` pointer.
+* The `/human-brainstorm` dialogue completed and the user has at least one task planned or
+  explicitly deferred task creation.
 
 ## Forbidden
 
