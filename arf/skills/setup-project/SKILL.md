@@ -9,7 +9,7 @@ description: >-
 ---
 # Setup Project
 
-**Version**: 5
+**Version**: 6
 
 ## Goal
 
@@ -205,15 +205,59 @@ project when they do not want to provide credentials.
     * `add-task-type`
     * `add-asset-type`
 
-### Phase 6: Wrap-up and first tasks
+### Phase 6: Generate project README
 
-18. Print a summary to the user with:
+18. Replace the template `README.md` at the repo root with a project-specific version. Read
+    `project/description.md`, `project/budget.json`, and list the entries in `meta/categories/`,
+    `meta/metrics/`, `meta/task_types/`. Write `README.md` with the following sections in order:
+
+    * `# <Project Title>` — from the `#` heading in `project/description.md`.
+    * `## Goal` — the 2-5 sentence goal from `project/description.md`.
+    * `## Research Questions` — the numbered list from `project/description.md`.
+    * `## Success Criteria` — the bulleted list from `project/description.md`.
+    * `## Current Phase` — from `project/description.md`.
+    * `## Results Dashboard` — one line:
+      `See [overview/README.md](overview/README.md) for the latest aggregated results, metrics, and task status.`
+    * `## Getting Started` — for new contributors: clone the repo, run `uv sync`, then run
+      `/setup-project` in Claude Code or Codex. 3-5 lines.
+    * `## Daily Workflow` — quick reference to `/create-task`, `/execute-task`, `/human-brainstorm`,
+      and regenerating `overview/README.md`. Keep under 10 lines.
+    * `## Key Rules` — the verificator-enforced rules that apply to anyone working in the repo: CLI
+      wrapping with `run_with_logs`, task isolation, commit per step, immutability + corrections,
+      read through aggregators, register metrics before reporting. Copy these from the template
+      README's "Key rules" section.
+    * `## Project Structure` — the top-level directory layout tree from the template README.
+    * `## Categories` — bulleted list of every slug under `meta/categories/` with its display name.
+    * `## Metrics` — bulleted list of every key under `meta/metrics/` with its display name and
+      unit.
+    * `## Task Types` — bulleted list of every slug under `meta/task_types/` with its display name
+      (mark the generic template types separately from project-specific ones if any were added).
+    * `## Budget and Services` — one line with total budget, currency, and the final
+      `available_services` list.
+    * `## Documentation` — links to `arf/docs/explanation/safety.md`, `arf/docs/tutorial/`,
+      `arf/docs/reference/`, and the style guides.
+    * `## License` — keep the same license as the template (Apache 2.0) unless the user says
+      otherwise.
+
+    Do **not** include: the template's "Who made this" section, "Is Glite ARF right for me?", "What
+    Glite ARF gives you", "Source of truth", "Contributing", "Citing Glite ARF", or badge URLs.
+    Those are template-level content that does not belong in a project fork.
+
+19. Run `uv run flowmark --inplace --nobackup README.md` to normalize formatting.
+
+20. Show the user the generated README and ask: "Review the project README. Should I change
+    anything?" Apply any requested edits and re-run flowmark after each round. After user
+    confirmation, commit with message `Replace template README with project-specific version`.
+
+### Phase 7: Wrap-up and first tasks
+
+21. Print a summary to the user with:
     * The final `available_services` list from `project/budget.json` after Phase 4 edits.
     * The number of entries added in each of `meta/categories/`, `meta/metrics/`,
       `meta/task_types/`, `meta/asset_types/`.
     * The list of files now present under `project/`.
 
-19. Print one line — `Running /human-brainstorm to plan first tasks.` — then immediately read
+22. Print one line — `Running /human-brainstorm to plan first tasks.` — then immediately read
     `arf/skills/human-brainstorm/SKILL.md` and follow every step of that skill's dialogue inline in
     this conversation until its own `Done When` is satisfied. The project is brand-new so
     aggregators will return empty results for tasks, suggestions, and metrics — that is expected.
@@ -234,6 +278,8 @@ project when they do not want to provide credentials.
   dropped the slug and `verify_project_budget` still passes.
 * Each of `/add-category`, `/add-metric`, `/add-task-type`, `/add-asset-type` was invoked and the
   user saw its result.
+* `README.md` was replaced with the project-specific version, flowmark-normalized, user-confirmed,
+  and committed.
 * The `/human-brainstorm` dialogue completed and the user has at least one task planned or
   explicitly deferred task creation.
 
