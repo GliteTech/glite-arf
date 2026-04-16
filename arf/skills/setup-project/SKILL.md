@@ -9,7 +9,7 @@ description: >-
 ---
 # Setup Project
 
-**Version**: 3
+**Version**: 4
 
 ## Goal
 
@@ -119,10 +119,11 @@ Read before starting:
 
 ### Phase 3: Project description and budget
 
-12. Invoke the `create-project-description` skill by printing a short notice such as "Next, I will
-    run /create-project-description to create project/description.md and project/budget.json. Press
-    enter to continue." and waiting for the user. Then delegate the entire dialogue to that skill —
-    do not ask its questions here.
+12. Print one line — `Running /create-project-description now.` — then immediately read
+    `arf/skills/create-project-description/SKILL.md` and follow every step of that skill's dialogue
+    inline in this conversation until its own `Done When` is satisfied. Do not pause for user
+    confirmation to kick it off; the user already accepted setup in Phase 1. Do not ask the skill's
+    questions here — ask them the way that skill specifies them.
 
 13. After `create-project-description` returns, confirm both files exist:
 
@@ -190,16 +191,19 @@ project when they do not want to provide credentials.
 
 16. Read `project/description.md` into context so subsequent sub-skills inherit it.
 
-17. For each of the four sub-skills below, in this order:
-    * Print `Running /<skill-name> to populate meta/<area>/.`
-    * Invoke the sub-skill with `project/description.md` as its argument.
-    * When the sub-skill returns, print the count of entries that were added.
+17. For each of the four sub-skills below, in the order listed, do the following without asking the
+    user for confirmation between them:
+    * Print one line — `Running /<skill-name> to populate meta/<area>/.`
+    * Read `arf/skills/<skill-name>/SKILL.md` and follow every step of that skill's dialogue inline
+      in this conversation, passing `project/description.md` as the `$ARGUMENTS` path.
+    * When the skill's `Done When` is satisfied, print the count of entries that were added, then
+      move to the next skill.
 
-    Sub-skills to invoke, in order:
-    * `/add-category project/description.md`
-    * `/add-metric project/description.md`
-    * `/add-task-type project/description.md`
-    * `/add-asset-type project/description.md`
+    Skills to run, in order:
+    * `add-category`
+    * `add-metric`
+    * `add-task-type`
+    * `add-asset-type`
 
 ### Phase 6: Wrap-up
 
