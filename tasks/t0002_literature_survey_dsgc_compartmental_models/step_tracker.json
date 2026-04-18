@@ -23,10 +23,10 @@
       "step": 3,
       "name": "init-folders",
       "description": "Create the mandatory task folder structure, including assets/paper/ and assets/answer/.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-18T23:12:40Z",
       "completed_at": null,
-      "log_file": "logs/steps/003_init-folders/"
+      "log_file": "logs\\steps\\003_init-folders/"
     },
     {
       "step": 4,
