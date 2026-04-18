@@ -41,9 +41,9 @@
       "step": 5,
       "name": "research-internet",
       "description": "Search the internet for compartmental DSGC modelling papers and patch-clamp studies across the 5 research questions.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-18T23:15:32Z",
-      "completed_at": null,
+      "completed_at": "2026-04-18T23:28:51Z",
       "log_file": "logs\\steps\\005_research-internet/"
     },
     {
