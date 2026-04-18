@@ -1,0 +1,10 @@
+{
+  "total_budget": 0.0,
+  "currency": "USD",
+  "per_task_default_limit": 0.0,
+  "available_services": [],
+  "alerts": {
+    "warn_at_percent": 80,
+    "stop_at_percent": 100
+  }
+}
