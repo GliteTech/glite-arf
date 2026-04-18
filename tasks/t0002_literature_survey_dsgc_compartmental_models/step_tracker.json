@@ -32,7 +32,7 @@
       "step": 4,
       "name": "research-papers",
       "description": "Review existing papers in the corpus (expected to be empty; skipped if so).",
-      "status": "pending",
+      "status": "skipped",
       "started_at": null,
       "completed_at": null,
       "log_file": "logs/steps/004_research-papers/"
@@ -50,7 +50,7 @@
       "step": 6,
       "name": "research-code",
       "description": "Review prior task outputs (expected to be empty since t0002 is the first research task).",
-      "status": "pending",
+      "status": "skipped",
       "started_at": null,
       "completed_at": null,
       "log_file": "logs/steps/006_research-code/"
