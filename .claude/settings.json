@@ -35,7 +35,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run python arf/scripts/hooks/check_run_with_logs.py"
+            "command": "export PATH=\"$USERPROFILE/.local/bin:$PATH\" && uv run python arf/scripts/hooks/check_run_with_logs.py"
           }
         ]
       },
@@ -44,7 +44,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run python arf/scripts/hooks/log_web_activity.py"
+            "command": "export PATH=\"$USERPROFILE/.local/bin:$PATH\" && uv run python arf/scripts/hooks/log_web_activity.py"
           }
         ]
       }
@@ -54,7 +54,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run python arf/scripts/hooks/verify_logs_on_stop.py"
+            "command": "export PATH=\"$USERPROFILE/.local/bin:$PATH\" && uv run python arf/scripts/hooks/verify_logs_on_stop.py"
           }
         ]
       }
