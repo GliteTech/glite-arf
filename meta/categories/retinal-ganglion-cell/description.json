@@ -1,0 +1,6 @@
+{
+  "spec_version": 1,
+  "name": "Retinal Ganglion Cell",
+  "short_description": "Output neurons of the retina whose axons form the optic nerve.",
+  "detailed_description": "Retinal ganglion cells (RGCs) are the output neurons of the retina, carrying visual information to the brain. This project targets direction-selective RGCs as the cell type to model, using their published morphology and electrophysiology as the substrate for parametric exploration of morphology, synaptic inputs, and voltage-gated conductances."
+}

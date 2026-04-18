@@ -1,0 +1,6 @@
+{
+  "spec_version": 1,
+  "name": "Compartmental Modeling",
+  "short_description": "Biophysical simulation of neurons split into discrete cable compartments.",
+  "detailed_description": "Compartmental modeling represents a neuron as a set of connected cable compartments with membrane capacitance, axial resistance, and voltage-gated conductances. This project's central methodology uses compartmental simulation (NEURON or an equivalent solver) to link morphology, channel distribution, and synaptic inputs to the cell's spiking output."
+}

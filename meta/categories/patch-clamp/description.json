@@ -1,0 +1,6 @@
+{
+  "spec_version": 1,
+  "name": "Patch Clamp",
+  "short_description": "Electrophysiological recording technique for measuring ionic currents in cells.",
+  "detailed_description": "Patch-clamp electrophysiology measures ionic currents and membrane potentials in single cells using a glass pipette sealed to the membrane. This project treats published patch-clamp data as the validation ground truth for its compartmental model, and this is the sole exception to the project's in-vivo-out-of-scope rule."
+}

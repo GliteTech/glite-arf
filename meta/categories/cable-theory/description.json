@@ -1,0 +1,6 @@
+{
+  "spec_version": 1,
+  "name": "Cable Theory",
+  "short_description": "Mathematical framework describing voltage spread in passive and active cables.",
+  "detailed_description": "Cable theory describes how voltage propagates along dendrites and axons as a function of geometry, passive membrane properties, and active conductances. The project uses it to reason about dendritic impedance gradients and sequence-direction selectivity, following the Rall and Branco-Clark-Hausser line of analysis."
+}

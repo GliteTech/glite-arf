@@ -1,0 +1,6 @@
+{
+  "spec_version": 1,
+  "name": "Dendritic Computation",
+  "short_description": "Signal processing that occurs in dendrites prior to somatic spike generation.",
+  "detailed_description": "Dendritic computation covers how dendritic morphology, cable properties, and active conductances transform synaptic inputs before they reach the soma. This project uses the category to tag work on active vs passive dendrites, dendritic spike contributions, and the cable-theory account of direction-selective input integration."
+}

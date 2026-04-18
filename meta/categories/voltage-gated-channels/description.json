@@ -1,0 +1,6 @@
+{
+  "spec_version": 1,
+  "name": "Voltage-Gated Channels",
+  "short_description": "Ion channels whose opening probability depends on membrane voltage.",
+  "detailed_description": "Voltage-gated channels — principally sodium and potassium species in this project — shape action potential generation at the soma and, when present in dendrites, shape local dendritic processing. The project optimises combinations of Na and K voltage-gated conductances to match a target angle-to-AP-frequency relationship."
+}

@@ -1,0 +1,6 @@
+{
+  "spec_version": 1,
+  "name": "Direction Selectivity",
+  "short_description": "Neural responses that depend on the direction of a moving or spreading stimulus.",
+  "detailed_description": "Direction selectivity is a functional property in which a neuron's firing rate depends on the direction of a moving stimulus or the spatial sequence of synaptic activation. This project studies how the internal electrophysiological properties of a single retinal ganglion cell shape its direction-selective response, with the goal of matching a target angle-to-AP-frequency tuning curve."
+}

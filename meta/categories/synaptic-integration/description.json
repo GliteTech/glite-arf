@@ -1,0 +1,6 @@
+{
+  "spec_version": 1,
+  "name": "Synaptic Integration",
+  "short_description": "Summation and interaction of excitatory and inhibitory synaptic inputs.",
+  "detailed_description": "Synaptic integration covers how excitatory (AMPA) and inhibitory (GABA) inputs combine across space and time to drive the post-synaptic neuron. In this project the category tags work on AMPA/GABA input density, EPSP and IPSP amplitude and kinetics, and the spatiotemporal structure of wave stimuli used to probe directional tuning."
+}
