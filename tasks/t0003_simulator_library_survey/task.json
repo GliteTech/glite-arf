@@ -5,13 +5,15 @@
   "name": "Simulator library survey for DSGC compartmental modelling",
   "short_description": "Compare candidate compartmental simulators (NEURON, NetPyNE, Brian2, MOOSE, Arbor) and pick a primary plus backup.",
   "long_description_file": "task_description.md",
-  "status": "not_started",
+  "status": "in_progress",
   "dependencies": [],
-  "start_time": null,
+  "start_time": "2026-04-19T07:20:04Z",
   "end_time": null,
   "expected_assets": {
     "answer": 1
   },
-  "task_types": ["internet-research"],
+  "task_types": [
+    "internet-research"
+  ],
   "source_suggestion": null
 }
