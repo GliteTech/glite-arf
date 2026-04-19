@@ -1,0 +1,11 @@
+URL: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1113/jphysiol.2008.161240
+Error: HTTP Error 403: Forbidden
+
+URL: https://physoc.onlinelibrary.wiley.com/doi/pdfdirect/10.1113/jphysiol.2008.161240
+Error: HTTP Error 403: Forbidden
+
+URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC2669973/pdf/tjp0587-0819.pdf
+Status: 200
+Content-Type: text/html; charset=utf-8
+First bytes: b'\n\n\n\n<htm'
+Is PDF: False

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "python -c \nimport urllib.request, os, sys\n\n# Try Wiley direct PDF URL for OA articles\nurls_to_try = [\n    'https://onlinelibrary.wiley.com/doi/pdfdirect/10.1113/jphysiol.2008.161240',\n    'https://physoc.onlinelibrary.wiley.com/doi/pdfdirect/10.1113/jphysiol.2008.161240',\n    'https://pmc.ncbi.nlm.nih.gov/articles/PMC2669973/pdf/tjp0587-0819.pdf',\n]\n\nheaders = {\n    'User-Agent': 'Mozilla/5.0 (compatible; research bot; mailto:a.nikolaev@sheffield.ac.uk)',\n    'Accept': 'application/pdf,*/*',\n}\n\nfor url in urls_to_try:\n    try:\n        req = urllib.request.Request(url, headers=headers)\n        with urllib.request.urlopen(req, timeout=30) as resp:\n            content_type = resp.headers.get('Content-Type', '')\n            first_bytes = resp.read(8)\n            print(f'URL: {url}')\n            print(f'Status: {resp.status}')\n            print(f'Content-Type: {content_type}')\n            print(f'First bytes: {first_bytes}')\n            print(f'Is PDF: {first_bytes[:4] == b\"%PDF\"}')\n            print()\n    except Exception as e:\n        print(f'URL: {url}')\n        print(f'Error: {e}')\n        print()\n",
+  "exit_code": 0,
+  "duration_seconds": 0.491,
+  "started_at": "2026-04-19T00:25:28Z",
+  "completed_at": "2026-04-19T00:25:28Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "095_20260419T002528Z_python-c-import-urllib-request-os-sys-tr.stdout.txt",
+  "stderr_file": "095_20260419T002528Z_python-c-import-urllib-request-os-sys-tr.stderr.txt",
+  "stdout_lines": 12,
+  "stderr_lines": 0,
+  "truncated": false
+}

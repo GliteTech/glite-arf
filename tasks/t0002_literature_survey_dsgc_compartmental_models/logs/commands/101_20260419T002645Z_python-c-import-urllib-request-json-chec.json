@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "python -c \nimport urllib.request, json\n\n# Check OpenAlex for PDF URL\nurl = 'https://api.openalex.org/works/doi:10.1113/jphysiol.2008.161240'\nreq = urllib.request.Request(url, headers={'User-Agent': 'research bot mailto:a.nikolaev@sheffield.ac.uk'})\ntry:\n    with urllib.request.urlopen(req, timeout=30) as resp:\n        data = json.loads(resp.read())\n        print('OA info:', json.dumps(data.get('open_access', {}), indent=2))\n        print('Best OA location:', json.dumps(data.get('best_oa_location', {}), indent=2))\n        locs = data.get('locations', [])\n        print(f'Locations ({len(locs)}):')\n        for loc in locs:\n            print(' ', loc.get('pdf_url'), loc.get('landing_page_url'), loc.get('source', {}).get('display_name'))\nexcept Exception as e:\n    print(f'Error: {e}')\n",
+  "exit_code": 0,
+  "duration_seconds": 0.509,
+  "started_at": "2026-04-19T00:26:45Z",
+  "completed_at": "2026-04-19T00:26:46Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "101_20260419T002645Z_python-c-import-urllib-request-json-chec.stdout.txt",
+  "stderr_file": "101_20260419T002645Z_python-c-import-urllib-request-json-chec.stderr.txt",
+  "stdout_lines": 39,
+  "stderr_lines": 0,
+  "truncated": false
+}

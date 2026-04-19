@@ -1,0 +1,5 @@
+URL: https://web.archive.org/web/2024/https://onlinelibrary.wiley.com/doi/pdfdirect/10.1113/jphysiol.2008.161240 -> Error: HTTP Error 404: NOT FOUND
+
+URL: https://scholar.archive.org/search?q=doi:10.1113/jphysiol.2008.161240 -> Error: HTTP Error 405: Method Not Allowed
+
+URL: https://api.fatcat.wiki/v0/release/lookup?doi=10.1113/jphysiol.2008.161240 -> Error: <urlopen error timed out>

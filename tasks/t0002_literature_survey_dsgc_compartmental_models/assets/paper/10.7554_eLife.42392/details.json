@@ -1,0 +1,68 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.7554_eLife.42392",
+  "doi": "10.7554/eLife.42392",
+  "title": "Retinal direction selectivity in the absence of asymmetric starburst amacrine cell responses",
+  "url": "https://elifesciences.org/articles/42392",
+  "pdf_url": "https://elifesciences.org/articles/42392.pdf",
+  "date_published": "2019-02-04",
+  "year": 2019,
+  "authors": [
+    {
+      "name": "Laura Hanson",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": "0000-0002-8737-9513"
+    },
+    {
+      "name": "Santhosh Sethuramanujam",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": "0000-0001-6199-1221"
+    },
+    {
+      "name": "Geoff deRosenroll",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": "0000-0002-5431-2814"
+    },
+    {
+      "name": "Varsha Jain",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": "0000-0002-1620-4177"
+    },
+    {
+      "name": "Gautam B Awatramani",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": "0000-0002-0610-5271"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Victoria",
+      "country": "CA"
+    }
+  ],
+  "journal": "eLife",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "synaptic-integration",
+    "compartmental-modeling",
+    "dendritic-computation",
+    "patch-clamp"
+  ],
+  "abstract": "In the mammalian retina, direction-selectivity is thought to originate in the dendrites of GABAergic/cholinergic starburst amacrine cells, where it is first observed. However, here we demonstrate that direction selectivity in downstream ganglion cells remains remarkably unaffected when starburst dendrites are rendered non-directional, using a novel strategy combining a conditional GABAA a2 receptor knockout mouse with optogenetics. We show that temporal asymmetries between excitation/inhibition, arising from the differential connectivity patterns of starburst cholinergic and GABAergic synapses to ganglion cells, form the basis for a parallel mechanism generating direction selectivity. We further demonstrate that these distinct mechanisms work in a coordinated way to refine direction selectivity as the stimulus crosses the ganglion cell's receptive field. Thus, precise spatiotemporal patterns of inhibition and excitation that determine directional responses in ganglion cells are shaped by two `core' mechanisms, both arising from distinct specializations of the starburst network.",
+  "citation_key": "Hanson2019",
+  "summary_path": "summary.md",
+  "files": [
+    "files/hanson_2019_circuit-ds.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "date_added": "2026-04-19"
+}

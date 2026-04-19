@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "curl -sS -L -A Mozilla/5.0 https://api.openalex.org/works/W1515536779?select=abstract_inverted_index",
+  "exit_code": 0,
+  "duration_seconds": 0.331,
+  "started_at": "2026-04-19T00:29:37Z",
+  "completed_at": "2026-04-19T00:29:38Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "117_20260419T002937Z_curl-ss-l.stdout.txt",
+  "stderr_file": "117_20260419T002937Z_curl-ss-l.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

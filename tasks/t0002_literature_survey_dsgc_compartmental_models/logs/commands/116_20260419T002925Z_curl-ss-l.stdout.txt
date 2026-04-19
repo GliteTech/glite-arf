@@ -1,0 +1,1 @@
+{"paperId": "b94df5bf7409997830d7710980bf19155d573866", "externalIds": {"MAG": "1515536779", "DOI": "10.1113/jphysiol.2010.192716", "CorpusId": 7158363, "PubMed": "20624793"}, "isOpenAccess": true, "openAccessPdf": {"url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2976019", "status": "GREEN", "license": null}}

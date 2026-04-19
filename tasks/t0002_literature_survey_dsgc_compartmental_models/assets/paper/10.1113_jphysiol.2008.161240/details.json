@@ -1,0 +1,67 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1113_jphysiol.2008.161240",
+  "doi": "10.1113/jphysiol.2008.161240",
+  "title": "Physiological properties of direction-selective ganglion cells in early postnatal and adult mouse retina",
+  "url": "https://physoc.onlinelibrary.wiley.com/doi/10.1113/jphysiol.2008.161240",
+  "pdf_url": null,
+  "date_published": "2009-02-15",
+  "year": 2009,
+  "authors": [
+    {
+      "name": "Minggang Chen",
+      "country": "CN",
+      "institution": "State Key Laboratory of Brain and Cognitive Sciences, Institute of Biophysics, Chinese Academy of Sciences",
+      "orcid": null
+    },
+    {
+      "name": "Shijun Weng",
+      "country": "CN",
+      "institution": "State Key Laboratory of Brain and Cognitive Sciences, Institute of Biophysics, Chinese Academy of Sciences",
+      "orcid": null
+    },
+    {
+      "name": "Qiudong Deng",
+      "country": "CN",
+      "institution": "State Key Laboratory of Brain and Cognitive Sciences, Institute of Biophysics, Chinese Academy of Sciences",
+      "orcid": null
+    },
+    {
+      "name": "Zhen Xu",
+      "country": "CN",
+      "institution": "State Key Laboratory of Brain and Cognitive Sciences, Institute of Biophysics, Chinese Academy of Sciences",
+      "orcid": null
+    },
+    {
+      "name": "Shigang He",
+      "country": "CN",
+      "institution": "State Key Laboratory of Brain and Cognitive Sciences, Institute of Biophysics, Chinese Academy of Sciences",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "State Key Laboratory of Brain and Cognitive Sciences, Institute of Biophysics, Chinese Academy of Sciences",
+      "country": "CN"
+    },
+    {
+      "name": "Institute of Neuroscience, Shanghai Institutes of Biological Sciences, Chinese Academy of Sciences",
+      "country": "CN"
+    }
+  ],
+  "journal": "The Journal of Physiology",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "patch-clamp"
+  ],
+  "abstract": "Selective responses of retinal ganglion cells (RGCs) to the direction of motion have been recorded extracellularly from the rabbit and the mouse retina at eye opening. Recently, it has been shown that the development of this circuitry is light independent. Using whole-cell patch clamp recording, we report here that mouse early postnatal direction-selective ganglion cells (DSGCs) showed lower membrane excitability, lower reliability of synaptic transmission and much slower kinetics of light responses compared with adult DSGCs. However, the degree of direction selectivity of early postnatal DSGCs measured by the direction-selective index and the width of the directional tuning curve was almost identical to that of adult DSGCs. The DSGCs exhibited a clear selectivity for the direction of motion at the onset of light sensitivity. Furthermore, the degree of direction selectivity was not affected by rearing in complete darkness from birth to postnatal day 11 or 30. The formation of the retinal neurocircuitry for coding motion direction is completely independent of light.",
+  "citation_key": "Chen2009",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "PDF is Wiley-restricted and not openly downloadable. PMC (PMC2669973) hosts the article but the publisher (Wiley) has not permitted PDF download via programmatic access — all PMC PDF URL attempts returned HTML pages rather than PDF content. Unpaywall reports no direct PDF URL. OpenAlex and Semantic Scholar list only the PMC landing page (no pdf_url). Wayback Machine has no archived snapshot of the Wiley PDF. Internet access to physoc.onlinelibrary.wiley.com returns HTTP 403. Full article text was successfully retrieved from the PMC HTML viewer and used as the basis for the summary.",
+  "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "date_added": "2026-04-19"
+}

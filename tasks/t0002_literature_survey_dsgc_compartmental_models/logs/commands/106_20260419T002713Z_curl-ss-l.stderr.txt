@@ -1,0 +1,38 @@
+* Host www.ebi.ac.uk:443 was resolved.
+* IPv6: (none)
+* IPv4: 193.62.192.80
+*   Trying 193.62.192.80:443...
+* schannel: disabled automatic use of client certificate
+* ALPN: curl offers http/1.1
+* ALPN: server accepted http/1.1
+* Connected to www.ebi.ac.uk (193.62.192.80) port 443
+* using HTTP/1.x
+> GET /europepmc/webservices/rest/PMC2976019/fullTextXML HTTP/1.1
+
+> Host: www.ebi.ac.uk
+
+> User-Agent: Mozilla/5.0
+
+> Accept: */*
+
+>
+
+* Request completely sent off
+* schannel: remote party requests renegotiation
+* schannel: renegotiating SSL/TLS connection
+* schannel: SSL/TLS connection renegotiated
+< HTTP/1.1 404 Not Found
+
+< Strict-Transport-Security: max-age=0
+
+< Date: Sun, 19 Apr 2026 00:27:13 GMT
+
+< Connection: keep-alive
+
+< Set-Cookie: JSESSIONID=3FF7625005B126E01C675690D8B0D48F; Path=/europepmc/webservices/; HttpOnly
+
+< Content-Length: 0
+
+<
+
+* Connection #0 to host www.ebi.ac.uk left intact
