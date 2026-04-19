@@ -1,0 +1,8 @@
+research/
+plan/
+assets/answer/
+results/
+results/images/
+corrections/
+intervention/
+logs/sessions/

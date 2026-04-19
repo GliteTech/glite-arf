@@ -23,10 +23,10 @@
       "step": 3,
       "name": "init-folders",
       "description": "Create task folder structure for research/, plan/, assets/answer/, results/, logs/.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-19T07:26:15Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\003_init-folders/"
     },
     {
       "step": 4,
