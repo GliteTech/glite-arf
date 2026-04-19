@@ -1,0 +1,5 @@
+{
+  "total_cost_usd": 0,
+  "breakdown": {},
+  "note": "Zero external cost: internet research, planning, and answer-asset authoring only. No paid APIs, no remote compute, no data transfer beyond WebFetch over standard internet."
+}
