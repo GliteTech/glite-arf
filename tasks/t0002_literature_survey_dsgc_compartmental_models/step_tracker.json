@@ -68,9 +68,9 @@
       "step": 8,
       "name": "implementation",
       "description": "Download and summarize ~20 paper assets across the 5 RQs, then write the synthesis answer asset.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-18T23:37:33Z",
-      "completed_at": null,
+      "completed_at": "2026-04-19T01:14:19Z",
       "log_file": "logs\\steps\\008_implementation/"
     },
     {
