@@ -122,9 +122,9 @@
       "step": 14,
       "name": "suggestions",
       "description": "Generate suggestions.json for follow-up tasks based on simulator selection.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-19T08:02:56Z",
-      "completed_at": null,
+      "completed_at": "2026-04-19T08:04:41Z",
       "log_file": "logs\\steps\\014_suggestions/"
     },
     {
