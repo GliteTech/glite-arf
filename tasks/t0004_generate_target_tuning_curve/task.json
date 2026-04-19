@@ -5,10 +5,10 @@
   "name": "Generate canonical target angle-to-AP-rate tuning curve",
   "short_description": "Analytically generate a canonical cosine-like target tuning curve to use as the optimisation reference for all later fits.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [],
   "start_time": "2026-04-19T08:12:46Z",
-  "end_time": null,
+  "end_time": "2026-04-19T08:42:30Z",
   "expected_assets": {
     "dataset": 1
   },

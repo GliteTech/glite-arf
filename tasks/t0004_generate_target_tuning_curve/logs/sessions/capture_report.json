@@ -1,0 +1,23 @@
+{
+  "spec_version": "1",
+  "task_id": "t0004_generate_target_tuning_curve",
+  "captured_at": "2026-04-19T08:43:07Z",
+  "checked_roots": [
+    {
+      "source_kind": "codex",
+      "root_path": "C:\\Users\\md1avn\\.codex\\sessions",
+      "exists": false,
+      "candidate_file_count": 0,
+      "matched_file_count": 0
+    },
+    {
+      "source_kind": "claude_code",
+      "root_path": "C:\\Users\\md1avn\\.claude\\projects",
+      "exists": true,
+      "candidate_file_count": 33,
+      "matched_file_count": 0
+    }
+  ],
+  "copied_sessions": [],
+  "errors": []
+}

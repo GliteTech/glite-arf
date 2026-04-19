@@ -1,0 +1,4 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0004_generate_target_tuning_curve\tasks\t0004_generate_target_tuning_curve\task.json
+
+[32m[1mPASSED[0m — no errors or warnings
