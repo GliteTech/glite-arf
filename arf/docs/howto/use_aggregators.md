@@ -98,7 +98,7 @@ aggregator. Use `data["<key>"]` to access the list — do not iterate the top-le
 | --- | --- | --- | --- |
 | `aggregate_tasks` | `task_count`, `tasks` | `tasks` | `task_id`, `name`, `short_description`, `status`, `task_types`, `dependencies` |
 | `aggregate_costs` | `budget`, `summary`, `tasks`, `skipped_tasks` | `tasks` | `task_id`, `total_cost_usd`, `breakdown` |
-| `aggregate_task_types` | `task_types` | `task_types` | `task_type_id`, `name`, `optional_steps`, `instruction` |
+| `aggregate_task_types` | `task_types` | `task_types` | `task_type_id` (aliased as `slug`), `name`, `optional_steps`, `instruction` |
 | `aggregate_suggestions` | `suggestion_count`, `suggestions` | `suggestions` | `id`, `title`, `kind`, `priority`, `source_task`, `categories`, `status` |
 | `aggregate_answers` | `answer_count`, `answers` | `answers` | `answer_id`, `question`, `short_title`, `categories`, `confidence` |
 | `aggregate_papers` | `paper_count`, `papers` | `papers` | `paper_id`, `title`, `year`, `authors`, `citation_key`, `categories` |
