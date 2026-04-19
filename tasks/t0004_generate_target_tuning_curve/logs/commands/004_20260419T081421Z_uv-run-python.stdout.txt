@@ -1,0 +1,14 @@
+{
+  "discovered_task_count": 5,
+  "cost_record_count": 3,
+  "skipped_task_count": 2,
+  "nonzero_cost_task_count": 0,
+  "total_cost_usd": 0.0,
+  "budget_left_usd": 0.0,
+  "budget_left_before_warn_usd": 0.0,
+  "budget_left_before_stop_usd": 0.0,
+  "spent_percent": 0.0,
+  "warn_threshold_reached": true,
+  "stop_threshold_reached": true,
+  "tasks_over_limit": []
+}

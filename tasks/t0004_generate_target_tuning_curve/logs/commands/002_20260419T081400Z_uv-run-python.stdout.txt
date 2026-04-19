@@ -1,0 +1,3 @@
+id: feature-engineering
+optional_steps: ['research-papers', 'research-internet', 'research-code', 'planning', 'creative-thinking']
+has_external_costs: True

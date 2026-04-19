@@ -1,0 +1,140 @@
+{
+  "task_id": "t0004_generate_target_tuning_curve",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create task/t0004_generate_target_tuning_curve branch from main and plan the step list.",
+      "status": "in_progress",
+      "started_at": "2026-04-19T08:13:43Z",
+      "completed_at": null,
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify task dependencies (task has none; run the verificator to confirm).",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create mandatory task folder structure and seed empty directories with .gitkeep.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Skipped: the functional form is given explicitly in the task description; no paper-level literature review is required to implement a synthetic cosine-like curve.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Skipped: no external data sources needed. The task is purely analytical and self-contained.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Skipped: no prior task produced code, datasets, or libraries relevant to generating a synthetic tuning curve (t0001 is setup, t0002 and t0003 run in parallel).",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Write plan/plan.md covering code layout, generator parameters, dataset-asset schema, and verification criteria.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 8,
+      "name": "setup-machines",
+      "description": "Skipped: task runs locally in seconds; no remote compute is needed.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 9,
+      "name": "implementation",
+      "description": "Generate the canonical cosine tuning curve (mean + noisy trials), register the dataset asset, and save the target_tuning_curve.png plot.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 10,
+      "name": "teardown",
+      "description": "Skipped: no remote machines were provisioned.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 11,
+      "name": "creative-thinking",
+      "description": "Skipped: mechanical synthesis of a fixed analytical formula; no alternative approaches to explore within this task's scope.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 12,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json, remote_machines_used.json.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 13,
+      "name": "compare-literature",
+      "description": "Skipped: the target curve is synthetic by design; there is no published baseline with the same parameters to compare against.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 14,
+      "name": "suggestions",
+      "description": "Generate follow-up suggestions via /generate-suggestions.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    },
+    {
+      "step": 15,
+      "name": "reporting",
+      "description": "Run all verificators, capture sessions, flip task.json to completed.",
+      "status": "pending",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": null
+    }
+  ]
+}

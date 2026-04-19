@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0004_generate_target_tuning_curve",
+  "command": "uv run python -u -m arf.scripts.aggregators.aggregate_task_types --format json",
+  "exit_code": 0,
+  "duration_seconds": 0.35,
+  "started_at": "2026-04-19T08:13:53Z",
+  "completed_at": "2026-04-19T08:13:53Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0004_generate_target_tuning_curve",
+  "stdout_file": "001_20260419T081353Z_uv-run-python.stdout.txt",
+  "stderr_file": "001_20260419T081353Z_uv-run-python.stderr.txt",
+  "stdout_lines": 252,
+  "stderr_lines": 0,
+  "truncated": false
+}

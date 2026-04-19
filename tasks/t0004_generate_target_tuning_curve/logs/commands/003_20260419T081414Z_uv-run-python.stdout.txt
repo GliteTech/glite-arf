@@ -1,0 +1,79 @@
+{
+  "budget": {
+    "total_budget": 0.0,
+    "currency": "USD",
+    "per_task_default_limit": 0.0,
+    "available_services": [],
+    "warn_at_percent": 80,
+    "stop_at_percent": 100,
+    "warn_threshold_usd": 0.0,
+    "stop_threshold_usd": 0.0
+  },
+  "summary": {
+    "discovered_task_count": 5,
+    "cost_record_count": 3,
+    "skipped_task_count": 2,
+    "nonzero_cost_task_count": 0,
+    "total_cost_usd": 0.0,
+    "budget_left_usd": 0.0,
+    "budget_left_before_warn_usd": 0.0,
+    "budget_left_before_stop_usd": 0.0,
+    "spent_percent": 0.0,
+    "warn_threshold_reached": true,
+    "stop_threshold_reached": true,
+    "tasks_over_limit": []
+  },
+  "breakdown_totals": {},
+  "service_totals": {},
+  "tasks": [
+    {
+      "task_id": "t0001_brainstorm_results_1",
+      "task_index": 1,
+      "name": "Brainstorm results session 1",
+      "status": "completed",
+      "total_cost_usd": 0.0,
+      "task_budget_limit_usd": null,
+      "effective_budget_limit_usd": 0.0,
+      "exceeds_budget_limit": false,
+      "cost_breakdown": {},
+      "service_breakdown": {},
+      "note": null
+    },
+    {
+      "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+      "task_index": 2,
+      "name": "Literature survey: compartmental models of DS retinal ganglion cells",
+      "status": "completed",
+      "total_cost_usd": 0.0,
+      "task_budget_limit_usd": null,
+      "effective_budget_limit_usd": 0.0,
+      "exceeds_budget_limit": false,
+      "cost_breakdown": {},
+      "service_breakdown": {},
+      "note": "Zero external cost: local Claude Code CLI only, no paid APIs, no remote machines, all paper downloads from open-access mirrors."
+    },
+    {
+      "task_id": "t0003_simulator_library_survey",
+      "task_index": 3,
+      "name": "Simulator library survey for DSGC compartmental modelling",
+      "status": "completed",
+      "total_cost_usd": 0.0,
+      "task_budget_limit_usd": null,
+      "effective_budget_limit_usd": 0.0,
+      "exceeds_budget_limit": false,
+      "cost_breakdown": {},
+      "service_breakdown": {},
+      "note": "Zero external cost: internet research, planning, and answer-asset authoring only. No paid APIs, no remote compute, no data transfer beyond WebFetch over standard internet."
+    }
+  ],
+  "skipped_tasks": [
+    {
+      "task_id": "t0004_generate_target_tuning_curve",
+      "reason": "results/costs.json is missing or invalid"
+    },
+    {
+      "task_id": "t0005_download_dsgc_morphology",
+      "reason": "results/costs.json is missing or invalid"
+    }
+  ]
+}

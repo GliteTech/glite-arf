@@ -1,0 +1,5 @@
+branch: task/t0004_generate_target_tuning_curve
+base_branch: main
+base_commit: b3c04effb4a0a90ed3b3fec4317cca8053937569
+worktree_path: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0004_generate_target_tuning_curve
+created_at: 2026-04-19T08:13:43Z

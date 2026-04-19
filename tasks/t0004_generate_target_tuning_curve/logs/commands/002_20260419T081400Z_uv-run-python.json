@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0004_generate_target_tuning_curve",
+  "command": "uv run python -c \nimport json, subprocess\nr = subprocess.run(['uv','run','python','-u','-m','arf.scripts.aggregators.aggregate_task_types','--format','json'], capture_output=True, text=True)\ndata = json.loads(r.stdout)\nfor t in data['task_types']:\n    if t['task_type_id'] == 'feature-engineering':\n        print('id:', t['task_type_id'])\n        print('optional_steps:', t['optional_steps'])\n        print('has_external_costs:', t.get('has_external_costs'))\n",
+  "exit_code": 0,
+  "duration_seconds": 0.49,
+  "started_at": "2026-04-19T08:14:00Z",
+  "completed_at": "2026-04-19T08:14:01Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0004_generate_target_tuning_curve",
+  "stdout_file": "002_20260419T081400Z_uv-run-python.stdout.txt",
+  "stderr_file": "002_20260419T081400Z_uv-run-python.stderr.txt",
+  "stdout_lines": 3,
+  "stderr_lines": 0,
+  "truncated": false
+}
