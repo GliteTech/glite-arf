@@ -103,27 +103,38 @@ from meta.asset_types.predictions.aggregator import (
 from meta.asset_types.predictions.format_overview import materialize_predictions
 
 
+def _is_better(
+    *,
+    new_value: float | int,
+    current_best: float | int,
+    higher_is_better: bool,
+) -> bool:
+    return new_value > current_best if higher_is_better else new_value < current_best
+
+
 def _build_key_metrics_by_task(
     *,
     metric_results: list[MetricResultsFull],
 ) -> dict[str, list[TaskKeyMetric]]:
-    # For each key metric, keep only the best value per task
-    # (highest numeric value across all variants).
+    # For each key metric, keep only the best value per task across
+    # all variants. "Best" means max for higher-is-better metrics and
+    # min for lower-is-better ones (latency, error, cost, ...).
     result: dict[str, list[TaskKeyMetric]] = {}
     for mr in metric_results:
         if not mr.is_key:
             continue
-        # Group entries by task_id, pick best value
         best_by_task: dict[str, float | int] = {}
         for entry in mr.entries:
             if entry.value is None:
                 continue
             if not isinstance(entry.value, int | float):
                 continue
-            current_best: float | int | None = best_by_task.get(
-                entry.task_id,
-            )
-            if current_best is None or entry.value > current_best:
+            current_best: float | int | None = best_by_task.get(entry.task_id)
+            if current_best is None or _is_better(
+                new_value=entry.value,
+                current_best=current_best,
+                higher_is_better=mr.higher_is_better,
+            ):
                 best_by_task[entry.task_id] = entry.value
         for task_id, best_value in best_by_task.items():
             key_metric: TaskKeyMetric = TaskKeyMetric(

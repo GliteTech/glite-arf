@@ -44,11 +44,23 @@ _SUBPAGE_REL: str = "../../../"
 # ---------------------------------------------------------------------------
 
 
-def _sort_key_for_value(*, value: object) -> tuple[int, float]:
+def _sort_key_for_value(
+    *,
+    value: object,
+    higher_is_better: bool,
+) -> tuple[int, float]:
+    # Ascending sort, so "better first" means the better value must
+    # produce the smaller sort key. Higher-is-better metrics negate
+    # the value (larger -> more negative); lower-is-better metrics
+    # use the value as-is (smaller -> smaller). The leading tuple
+    # element groups numeric (0) before non-numeric/None (1/2) so
+    # nulls and strings always land at the bottom regardless of
+    # direction.
+    sign: float = -1.0 if higher_is_better else 1.0
     if isinstance(value, bool):
-        return (1, -float(value))
+        return (1, sign * float(value))
     if isinstance(value, int | float):
-        return (0, -float(value))
+        return (0, sign * float(value))
     if value is None:
         return (2, 0.0)
     return (1, 0.0)
@@ -93,7 +105,10 @@ def _format_metric_subpage(
 
     sorted_entries: list[MetricResultEntry] = sorted(
         metric.entries,
-        key=lambda e: _sort_key_for_value(value=e.value),
+        key=lambda e: _sort_key_for_value(
+            value=e.value,
+            higher_is_better=metric.higher_is_better,
+        ),
     )
 
     lines.append("| # | Task | Variant | Value |")

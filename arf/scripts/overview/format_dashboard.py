@@ -306,11 +306,19 @@ def _format_llm_context_highlights(
 # ---------------------------------------------------------------------------
 
 
-def _sort_key_for_value(*, value: object) -> tuple[int, float]:
+def _sort_key_for_value(
+    *,
+    value: object,
+    higher_is_better: bool,
+) -> tuple[int, float]:
+    # Mirrors `format_metric_results._sort_key_for_value` — kept
+    # duplicated deliberately so the dashboard has no cross-module
+    # dependency on the metric-results formatter.
+    sign: float = -1.0 if higher_is_better else 1.0
     if isinstance(value, bool):
-        return (1, -float(value))
+        return (1, sign * float(value))
     if isinstance(value, int | float):
-        return (0, -float(value))
+        return (0, sign * float(value))
     if value is None:
         return (2, 0.0)
     return (1, 0.0)
@@ -341,7 +349,10 @@ def _format_key_metrics_leaderboard(
 
         sorted_entries: list[MetricResultEntry] = sorted(
             [e for e in metric.entries if e.value is not None],
-            key=lambda e: _sort_key_for_value(value=e.value),
+            key=lambda e: _sort_key_for_value(
+                value=e.value,
+                higher_is_better=metric.higher_is_better,
+            ),
         )
         shown: list[MetricResultEntry] = sorted_entries[:_MAX_KEY_METRIC_ENTRIES]
 
