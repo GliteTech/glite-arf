@@ -23,10 +23,10 @@
       "step": 3,
       "name": "init-folders",
       "description": "Create mandatory task folder structure and seed empty directories with .gitkeep.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-19T08:20:12Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\003_init-folders/"
     },
     {
       "step": 4,
