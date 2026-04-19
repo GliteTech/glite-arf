@@ -23,6 +23,10 @@ Register a new metric in [`meta/metrics/`](../../../meta/metrics/) so tasks can 
    * `unit` — one of `"f1"`, `"accuracy"`, `"precision"`, `"recall"`, `"ratio"`, `"count"`, `"usd"`,
      `"seconds"`, `"bytes"`, `"instances_per_second"`, `"none"`
    * `value_type` — one of `"float"`, `"int"`, `"bool"`, `"string"`
+   * `higher_is_better` — required boolean. `true` when larger values rank better (F1, accuracy,
+     correlation, throughput); `false` when smaller values rank better (MAE, MSE, latency, cost,
+     error rate). Required — the framework does not guess a default because silently defaulting
+     would mis-rank error-style metrics
    * `datasets` (optional) — list of dataset asset IDs this metric applies to
    * `is_key` (optional bool) — mark headline metrics for leaderboards
    * `emoji` (optional string) — only meaningful when `is_key` is `true`
@@ -47,6 +51,8 @@ Expected: no errors, new folder listed among validated metrics.
 * `unit` written as a long description instead of one of the allowed tokens
 * `spec_version` written as a string (`"1"`) instead of an integer (`1`)
 * Missing `value_type` or using an unsupported value
+* Omitting `higher_is_better` — it is required, not optional; `verify_metrics` raises `MT-E002`
+* Setting `higher_is_better` to a non-boolean (e.g. `"yes"`, `1`) — verificator raises `MT-E009`
 * Setting `emoji` without also setting `is_key: true`
 * Reporting a metric in `metrics.json` before registering it
 
