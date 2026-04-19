@@ -26,6 +26,7 @@ SUGGESTIONS_FILE_NAME: str = "suggestions.json"
 DATASETS_MARKDOWN_FILE_NAME: str = "datasets.md"
 METRICS_MARKDOWN_FILE_NAME: str = "metrics.md"
 BY_DATE_ADDED_SUBDIR: str = "by-date-added"
+BY_CATEGORY_SUBDIR: str = "by-category"
 SPEC_VERSION_1: str = "1"
 SPEC_VERSION_2: str = "2"
 
@@ -98,6 +99,15 @@ def _configure_repo_paths(*, monkeypatch: pytest.MonkeyPatch, repo_root: Path) -
         format_datasets_module,
         "DATASETS_BY_DATE_README",
         overview_dir / DATASETS_SUBDIR / BY_DATE_ADDED_SUBDIR / README_FILE_NAME,
+    )
+    # `DATASETS_BY_CATEGORY_DIR` is resolved from `REPO_ROOT` at import time.
+    # If left unpatched, `materialize_datasets` calls `remove_dir_if_exists`
+    # against the real `overview/datasets/by-category/` and silently deletes
+    # project files every time the test runs.
+    monkeypatch.setattr(
+        format_datasets_module,
+        "DATASETS_BY_CATEGORY_DIR",
+        overview_dir / DATASETS_SUBDIR / BY_CATEGORY_SUBDIR,
     )
     monkeypatch.setattr(
         format_metrics_module,
