@@ -1,0 +1,11 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0003_simulator_library_survey\tasks\t0003_simulator_library_survey\research\research_internet.md
+
+[31m[1mERRORS:[0m
+[31m  RI-E007 error: Source Index has 21 entries but frontmatter says sources_cited=18[0m
+[31m  RI-E008 error: Source Index entry [ModelDB-189347] is missing the URL field[0m
+
+[33m[1mWARNINGS:[0m
+[33m  RI-W004 warning: Source Index entry [ModelDB-189347] is missing the 'Peer-reviewed' field[0m
+
+[31m[1mFAILED[0m — 2 error(s), 1 warning(s)
