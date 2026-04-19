@@ -77,9 +77,9 @@
       "step": 9,
       "name": "implementation",
       "description": "Produce one answer asset under assets/answer/ with five-axis comparison table and primary+backup recommendation.",
-      "status": "in_progress",
+      "status": "completed",
       "started_at": "2026-04-19T07:49:04Z",
-      "completed_at": null,
+      "completed_at": "2026-04-19T07:56:30Z",
       "log_file": "logs\\steps\\009_implementation/"
     },
     {
