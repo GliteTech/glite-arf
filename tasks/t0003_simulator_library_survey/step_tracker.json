@@ -35,7 +35,7 @@
       "description": "Skipped: no relevant papers in corpus for simulator library tooling comparison.",
       "started_at": null,
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs/steps/004_research-papers/"
     },
     {
       "step": 5,
@@ -53,7 +53,7 @@
       "description": "Skipped: no prior task code relevant to simulator selection.",
       "started_at": null,
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs/steps/006_research-code/"
     },
     {
       "step": 7,
@@ -71,7 +71,7 @@
       "description": "Skipped: local-only task, no remote compute required.",
       "started_at": null,
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs/steps/008_setup-machines/"
     },
     {
       "step": 9,
@@ -89,7 +89,7 @@
       "description": "Skipped: no remote machines to tear down.",
       "started_at": null,
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs/steps/010_teardown/"
     },
     {
       "step": 11,
@@ -98,7 +98,7 @@
       "description": "Skipped: straightforward tooling comparison, no need for out-of-the-box analysis.",
       "started_at": null,
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs/steps/011_creative-thinking/"
     },
     {
       "step": 12,
@@ -116,7 +116,7 @@
       "description": "Skipped: no quantitative metrics to compare against published baselines.",
       "started_at": null,
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs/steps/013_compare-literature/"
     },
     {
       "step": 14,
