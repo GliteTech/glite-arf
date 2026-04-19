@@ -1,0 +1,55 @@
+{
+  "spec_version": "2",
+  "suggestions": [
+    {
+      "id": "S-0003-01",
+      "title": "Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain on the local workstation",
+      "description": "Create a task that `uv pip install neuron==8.2.7 netpyne==1.1.1` into the project's virtualenv, compiles the bundled Hodgkin-Huxley MOD files with `nrnivmodl`, runs a 1-compartment sanity simulation, and records the installed versions, install-time warnings, and simulation wall-clock in a task asset. Rationale: the t0003 survey selected this toolchain but did not install it; the next simulation task needs a validated environment.",
+      "kind": "library",
+      "priority": "high",
+      "source_task": "t0003_simulator_library_survey",
+      "source_paper": null,
+      "categories": ["compartmental-modeling", "retinal-ganglion-cell"]
+    },
+    {
+      "id": "S-0003-02",
+      "title": "Port the Poleg-Polsky & Diamond 2016 DSGC ModelDB 189347 into the project as a library asset",
+      "description": "Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included demo, and register the resulting Python package as a library asset under `assets/library/`. This makes the DSGC reference implementation available to every downstream simulation task without re-download.",
+      "kind": "library",
+      "priority": "high",
+      "source_task": "t0003_simulator_library_survey",
+      "source_paper": null,
+      "categories": ["compartmental-modeling", "retinal-ganglion-cell", "direction-selectivity"]
+    },
+    {
+      "id": "S-0003-03",
+      "title": "Benchmark NEURON vs Arbor on the project's actual DSGC morphology",
+      "description": "Once a DSGC model runs in NEURON (via S-0003-02), port the same morphology and channel set to Arbor 0.12.0 and measure single-cell simulation wall-clock on the project's workstation. Third-party benchmarks claim Arbor is 7-12x faster; this task validates that claim on our actual use case and records the real cost of the NMODL `modcc` translation that t0003 flagged as the main Arbor adoption risk.",
+      "kind": "experiment",
+      "priority": "medium",
+      "source_task": "t0003_simulator_library_survey",
+      "source_paper": null,
+      "categories": ["compartmental-modeling", "retinal-ganglion-cell"]
+    },
+    {
+      "id": "S-0003-04",
+      "title": "Scaffold a NetPyNE `Batch` sweep harness for DSGC parameter studies",
+      "description": "Build a small library that wraps NetPyNE's `Batch` class with the project's preferred sweep axes (morphology scale, channel densities, synaptic weights) and an Optuna backend. Output: an `assets/library/` entry plus a one-page usage example. This unblocks every downstream tuning-curve experiment that needs to run more than one parameter combination.",
+      "kind": "library",
+      "priority": "medium",
+      "source_task": "t0003_simulator_library_survey",
+      "source_paper": null,
+      "categories": ["compartmental-modeling", "direction-selectivity"]
+    },
+    {
+      "id": "S-0003-05",
+      "title": "Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption",
+      "description": "NEURON 9.0.0 and 9.0.1 (Sep-Nov 2025) migrate MOD-file semantics to C++ and add Python 3.14 wheels. The t0003 survey picked 8.2.7 for conservatism. Create a task that (1) installs 9.0.1 into a sandbox venv, (2) rebuilds the Poleg-Polsky 189347 DSGC model from S-0003-02 under 9.0.x, (3) runs the existing DSGC simulations under both 8.2.7 and 9.0.1, and (4) records any behavioural differences. This decides whether the project should upgrade before or after the first round of tuning-curve experiments.",
+      "kind": "evaluation",
+      "priority": "low",
+      "source_task": "t0003_simulator_library_survey",
+      "source_paper": null,
+      "categories": ["compartmental-modeling"]
+    }
+  ]
+}
