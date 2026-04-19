@@ -1,0 +1,1 @@
+C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0003_simulator_library_survey\.venv\Scripts\python.exe: No module named arf.scripts.verificators.verify_task_completed

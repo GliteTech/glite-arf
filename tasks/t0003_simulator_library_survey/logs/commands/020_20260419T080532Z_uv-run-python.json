@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0003_simulator_library_survey",
+  "command": "uv run python -u -m arf.scripts.verificators.verify_task_folder t0003_simulator_library_survey",
+  "exit_code": 1,
+  "duration_seconds": 0.297,
+  "started_at": "2026-04-19T08:05:32Z",
+  "completed_at": "2026-04-19T08:05:32Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0003_simulator_library_survey",
+  "stdout_file": "020_20260419T080532Z_uv-run-python.stdout.txt",
+  "stderr_file": "020_20260419T080532Z_uv-run-python.stderr.txt",
+  "stdout_lines": 11,
+  "stderr_lines": 0,
+  "truncated": false
+}

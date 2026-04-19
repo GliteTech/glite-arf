@@ -1,0 +1,13 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0003_simulator_library_survey\tasks\t0003_simulator_library_survey\task.json
+
+[31m[1mERRORS:[0m
+[31m  TC-E004 error: Step 'reporting' has status 'in_progress', not finished[0m
+[31m  TC-E005 error: Mandatory directory missing: logs/searches/[0m
+[31m  TC-E007 error: Sub-verificator failed: verify_task_folder
+    [31m  FD-E005 error: Required log subdirectory is missing: logs/searches/[0m; [31m[1mFAILED[0m — 1 error(s), 1 warning(s)[0m
+
+[33m[1mWARNINGS:[0m
+[33m  TC-W005 warning: No merged PR found for branch 'task/t0003_simulator_library_survey'[0m
+
+[31m[1mFAILED[0m — 3 error(s), 1 warning(s)
