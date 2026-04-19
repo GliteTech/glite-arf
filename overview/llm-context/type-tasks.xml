@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="tasks" generated_at_utc="2026-04-19T01:44:52Z">
+<llm_context_archive type_id="tasks" generated_at_utc="2026-04-19T08:11:25Z">
   <archive_summary>
     <title>All Tasks</title>
     <description>Complete task data with full descriptions, results summaries, dependencies, and status.</description>
     <section_count>1</section_count>
-    <char_count>18430</char_count>
-    <byte_count>18493</byte_count>
-    <estimated_tokens>4607</estimated_tokens>
+    <char_count>19978</char_count>
+    <byte_count>20052</byte_count>
+    <estimated_tokens>4994</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -247,10 +247,12 @@ Hz**, null residual **&lt; 10 Hz**, half-width **60-90 deg**, **177 AMPA + 177 G
 
 ## Simulator library survey for DSGC compartmental modelling
 ID: t0003_simulator_library_survey
-Status: not_started
-Effective date: 2026-04-18
+Status: completed
+Effective date: 2026-04-19
 Short description: Compare candidate compartmental simulators (NEURON, NetPyNE, Brian2, MOOSE, Arbor) and pick a primary plus backup.
 Task types: internet-research
+Start time: 2026-04-19T07:20:04Z
+End time: 2026-04-19T08:05:00Z
 
 #### Motivation
 
@@ -307,6 +309,36 @@ None. Runs in parallel with t0002 and t0004.
 * The answer asset passes `verify_answer_asset.py`.
 * The `## Answer` section states the primary and backup simulator in one or two sentences.
 * The full answer includes the five-axis comparison table for every candidate library.
+
+### Results Summary
+
+#### Summary
+
+Produced a single answer asset recommending **NEURON 8.2.7** (paired with **NetPyNE 1.1.1** for
+parameter sweeps) as the project&#x27;s primary compartmental simulator and **Arbor 0.12.0** as backup,
+after surveying five candidate libraries (NEURON, NetPyNE, Brian2, MOOSE, Arbor) on five axes
+(cable-model fidelity, Python ergonomics, speed and parallelism, DSGC/RGC example availability,
+long-term maintenance). Brian2 and MOOSE were rejected with grounded evidence. The full answer
+embeds a 5-row × 5-column comparison table backed by 20 indexed internet sources.
+
+#### Metrics
+
+* **Libraries evaluated**: 5 (NEURON, NetPyNE, Brian2, MOOSE, Arbor)
+* **Evaluation axes**: 5 (cable-model fidelity, Python ergonomics, speed and parallelism, DSGC/RGC
+  examples, long-term maintenance)
+* **Sources cited**: 20 URLs, including 4 newly discovered papers
+* **Answer assets produced**: 1 (`dsgc-compartmental-simulator-choice`)
+* **Task requirements satisfied**: 17 of 17 (REQ-1 through REQ-17)
+* **External cost incurred**: $0.00 (no paid APIs, no remote compute)
+* **Registered metrics measured**: 0 (none apply — this task selects a simulator rather than running
+  one; `metrics.json` is `{}`)
+
+#### Verification
+
+* `verify_task_dependencies.py` — PASSED (0 errors, 0 warnings)
+* `verify_research_internet.py` — PASSED (0 errors, 0 warnings)
+* `verify_plan.py` — PASSED (0 errors, 0 warnings)
+* `verify_answer_asset.py` — PASSED (0 errors, 0 warnings)
 
 ## Generate canonical target angle-to-AP-rate tuning curve
 ID: t0004_generate_target_tuning_curve

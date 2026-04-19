@@ -1,6 +1,6 @@
-# Answers: `compartmental-modeling` (1)
+# Answers: `compartmental-modeling` (2)
 
-1 answer(s).
+2 answer(s).
 
 [Back to all answers](../README.md)
 
@@ -41,5 +41,34 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 | **Task sources** | — |
 | **URL sources** | — |
 | **Created by** | [`t0002_literature_survey_dsgc_compartmental_models`](../../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) |
+
+</details>
+
+<details>
+<summary><strong>Which compartmental simulator should the direction-selective
+ganglion cell (DSGC) project use as its primary simulator, and which should
+it keep as a backup?</strong></summary>
+
+**Confidence**: high
+
+Use NEURON 8.2.7 as the primary simulator, wrapped with NetPyNE 1.1.1 for parameter sweeps and
+optimisation. Keep Arbor 0.12.0 as the backup simulator to exploit its 7-12x single-cell
+speedup whenever the parameter sweep outgrows the NEURON workstation budget. Brian2 and MOOSE
+are rejected because Brian2's own authors describe its multicompartment support as immature
+and MOOSE shows the weakest maintenance signal of the five candidates.
+
+| Field | Value |
+|---|---|
+| **Full answer** | [`full_answer.md`](../../../tasks/t0003_simulator_library_survey/assets/answer/dsgc-compartmental-simulator-choice/full_answer.md) |
+| **ID** | [`dsgc-compartmental-simulator-choice`](../../../tasks/t0003_simulator_library_survey/assets/answer/dsgc-compartmental-simulator-choice/) |
+| **Question** | Which compartmental simulator should the direction-selective ganglion cell (DSGC) project use as its primary simulator, and which should it keep as a backup? |
+| **Methods** | `internet` |
+| **Confidence** | high |
+| **Date created** | 2026-04-19 |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+| **Paper sources** | — |
+| **Task sources** | — |
+| **URL sources** | [url 1](https://pmc.ncbi.nlm.nih.gov/articles/PMC9272742/), [url 2](https://elifesciences.org/articles/47314), [url 3](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1013926), [url 4](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000899), [url 5](https://modeldb.science/189347), [url 6](https://github.com/neuronsimulator/nrn/blob/master/docs/changelog.md), [url 7](https://github.com/neuronsimulator/nrn/issues/3595), [url 8](https://github.com/arbor-sim/arbor/releases), [url 9](https://docs.arbor-sim.org/en/latest/install/python.html), [url 10](https://docs.arbor-sim.org/en/latest/index.html), [url 11](https://docs.arbor-sim.org/en/latest/fileformat/nmodl.html), [url 12](http://doc.netpyne.org/), [url 13](https://github.com/suny-downstate-medical-center/netpyne), [url 14](https://brian2.readthedocs.io/en/stable/user/multicompartmental.html), [url 15](https://github.com/brian-team/brian2), [url 16](https://github.com/BhallaLab/moose), [url 17](https://github.com/BhallaLab/moose/releases), [url 18](https://moose.ncbs.res.in/readthedocs/user/py/rdesigneur/rdes.html), [url 19](https://github.com/jzlab/dsg), [url 20](https://github.com/berenslab/rgc_dendrites) |
+| **Created by** | [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
 
 </details>

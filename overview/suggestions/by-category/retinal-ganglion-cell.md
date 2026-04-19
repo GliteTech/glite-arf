@@ -1,8 +1,8 @@
 # Suggestions: `retinal-ganglion-cell`
 
-2 suggestion(s) in category
-[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **2 open** (1 high,
-1 medium).
+5 suggestion(s) in category
+[`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) **5 open** (3 high,
+2 medium).
 
 [Back to all suggestions](../README.md)
 
@@ -34,7 +34,69 @@ currently lacks. Recommended task types: experiment-run.
 
 </details>
 
+<details>
+<summary>📚 <strong>Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain on
+the local workstation</strong> (S-0003-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0003-01` |
+| **Kind** | library |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Create a task that `uv pip install neuron==8.2.7 netpyne==1.1.1` into the project's
+virtualenv, compiles the bundled Hodgkin-Huxley MOD files with `nrnivmodl`, runs a
+1-compartment sanity simulation, and records the installed versions, install-time warnings,
+and simulation wall-clock in a task asset. Rationale: the t0003 survey selected this toolchain
+but did not install it; the next simulation task needs a validated environment.
+
+</details>
+
+<details>
+<summary>📚 <strong>Port the Poleg-Polsky & Diamond 2016 DSGC ModelDB 189347 into
+the project as a library asset</strong> (S-0003-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0003-02` |
+| **Kind** | library |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included demo, and
+register the resulting Python package as a library asset under `assets/library/`. This makes
+the DSGC reference implementation available to every downstream simulation task without
+re-download.
+
+</details>
+
 ## Medium Priority
+
+<details>
+<summary>🧪 <strong>Benchmark NEURON vs Arbor on the project's actual DSGC
+morphology</strong> (S-0003-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0003-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Once a DSGC model runs in NEURON (via S-0003-02), port the same morphology and channel set to
+Arbor 0.12.0 and measure single-cell simulation wall-clock on the project's workstation.
+Third-party benchmarks claim Arbor is 7-12x faster; this task validates that claim on our
+actual use case and records the real cost of the NMODL `modcc` translation that t0003 flagged
+as the main Arbor adoption risk.
+
+</details>
 
 <details>
 <summary>📂 <strong>Reproduce the Park2014 mouse ON-OFF DSGC tuning-curve dataset

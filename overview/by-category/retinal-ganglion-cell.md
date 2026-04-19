@@ -5,8 +5,8 @@ Output neurons of the retina whose axons form the optic nerve.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (18)](../papers/by-category/retinal-ganglion-cell.md) | [Answers
-(1)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
-(2)](../suggestions/by-category/retinal-ganglion-cell.md)
+(2)](../answers/by-category/retinal-ganglion-cell.md) | [Suggestions
+(5)](../suggestions/by-category/retinal-ganglion-cell.md)
 
 ---
 
@@ -945,7 +945,23 @@ simulation.
 |---|------|--------|-----------|
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
 
-## Answers (1)
+## Answers (2)
+
+<details>
+<summary><strong>Which compartmental simulator should the direction-selective
+ganglion cell (DSGC) project use as its primary simulator, and which should
+it keep as a backup?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-04-19 | **Full answer**:
+[`dsgc-compartmental-simulator-choice`](../../tasks/t0003_simulator_library_survey/assets/answer/dsgc-compartmental-simulator-choice/)
+
+Use NEURON 8.2.7 as the primary simulator, wrapped with NetPyNE 1.1.1 for parameter sweeps and
+optimisation. Keep Arbor 0.12.0 as the backup simulator to exploit its 7-12x single-cell
+speedup whenever the parameter sweep outgrows the NEURON workstation budget. Brian2 and MOOSE
+are rejected because Brian2's own authors describe its multicompartment support as immature
+and MOOSE shows the weakest maintenance signal of the five candidates.
+
+</details>
 
 <details>
 <summary><strong>How does the existing peer-reviewed literature on compartmental
@@ -972,7 +988,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (2 open, 0 closed)
+## Suggestions (5 open, 0 closed)
 
 <details>
 <summary>🧪 <strong>Factorial morphology sweep (branch orders, segment length,
@@ -1007,5 +1023,49 @@ in Hz, error bars, cell counts) so the model can be scored against measured data
 only against the analytic target in t0004. This gives the project a literature-grounded
 validation benchmark distinct from the canonical analytic target. Recommended task types:
 download-dataset, data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain on
+the local workstation</strong> (S-0003-01)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+[t0003_simulator_library_survey](../../tasks/t0003_simulator_library_survey/)
+
+Create a task that `uv pip install neuron==8.2.7 netpyne==1.1.1` into the project's
+virtualenv, compiles the bundled Hodgkin-Huxley MOD files with `nrnivmodl`, runs a
+1-compartment sanity simulation, and records the installed versions, install-time warnings,
+and simulation wall-clock in a task asset. Rationale: the t0003 survey selected this toolchain
+but did not install it; the next simulation task needs a validated environment.
+
+</details>
+
+<details>
+<summary>📚 <strong>Port the Poleg-Polsky & Diamond 2016 DSGC ModelDB 189347 into
+the project as a library asset</strong> (S-0003-02)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+[t0003_simulator_library_survey](../../tasks/t0003_simulator_library_survey/)
+
+Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included demo, and
+register the resulting Python package as a library asset under `assets/library/`. This makes
+the DSGC reference implementation available to every downstream simulation task without
+re-download.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Benchmark NEURON vs Arbor on the project's actual DSGC
+morphology</strong> (S-0003-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-19 | **Source**:
+[t0003_simulator_library_survey](../../tasks/t0003_simulator_library_survey/)
+
+Once a DSGC model runs in NEURON (via S-0003-02), port the same morphology and channel set to
+Arbor 0.12.0 and measure single-cell simulation wall-clock on the project's workstation.
+Third-party benchmarks claim Arbor is 7-12x faster; this task validates that claim on our
+actual use case and records the real cost of the NMODL `modcc` translation that t0003 flagged
+as the main Arbor adoption risk.
 
 </details>

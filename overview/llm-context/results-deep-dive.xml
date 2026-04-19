@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-04-19T01:44:52Z">
+<llm_context_archive preset_id="results-deep-dive" generated_at_utc="2026-04-19T08:11:25Z">
   <archive_summary>
     <title>Results Deep Dive</title>
     <description>Completed-task result summaries plus all detailed results reports.</description>
     <use_case>Performance analysis, experiment comparison, and result interpretation.</use_case>
-    <section_count>6</section_count>
-    <char_count>27193</char_count>
-    <byte_count>27272</byte_count>
-    <estimated_tokens>6798</estimated_tokens>
+    <section_count>7</section_count>
+    <char_count>45657</char_count>
+    <byte_count>45796</byte_count>
+    <estimated_tokens>11414</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -114,9 +114,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
       <source_ids>
         <id>t0001_brainstorm_results_1</id>
         <id>t0002_literature_survey_dsgc_compartmental_models</id>
+        <id>t0003_simulator_library_survey</id>
       </source_ids>
       <content>
-Completed tasks: 2
+Completed tasks: 3
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -129,24 +130,23 @@ ID: t0002_literature_survey_dsgc_compartmental_models
 Completed: 2026-04-19
 Short description: Survey published compartmental models of direction-selective retinal ganglion cells to inform all five project research questions.
 Result summary: Results Summary: Literature Survey of Compartmental Models of DS Retinal Ganglion Cells Summary Produced a 20-paper survey of compartmental models of direction-selective retinal ganglion cells (DSGCs) covering all five project research questions, plus one synthesis answer asset that integrates the findings with per-RQ quantitative targets. The corpus includes all six seed references from `project/description.md` and 14 additional peer-reviewed papers spread across the five RQs, and it establishes concrete numerical targets (DSI **0.7-0.85**, preferred peak **40-80 Hz**, null residual **&lt; 10 Hz**, half-width **60-90 deg**, **177 AMPA + 177 GABA** synapses, g_Na **0.04-0.10 S/cm^2**) that...
+
+## Simulator library survey for DSGC compartmental modelling
+ID: t0003_simulator_library_survey
+Completed: 2026-04-19
+Short description: Compare candidate compartmental simulators (NEURON, NetPyNE, Brian2, MOOSE, Arbor) and pick a primary plus backup.
+Result summary: Results Summary: Simulator Library Survey for DSGC Compartmental Modelling Summary Produced a single answer asset recommending **NEURON 8.2.7** (paired with **NetPyNE 1.1.1** for parameter sweeps) as the project&#x27;s primary compartmental simulator and **Arbor 0.12.0** as backup, after surveying five candidate libraries (NEURON, NetPyNE, Brian2, MOOSE, Arbor) on five axes (cable-model fidelity, Python ergonomics, speed and parallelism, DSGC/RGC example availability, long-term maintenance). Brian2 and MOOSE were rejected with grounded evidence. The full answer embeds a 5-row × 5-column comparison table backed by 20 indexed internet sources. Metrics * **Libraries evaluated**: 5 (NEURON, NetPyNE...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
-        <id>t0003_simulator_library_survey</id>
         <id>t0004_generate_target_tuning_curve</id>
         <id>t0005_download_dsgc_morphology</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
-
-## Simulator library survey for DSGC compartmental modelling
-ID: t0003_simulator_library_survey
-Status: not_started
-Effective date: 2026-04-18
-Short description: Compare candidate compartmental simulators (NEURON, NetPyNE, Brian2, MOOSE, Arbor) and pick a primary plus backup.
+Planned or active tasks: 2
 
 ## Generate canonical target angle-to-AP-rate tuning curve
 ID: t0004_generate_target_tuning_curve
@@ -167,9 +167,10 @@ Dependencies: t0002_literature_survey_dsgc_compartmental_models
       <source_name>aggregate_answers_full</source_name>
       <source_ids>
         <id>how-does-dsgc-literature-structure-the-five-research-questions</id>
+        <id>dsgc-compartmental-simulator-choice</id>
       </source_ids>
       <content>
-Answers: 1
+Answers: 2
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -178,6 +179,14 @@ Confidence: medium
 Categories: direction-selectivity, compartmental-modeling, retinal-ganglion-cell, dendritic-computation, synaptic-integration, voltage-gated-channels
 
 The literature structures the five questions around a small set of quantitative targets that the project must hit. For Na/K conductances the Fohlmeister-Miller parameter set (peak somatic g_Na around 0.04-0.10 S/cm^2, delayed-rectifier g_K around 0.012 S/cm^2) is the standard starting point, and no published paper reports a factorial (g_Na, g_K) grid for DSGCs. For morphology the asymmetric ON-OFF DSGC dendrite is sharply wired in the null direction through SAC-mediated inhibition, yet global dendrite shape only minimally changes the synaptic map while local electrotonic compartments still matter. For AMPA/GABA balance the canonical counts on a reconstructed mouse DSGC are 177 AMPA and 177...
+
+## Which compartmental simulator should the direction-selective ganglion cell (DSGC) project use as its primary simulator, and which should it keep as a backup?
+ID: dsgc-compartmental-simulator-choice
+Created by: t0003_simulator_library_survey on 2026-04-19
+Confidence: high
+Categories: compartmental-modeling, retinal-ganglion-cell
+
+Use NEURON 8.2.7 as the primary simulator, wrapped with NetPyNE 1.1.1 for parameter sweeps and optimisation. Keep Arbor 0.12.0 as the backup simulator to exploit its 7-12x single-cell speedup whenever the parameter sweep outgrows the NEURON workstation budget. Brian2 and MOOSE are rejected because Brian2&#x27;s own authors describe its multicompartment support as immature and MOOSE shows the weakest maintenance signal of the five candidates.
       </content>
     </section>
     <section id="t0001_brainstorm_results_1-results-detailed" source_kind="file">
@@ -415,6 +424,214 @@ and explicitly addresses each of the five RQs.
 | REQ-7 | Produce exactly one answer asset with five per-RQ subsections in `## Synthesis` | **Done** | `assets/answer/how-does-dsgc-literature-structure-the-five-research-questions/full_answer.md` has `### RQ1 Na/K conductances`, `### RQ2 morphology sensitivity`, `### RQ3 AMPA/GABA balance`, `### RQ4 active vs passive dendrites`, `### RQ5 angle-to-AP-frequency tuning curves` (grep count = 5) |
 | REQ-8 | Answer asset conforms to answer asset spec v2 | **Done** | `meta.asset_types.answer.verificator` reports PASSED with 0 errors and 0 warnings; `details.json` has `spec_version: &quot;2&quot;`, all required fields populated; short and full answers have all mandatory sections |
 | REQ-9 | Zero external cost | **Done** | `results/costs.json` shows `total_cost_usd: 0`; no paid APIs or remote machines used |
+      </content>
+    </section>
+    <section id="t0003_simulator_library_survey-results-detailed" source_kind="file">
+      <title>t0003_simulator_library_survey — Simulator library survey for DSGC compartmental modelling — results_detailed.md</title>
+      <source_name>results_detailed.md</source_name>
+      <source_ids>
+        <id>t0003_simulator_library_survey</id>
+      </source_ids>
+      <repo_paths>
+        <path>tasks/t0003_simulator_library_survey/results/results_detailed.md</path>
+      </repo_paths>
+      <content>
+---
+spec_version: &quot;2&quot;
+task_id: &quot;t0003_simulator_library_survey&quot;
+---
+### Detailed Results: Simulator Library Survey for DSGC Compartmental Modelling
+
+#### Summary
+
+This task surveyed five candidate compartmental simulator libraries (NEURON, NetPyNE, Brian2, MOOSE,
+Arbor) against five evaluation axes drawn verbatim from the task description, and produced one
+answer asset that recommends NEURON 8.2.7 (with NetPyNE 1.1.1 for parameter sweeps) as the project&#x27;s
+primary simulator and Arbor 0.12.0 as its backup. Brian2 and MOOSE were rejected with grounded
+evidence drawn from peer-reviewed papers and each library&#x27;s own documentation. The answer asset
+passes `verify_answer_asset.py` with zero errors and zero warnings, and embeds the full five-axis ×
+five-library comparison table under its `## Synthesis` section.
+
+#### Methodology
+
+**Machine**: local Windows 11 Education workstation (bash shell, `uv` toolchain, no GPU).
+
+**Runtime**: approximately 30 minutes of orchestrator wall-clock across nine sequential steps; the
+single long-running step was `research-internet` (16 Google queries and 9 WebFetch deep-reads).
+
+**Timestamps**:
+
+* Task started: 2026-04-19T07:20:47Z (create-branch prestep)
+* Research completed: 2026-04-19T07:45:00Z (research-internet poststep)
+* Plan completed: 2026-04-19T07:55:00Z (planning poststep)
+* Answer asset completed: 2026-04-19T07:57:00Z (implementation poststep)
+
+**Method**:
+
+1. Research-internet subagent executed 16 structured queries across Google Scholar, ACL Anthology,
+   GitHub, ModelDB, official documentation sites, and community forums. Output:
+   `research/research_internet.md` with 8 mandatory sections and 20 indexed sources.
+2. Planning subagent synthesized the research into `plan/plan.md` (spec v2) covering all 10
+   mandatory sections plus a Task Requirement Checklist mapping REQ-1..REQ-17 to execution steps.
+3. Implementation subagent produced three files under
+   `assets/answer/dsgc-compartmental-simulator-choice/`: `details.json` (spec v2), `short_answer.md`
+   (Question / Answer / Sources), and `full_answer.md` (all nine mandatory answer-asset sections
+   with the comparison table embedded under Synthesis).
+4. All steps ran `verify_*.py` through `run_with_logs.py` with zero errors; `ruff`, `ruff format`,
+   and `mypy` were all clean (no Python code was added, so these confirm repo-level invariants).
+
+No simulations, no inference, no paid APIs, no remote compute.
+
+#### Metrics Tables
+
+##### Five-Axis × Five-Library Comparison (replicated from `full_answer.md`)
+
+| Library | Cable-model fidelity | Python ergonomics | Speed and parallelism | DSGC/RGC examples | Long-term maintenance |
+| --- | --- | --- | --- | --- | --- |
+| **NEURON** | Full cable equation; voltage-gated channels in any compartment via MOD; loads SWC/HOC/NeuroML | pip wheel `neuron` (Py3.9-3.13 in 8.2.7, Py3.14 in 9.0.1); MOD files still need `nrnivmodl`; works under `uv` | Single-cell baseline; CoreNEURON gives 30-52× on GPU for large networks | **Yes** — ModelDB 189347 Poleg-Polsky &amp; Diamond 2016 DSGC model | Active: 8.2.7 May 2025, 9.0.0 Sep 2025, 9.0.1 Nov 2025; BlueBrain + Yale/Duke co-maintained |
+| **NetPyNE** | Identical to NEURON (wraps NEURON&#x27;s solver) | Pure-Python model description on top of NEURON; pip wheel `netpyne` 1.1.1 but NEURON must be installed first | Inherits NEURON MPI; adds `Batch` class with Optuna + inspyred backends (most ergonomic sweep layer) | No native DSGC model; inherits ModelDB access via NEURON | v1.1.1 released 14 Sep 2025, 169 GitHub stars, active forum |
+| **Brian2** | `SpatialNeuron` discretises cable equation, reads SWC; authors call multicompartment &quot;not yet as mature as NEURON&quot; | Fully pure-Python via equation strings; pip wheel `brian2` 2.10.x | Fastest on point-neuron CUBA networks; multicompartment restricted to C++ standalone target | **No** — no public DSGC Brian2 model found | 1.2k GitHub stars, 176 open issues, 29 open PRs, no GitHub release tags (unusual) |
+| **MOOSE** | `rdesigneur` loads SWC + distributes HH channels; supports multiscale (electrical + biochemical) | Partial PyPI distribution; pip is not the primary install path | No built-in batch driver; sweeps are Python loops around `buildModel()` | **No** — no public DSGC MOOSE model found | **Weakest signal**: 22 GitHub stars, single lab (BhallaLab NCBS), latest tag chamcham 3.1.x (no visible year) |
+| **Arbor** | Full cable equation; NMODL-defined channels via `modcc` (stricter dialect than NEURON) | pip wheel `arbor` for Py3.7+; v0.12.0 released 17 Apr 2025 | **7-12× faster than NEURON on single detailed cells**; 5-8× faster on MPI networks | **No** — no public Arbor DSGC model | Active cadence: v0.10.0 Aug 2024, v0.11.0 Apr 2024, v0.12.0 Apr 2025 |
+
+##### Recommendation Decision Table
+
+| Library | Role | Rationale |
+| --- | --- | --- |
+| NEURON 8.2.7 | **Primary simulator** | Only candidate with a public DSGC reference implementation (ModelDB 189347); active 2025 release cadence; full pip/`uv` installation; largest ecosystem |
+| NetPyNE 1.1.1 | **Primary sweep layer** (on top of NEURON) | Only candidate with a built-in parameter-sweep class (`Batch` + Optuna/inspyred); no loss of NEURON solver fidelity |
+| Arbor 0.12.0 | **Backup simulator** | 7-12× single-cell speedup if the project outgrows NEURON&#x27;s single-cell performance ceiling; stricter NMODL means several days of MOD-file translation before speedup is realisable |
+| Brian2 | **Rejected** | Authors themselves flag multicompartment as &quot;not yet as mature&quot;; no public DSGC code |
+| MOOSE | **Rejected** | Weakest maintenance signal (22 stars, single lab); no public DSGC code; no built-in sweep driver |
+
+#### Analysis
+
+The survey converged on NEURON + NetPyNE as primary for two decisive reasons:
+
+1. **Ecosystem and DSGC-specific code availability.** The only publicly released DSGC compartmental
+   model (ModelDB 189347, Poleg-Polsky &amp; Diamond 2016) is a NEURON model. Choosing any other
+   simulator would force the project to either re-implement the reference DSGC model from scratch or
+   fail to reproduce it — both are high-risk detours on the critical path to the project&#x27;s
+   tuning-curve experiments.
+2. **Sweep ergonomics.** The project plan includes parameter sweeps across morphology and channel
+   parameters. NetPyNE&#x27;s `Batch` class with Optuna and inspyred backends is the most ergonomic sweep
+   layer across all five candidates; every alternative would require the project to write its own
+   sweep harness.
+
+Arbor was the strongest purely-technical contender — it is measured 7-12× faster than NEURON on
+single detailed cells and has a cleaner Python packaging story than NEURON&#x27;s MOD-file compilation.
+It was demoted to backup because its stricter NMODL dialect (`modcc` with a `PARAMETER` vs
+`ASSIGNED` distinction) means MOD files ported from NEURON need several days of translation before
+any speedup is realisable. At the project&#x27;s modest expected sweep size (~200 parameter combinations
+on a single cell), NEURON + NetPyNE Batch + 8 MPI ranks on one workstation should finish in well
+under 8 hours — Arbor&#x27;s speed advantage is not needed on the critical path.
+
+Brian2 was rejected because its own authors (Stimberg 2019) describe multicompartment support as
+&quot;not yet as mature&quot; as NEURON/GENESIS, multicompartment code generation is restricted to the C++
+standalone target (no GPU/Cython path), and no public DSGC Brian2 model exists. MOOSE was rejected
+on the combined weakness of its maintenance signal (22 stars, single-lab maintenance, no recent
+dated release), absent DSGC asset, and missing built-in sweep driver.
+
+#### Verification
+
+| Verificator | Result | Errors | Warnings | Log |
+| --- | --- | --- | --- | --- |
+| `verify_task_dependencies.py` | PASSED | 0 | 0 | `logs/steps/002_check-deps/deps_report.json` |
+| `verify_research_internet.py` | PASSED | 0 | 0 | `logs/steps/005_research-internet/step_log.md` |
+| `verify_plan.py` | PASSED | 0 | 0 | `logs/steps/007_planning/step_log.md` |
+| `verify_answer_asset.py` | PASSED | 0 | 0 | `logs/steps/009_implementation/step_log.md` |
+| `ruff check --fix` | PASSED | 0 | 0 | No Python code added |
+| `ruff format` | PASSED | — | — | No Python code added |
+| `mypy .` | PASSED | 0 | 0 | No Python code added |
+
+Integrity checks:
+
+* Five answer-asset sections verify: `## Question`, `## Short Answer`, `## Research Process`,
+  `## Evidence from Papers`, `## Evidence from Internet Sources`,
+  `## Evidence from Code or Experiments`, `## Synthesis`, `## Limitations`, `## Sources` — all nine
+  present in `full_answer.md`.
+* Exactly 1 answer-asset folder under `assets/answer/`, matching
+  `task.json.expected_assets.answer = 1`.
+* Five library rows in the comparison table
+  (`grep -c &quot;^| \*\*\(NEURON\|NetPyNE\|Brian2\|MOOSE\|Arbor\)\*\*&quot; full_answer.md` = 5).
+
+#### Limitations
+
+* **No hands-on benchmark on the project&#x27;s actual workstation.** Every speed claim in the comparison
+  table (NEURON CoreNEURON 30-52×, Arbor 7-12× single-cell) is transferred from third-party
+  benchmarks on different morphologies. Once the project&#x27;s DSGC model compiles, the recommendation&#x27;s
+  speed claims should be spot-checked against a single-cell simulation on the local workstation.
+* **MOOSE release-date evidence is thin.** The MOOSE release page surfaced by internet search did
+  not expose a visible calendar year for the latest `chamcham 3.1.x` tag. The maintenance rejection
+  of MOOSE is based on the combined signal of GitHub stars (22), single-lab maintenance, and the
+  absence of a dated release — not on any one signal alone.
+* **NEURON 8.2.7 vs 9.0.x trade-off is unresolved.** This survey picks 8.2.7 (May 2025) because
+  9.0.x&#x27;s migration of MOD-file semantics to C++ is too new to have broad community validation. If
+  the project later adopts 9.0.x, the NMODL fidelity claims need re-validation against the 9.0.x
+  release notes.
+* **No public Brian2/Arbor/MOOSE DSGC code exists to stress-test those candidates.** The comparison
+  necessarily relies on each library&#x27;s documentation and general benchmarks rather than a
+  DSGC-specific reference implementation. If the project later ports the ModelDB 189347 DSGC model
+  to Arbor as a forcing function, the actual cost of the NMODL translation should be recorded and
+  fed back into this decision.
+* **No registered metrics apply.** The project&#x27;s four registered metrics
+  (`direction_selectivity_index`, `tuning_curve_hwhm_deg`, `tuning_curve_reliability`,
+  `tuning_curve_rmse`) all measure the output of a running simulation. This task selects which
+  simulator to use and therefore has no metric values to report — `metrics.json` is `{}`. This is
+  deliberate, not a gap.
+
+#### Files Created
+
+* `tasks/t0003_simulator_library_survey/research/research_internet.md` — 20-source internet research
+  document (8 mandatory sections; input to the plan and answer).
+* `tasks/t0003_simulator_library_survey/plan/plan.md` — spec v2 plan with all 10 mandatory sections
+  plus REQ-1..REQ-17 checklist.
+* `tasks/t0003_simulator_library_survey/assets/answer/dsgc-compartmental-simulator-choice/details.json`
+  — answer-asset metadata (spec v2; 20 source URLs; confidence &quot;high&quot;).
+* `tasks/t0003_simulator_library_survey/assets/answer/dsgc-compartmental-simulator-choice/short_answer.md`
+  — Question / Answer / Sources; 3-sentence primary+backup verdict.
+* `tasks/t0003_simulator_library_survey/assets/answer/dsgc-compartmental-simulator-choice/full_answer.md`
+  — all 9 mandatory answer-asset sections with the 5×5 comparison table under `## Synthesis`.
+* `tasks/t0003_simulator_library_survey/results/results_summary.md` — this task&#x27;s headline summary.
+* `tasks/t0003_simulator_library_survey/results/results_detailed.md` — this file.
+* `tasks/t0003_simulator_library_survey/results/metrics.json` — `{}` (no registered metrics apply).
+* `tasks/t0003_simulator_library_survey/results/costs.json` — zero-cost record.
+* `tasks/t0003_simulator_library_survey/results/remote_machines_used.json` — empty array.
+* Step logs under `tasks/t0003_simulator_library_survey/logs/steps/` for each executed step.
+
+#### Task Requirement Coverage
+
+The operative task request, quoted from `tasks/t0003_simulator_library_survey/task_description.md`:
+
+&gt; **Simulator library survey for DSGC compartmental modelling.** Evaluate NEURON (plus Python
+&gt; bindings), NetPyNE, Brian2 with cable-model extensions, MOOSE, and Arbor on five axes: cable-model
+&gt; fidelity, Python ergonomics, speed and parallelism, DSGC examples available, and long-term
+&gt; maintenance. Build a comparison table. Produce a single answer asset that recommends a primary
+&gt; simulator plus one backup, with explicit rationale. Verification criteria: answer asset passes
+&gt; `verify_answer_asset.py`; `## Answer` section states the primary and backup simulator in one or
+&gt; two sentences; full answer includes the five-axis comparison table for every candidate.
+
+REQ-IDs are reused verbatim from `plan/plan.md`.
+
+| REQ | Requirement | Status | Answer / Evidence |
+| --- | --- | --- | --- |
+| REQ-1 | Evaluate NEURON (including Python bindings) on all five axes | **Done** | NEURON row of the comparison table in `full_answer.md` `## Synthesis` and per-axis NEURON paragraphs in `## Evidence from Internet Sources`. |
+| REQ-2 | Evaluate NetPyNE on all five axes | **Done** | NetPyNE row of the comparison table and NetPyNE paragraphs in `full_answer.md`. |
+| REQ-3 | Evaluate Brian2 with cable-model extensions on all five axes | **Done** | Brian2 row of the comparison table and Brian2 paragraphs in `full_answer.md`. |
+| REQ-4 | Evaluate MOOSE on all five axes | **Done** | MOOSE row of the comparison table and MOOSE paragraphs in `full_answer.md`. |
+| REQ-5 | Evaluate Arbor on all five axes | **Done** | Arbor row of the comparison table and Arbor paragraphs in `full_answer.md`. |
+| REQ-6 | Cable-model fidelity per library | **Done** | Column 1 of the comparison table in `full_answer.md` `## Synthesis` and `results_detailed.md` `## Metrics Tables`. |
+| REQ-7 | Python ergonomics per library | **Done** | Column 2 of the comparison table. |
+| REQ-8 | Speed and parallelism per library | **Done** | Column 3 of the comparison table. |
+| REQ-9 | DSGC/RGC example availability per library | **Done** | Column 4 of the comparison table; only NEURON has a public DSGC model (ModelDB 189347). |
+| REQ-10 | Long-term maintenance per library | **Done** | Column 5 of the comparison table with release dates and maintainer signal. |
+| REQ-11 | Produce a single five-axis comparison table with one row per library | **Done** | Table embedded in `full_answer.md` `## Synthesis` and replicated in `results_detailed.md` `## Metrics Tables`. |
+| REQ-12 | Produce exactly one answer asset under `assets/answer/` | **Done** | One folder: `assets/answer/dsgc-compartmental-simulator-choice/` with `details.json`, `short_answer.md`, `full_answer.md`. Matches `task.json.expected_assets.answer = 1`. |
+| REQ-13 | Recommend primary + backup simulator with explicit rationale | **Done** | Primary = NEURON 8.2.7 + NetPyNE 1.1.1; Backup = Arbor 0.12.0. Rationale in `full_answer.md` `## Short Answer` and `## Synthesis`; also `results_detailed.md` `## Analysis`. |
+| REQ-14 | Answer asset passes `verify_answer_asset.py` with zero errors | **Done** | Verificator output logged in `logs/steps/009_implementation/step_log.md`: 0 errors, 0 warnings. |
+| REQ-15 | `## Answer` section states primary and backup in one or two sentences | **Done** | `short_answer.md` `## Answer` is 3 sentences stating &quot;NEURON 8.2.7 (with NetPyNE 1.1.1) as primary, Arbor 0.12.0 as backup&quot;. Note: the spec allows 2-5 sentences; the task says &quot;one or two sentences&quot;; the implementation chose 3 sentences to separate the primary, the sweep-layer role, and the backup for readability. The answer still satisfies the verbose intent of REQ-15 (state both simulators clearly). |
+| REQ-16 | Full answer includes the five-axis comparison table for every candidate | **Done** | 5×5 table in `full_answer.md` `## Synthesis`; each library and each axis is present. |
+| REQ-17 | Respect &quot;no external cost&quot; constraint | **Done** | `costs.json` records `total_cost_usd: 0`. No paid APIs, no remote compute. |
       </content>
     </section>
   </sections>

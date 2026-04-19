@@ -6,9 +6,119 @@
 
 ---
 
-## 2026-04-19 (1)
+## 2026-04-19 (2)
 
 ## ✅ Completed
+
+<details>
+<summary>✅ 0003 — <strong>Simulator library survey for DSGC compartmental
+modelling</strong></summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `t0003_simulator_library_survey` |
+| **Status** | completed |
+| **Effective date** | 2026-04-19 |
+| **Dependencies** | — |
+| **Expected assets** | 1 answer |
+| **Source suggestion** | — |
+| **Task types** | [`internet-research`](../../../meta/task_types/internet-research/) |
+| **Start time** | 2026-04-19T07:20:04Z |
+| **End time** | 2026-04-19T08:05:00Z |
+| **Step progress** | 9/15 |
+| **Task page** | [Simulator library survey for DSGC compartmental modelling](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
+| **Task folder** | [`t0003_simulator_library_survey/`](../../../tasks/t0003_simulator_library_survey/) |
+| **Detailed report** | [results_detailed.md](../../../tasks/t0003_simulator_library_survey/results/results_detailed.md) |
+
+# Simulator library survey for DSGC compartmental modelling
+
+## Motivation
+
+`project/description.md` mentions NEURON as the canonical simulator but the researcher wants
+to evaluate several libraries before committing. A bad simulator choice locks the project into
+poor cable-model fidelity, slow parameter sweeps, or brittle tooling for months. A short
+survey up front prevents this.
+
+## Scope
+
+Evaluate the following candidate libraries:
+
+* NEURON (plus NEURON+Python bindings)
+* NetPyNE (higher-level NEURON wrapper)
+* Brian2 with cable-model extensions
+* MOOSE
+* Arbor
+
+For each library, collect:
+
+1. **Cable-model fidelity** — does it solve the full compartmental cable equation, support
+   voltage-gated conductances in arbitrary compartments, and handle reconstructed morphologies
+   (SWC, HOC, NeuroML)?
+2. **Python ergonomics** — pure Python vs wrapped C++/MOD files, packaging on `uv`, quality of
+   current documentation and examples.
+3. **Speed and parallelism** — single-cell simulation speed and support for running large
+   parameter sweeps.
+4. **DSGC examples available** — whether any published DSGC or broader RGC compartmental model
+   has been released in that library.
+5. **Long-term maintenance** — last release, community activity, active maintainers.
+
+## Approach
+
+1. Run `/research-internet` to gather documentation, benchmarks, and user reports for each
+   library.
+2. Build a comparison table covering the five axes above.
+3. Produce a single answer asset that recommends a **primary** simulator plus one **backup**,
+   with explicit rationale.
+
+## Expected Outputs
+
+* One answer asset under `assets/answer/` summarising the library comparison and stating the
+  primary plus backup recommendation.
+
+## Compute and Budget
+
+No external cost. Local LLM CLI and internet search only.
+
+## Dependencies
+
+None. Runs in parallel with t0002 and t0004.
+
+## Verification Criteria
+
+* The answer asset passes `verify_answer_asset.py`.
+* The `## Answer` section states the primary and backup simulator in one or two sentences.
+* The full answer includes the five-axis comparison table for every candidate library.
+
+**Results summary:**
+
+> **Results Summary: Simulator Library Survey for DSGC Compartmental Modelling**
+>
+> **Summary**
+>
+> Produced a single answer asset recommending **NEURON 8.2.7** (paired with **NetPyNE 1.1.1**
+> for
+> parameter sweeps) as the project's primary compartmental simulator and **Arbor 0.12.0** as
+> backup,
+> after surveying five candidate libraries (NEURON, NetPyNE, Brian2, MOOSE, Arbor) on five
+> axes
+> (cable-model fidelity, Python ergonomics, speed and parallelism, DSGC/RGC example
+> availability,
+> long-term maintenance). Brian2 and MOOSE were rejected with grounded evidence. The full
+> answer
+> embeds a 5-row × 5-column comparison table backed by 20 indexed internet sources.
+>
+> **Metrics**
+>
+> * **Libraries evaluated**: 5 (NEURON, NetPyNE, Brian2, MOOSE, Arbor)
+> * **Evaluation axes**: 5 (cable-model fidelity, Python ergonomics, speed and parallelism,
+>   DSGC/RGC
+> examples, long-term maintenance)
+> * **Sources cited**: 20 URLs, including 4 newly discovered papers
+> * **Answer assets produced**: 1 (`dsgc-compartmental-simulator-choice`)
+> * **Task requirements satisfied**: 17 of 17 (REQ-1 through REQ-17)
+> * **External cost incurred**: $0.00 (no paid APIs, no remote compute)
+
+</details>
 
 <details>
 <summary>✅ 0002 — <strong>Literature survey: compartmental models of DS retinal
@@ -131,7 +241,7 @@ None. This is the first research task.
 
 </details>
 
-## 2026-04-18 (4)
+## 2026-04-18 (3)
 
 ## ⏹ Not Started
 
@@ -268,83 +378,6 @@ task will compare against.
 * `details.json` records the generator parameters and random seed explicitly.
 * The generated CSV/JSON has one row per angle and the noisy-trial table has at least 10
   trials per angle.
-
-</details>
-
-<details>
-<summary>⏹ 0003 — <strong>Simulator library survey for DSGC compartmental
-modelling</strong></summary>
-
-| Field | Value |
-|---|---|
-| **ID** | `t0003_simulator_library_survey` |
-| **Status** | not_started |
-| **Effective date** | 2026-04-18 |
-| **Dependencies** | — |
-| **Expected assets** | 1 answer |
-| **Source suggestion** | — |
-| **Task types** | [`internet-research`](../../../meta/task_types/internet-research/) |
-| **Task page** | [Simulator library survey for DSGC compartmental modelling](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
-| **Task folder** | [`t0003_simulator_library_survey/`](../../../tasks/t0003_simulator_library_survey/) |
-
-# Simulator library survey for DSGC compartmental modelling
-
-## Motivation
-
-`project/description.md` mentions NEURON as the canonical simulator but the researcher wants
-to evaluate several libraries before committing. A bad simulator choice locks the project into
-poor cable-model fidelity, slow parameter sweeps, or brittle tooling for months. A short
-survey up front prevents this.
-
-## Scope
-
-Evaluate the following candidate libraries:
-
-* NEURON (plus NEURON+Python bindings)
-* NetPyNE (higher-level NEURON wrapper)
-* Brian2 with cable-model extensions
-* MOOSE
-* Arbor
-
-For each library, collect:
-
-1. **Cable-model fidelity** — does it solve the full compartmental cable equation, support
-   voltage-gated conductances in arbitrary compartments, and handle reconstructed morphologies
-   (SWC, HOC, NeuroML)?
-2. **Python ergonomics** — pure Python vs wrapped C++/MOD files, packaging on `uv`, quality of
-   current documentation and examples.
-3. **Speed and parallelism** — single-cell simulation speed and support for running large
-   parameter sweeps.
-4. **DSGC examples available** — whether any published DSGC or broader RGC compartmental model
-   has been released in that library.
-5. **Long-term maintenance** — last release, community activity, active maintainers.
-
-## Approach
-
-1. Run `/research-internet` to gather documentation, benchmarks, and user reports for each
-   library.
-2. Build a comparison table covering the five axes above.
-3. Produce a single answer asset that recommends a **primary** simulator plus one **backup**,
-   with explicit rationale.
-
-## Expected Outputs
-
-* One answer asset under `assets/answer/` summarising the library comparison and stating the
-  primary plus backup recommendation.
-
-## Compute and Budget
-
-No external cost. Local LLM CLI and internet search only.
-
-## Dependencies
-
-None. Runs in parallel with t0002 and t0004.
-
-## Verification Criteria
-
-* The answer asset passes `verify_answer_asset.py`.
-* The `## Answer` section states the primary and backup simulator in one or two sentences.
-* The full answer includes the five-axis comparison table for every candidate library.
 
 </details>
 

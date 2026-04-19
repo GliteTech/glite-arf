@@ -1,6 +1,6 @@
 # Project Tasks
 
-5 tasks. ⏹ **3 not_started**, ✅ **2 completed**.
+5 tasks. ⏹ **2 not_started**, ✅ **3 completed**.
 
 **Browse by view**: By status: [⏹ `not_started`](by-status/not_started.md), [✅
 `completed`](by-status/completed.md); [By date added](by-date-added/README.md)
@@ -12,7 +12,6 @@
 ```mermaid
 graph LR
     t0002_literature_survey_dsgc_compartmental_models["✅ t0002_literature_survey_dsgc_compartmental_models"]
-    t0003_simulator_library_survey["⏹ t0003_simulator_library_survey"]
     t0004_generate_target_tuning_curve["⏹ t0004_generate_target_tuning_curve"]
     t0005_download_dsgc_morphology["⏹ t0005_download_dsgc_morphology"]
 
@@ -159,21 +158,27 @@ task will compare against.
 
 </details>
 
+## ✅ Completed
+
 <details>
-<summary>⏹ 0003 — <strong>Simulator library survey for DSGC compartmental
+<summary>✅ 0003 — <strong>Simulator library survey for DSGC compartmental
 modelling</strong></summary>
 
 | Field | Value |
 |---|---|
 | **ID** | `t0003_simulator_library_survey` |
-| **Status** | not_started |
-| **Effective date** | 2026-04-18 |
+| **Status** | completed |
+| **Effective date** | 2026-04-19 |
 | **Dependencies** | — |
 | **Expected assets** | 1 answer |
 | **Source suggestion** | — |
 | **Task types** | [`internet-research`](../../meta/task_types/internet-research/) |
+| **Start time** | 2026-04-19T07:20:04Z |
+| **End time** | 2026-04-19T08:05:00Z |
+| **Step progress** | 9/15 |
 | **Task page** | [Simulator library survey for DSGC compartmental modelling](../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
 | **Task folder** | [`t0003_simulator_library_survey/`](../../tasks/t0003_simulator_library_survey/) |
+| **Detailed report** | [results_detailed.md](../../tasks/t0003_simulator_library_survey/results/results_detailed.md) |
 
 # Simulator library survey for DSGC compartmental modelling
 
@@ -234,9 +239,36 @@ None. Runs in parallel with t0002 and t0004.
 * The `## Answer` section states the primary and backup simulator in one or two sentences.
 * The full answer includes the five-axis comparison table for every candidate library.
 
-</details>
+**Results summary:**
 
-## ✅ Completed
+> **Results Summary: Simulator Library Survey for DSGC Compartmental Modelling**
+>
+> **Summary**
+>
+> Produced a single answer asset recommending **NEURON 8.2.7** (paired with **NetPyNE 1.1.1**
+> for
+> parameter sweeps) as the project's primary compartmental simulator and **Arbor 0.12.0** as
+> backup,
+> after surveying five candidate libraries (NEURON, NetPyNE, Brian2, MOOSE, Arbor) on five
+> axes
+> (cable-model fidelity, Python ergonomics, speed and parallelism, DSGC/RGC example
+> availability,
+> long-term maintenance). Brian2 and MOOSE were rejected with grounded evidence. The full
+> answer
+> embeds a 5-row × 5-column comparison table backed by 20 indexed internet sources.
+>
+> **Metrics**
+>
+> * **Libraries evaluated**: 5 (NEURON, NetPyNE, Brian2, MOOSE, Arbor)
+> * **Evaluation axes**: 5 (cable-model fidelity, Python ergonomics, speed and parallelism,
+>   DSGC/RGC
+> examples, long-term maintenance)
+> * **Sources cited**: 20 URLs, including 4 newly discovered papers
+> * **Answer assets produced**: 1 (`dsgc-compartmental-simulator-choice`)
+> * **Task requirements satisfied**: 17 of 17 (REQ-1 through REQ-17)
+> * **External cost incurred**: $0.00 (no paid APIs, no remote compute)
+
+</details>
 
 <details>
 <summary>✅ 0002 — <strong>Literature survey: compartmental models of DS retinal

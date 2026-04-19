@@ -5,8 +5,8 @@ Biophysical simulation of neurons split into discrete cable compartments.
 [Back to Dashboard](../README.md)
 
 **Detail pages**: [Papers (8)](../papers/by-category/compartmental-modeling.md) | [Answers
-(1)](../answers/by-category/compartmental-modeling.md) | [Suggestions
-(8)](../suggestions/by-category/compartmental-modeling.md)
+(2)](../answers/by-category/compartmental-modeling.md) | [Suggestions
+(13)](../suggestions/by-category/compartmental-modeling.md)
 
 ---
 
@@ -445,7 +445,23 @@ dendritic transients.
 |---|------|--------|-----------|
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | completed | 2026-04-19 01:35 |
 
-## Answers (1)
+## Answers (2)
+
+<details>
+<summary><strong>Which compartmental simulator should the direction-selective
+ganglion cell (DSGC) project use as its primary simulator, and which should
+it keep as a backup?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-04-19 | **Full answer**:
+[`dsgc-compartmental-simulator-choice`](../../tasks/t0003_simulator_library_survey/assets/answer/dsgc-compartmental-simulator-choice/)
+
+Use NEURON 8.2.7 as the primary simulator, wrapped with NetPyNE 1.1.1 for parameter sweeps and
+optimisation. Keep Arbor 0.12.0 as the backup simulator to exploit its 7-12x single-cell
+speedup whenever the parameter sweep outgrows the NEURON workstation budget. Brian2 and MOOSE
+are rejected because Brian2's own authors describe its multicompartment support as immature
+and MOOSE shows the weakest maintenance signal of the five candidates.
+
+</details>
 
 <details>
 <summary><strong>How does the existing peer-reviewed literature on compartmental
@@ -472,7 +488,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (8 open, 0 closed)
+## Suggestions (13 open, 0 closed)
 
 <details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
@@ -617,5 +633,79 @@ scalar loss combining all four targets with documented weights (e.g., weighted E
 distance in normalised space), plus per-metric residuals. This is the tool every downstream
 optimisation task (Na/K grid, morphology sweep, E/I ratio scan) will depend on. Recommended
 task types: write-library.
+
+</details>
+
+<details>
+<summary>📚 <strong>Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain on
+the local workstation</strong> (S-0003-01)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+[t0003_simulator_library_survey](../../tasks/t0003_simulator_library_survey/)
+
+Create a task that `uv pip install neuron==8.2.7 netpyne==1.1.1` into the project's
+virtualenv, compiles the bundled Hodgkin-Huxley MOD files with `nrnivmodl`, runs a
+1-compartment sanity simulation, and records the installed versions, install-time warnings,
+and simulation wall-clock in a task asset. Rationale: the t0003 survey selected this toolchain
+but did not install it; the next simulation task needs a validated environment.
+
+</details>
+
+<details>
+<summary>📚 <strong>Port the Poleg-Polsky & Diamond 2016 DSGC ModelDB 189347 into
+the project as a library asset</strong> (S-0003-02)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+[t0003_simulator_library_survey](../../tasks/t0003_simulator_library_survey/)
+
+Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included demo, and
+register the resulting Python package as a library asset under `assets/library/`. This makes
+the DSGC reference implementation available to every downstream simulation task without
+re-download.
+
+</details>
+
+<details>
+<summary>🧪 <strong>Benchmark NEURON vs Arbor on the project's actual DSGC
+morphology</strong> (S-0003-03)</summary>
+
+**Kind**: experiment | **Priority**: medium | **Date**: 2026-04-19 | **Source**:
+[t0003_simulator_library_survey](../../tasks/t0003_simulator_library_survey/)
+
+Once a DSGC model runs in NEURON (via S-0003-02), port the same morphology and channel set to
+Arbor 0.12.0 and measure single-cell simulation wall-clock on the project's workstation.
+Third-party benchmarks claim Arbor is 7-12x faster; this task validates that claim on our
+actual use case and records the real cost of the NMODL `modcc` translation that t0003 flagged
+as the main Arbor adoption risk.
+
+</details>
+
+<details>
+<summary>📚 <strong>Scaffold a NetPyNE `Batch` sweep harness for DSGC parameter
+studies</strong> (S-0003-04)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-04-19 | **Source**:
+[t0003_simulator_library_survey](../../tasks/t0003_simulator_library_survey/)
+
+Build a small library that wraps NetPyNE's `Batch` class with the project's preferred sweep
+axes (morphology scale, channel densities, synaptic weights) and an Optuna backend. Output: an
+`assets/library/` entry plus a one-page usage example. This unblocks every downstream
+tuning-curve experiment that needs to run more than one parameter combination.
+
+</details>
+
+<details>
+<summary>📊 <strong>Evaluate NEURON 9.0.x C++ MOD-file migration readiness for
+project adoption</strong> (S-0003-05)</summary>
+
+**Kind**: evaluation | **Priority**: low | **Date**: 2026-04-19 | **Source**:
+[t0003_simulator_library_survey](../../tasks/t0003_simulator_library_survey/)
+
+NEURON 9.0.0 and 9.0.1 (Sep-Nov 2025) migrate MOD-file semantics to C++ and add Python 3.14
+wheels. The t0003 survey picked 8.2.7 for conservatism. Create a task that (1) installs 9.0.1
+into a sandbox venv, (2) rebuilds the Poleg-Polsky 189347 DSGC model from S-0003-02 under
+9.0.x, (3) runs the existing DSGC simulations under both 8.2.7 and 9.0.1, and (4) records any
+behavioural differences. This decides whether the project should upgrade before or after the
+first round of tuning-curve experiments.
 
 </details>

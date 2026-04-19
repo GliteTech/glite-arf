@@ -6,7 +6,7 @@ Neural responses that depend on the direction of a moving or spreading stimulus.
 
 **Detail pages**: [Papers (17)](../papers/by-category/direction-selectivity.md) | [Answers
 (1)](../answers/by-category/direction-selectivity.md) | [Suggestions
-(9)](../suggestions/by-category/direction-selectivity.md)
+(11)](../suggestions/by-category/direction-selectivity.md)
 
 ---
 
@@ -921,7 +921,7 @@ preferred peak 40-80 Hz, null residual under 10 Hz, and a half-width of 60-90 de
 
 </details>
 
-## Suggestions (9 open, 0 closed)
+## Suggestions (11 open, 0 closed)
 
 <details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
@@ -1084,5 +1084,33 @@ in Hz, error bars, cell counts) so the model can be scored against measured data
 only against the analytic target in t0004. This gives the project a literature-grounded
 validation benchmark distinct from the canonical analytic target. Recommended task types:
 download-dataset, data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Port the Poleg-Polsky & Diamond 2016 DSGC ModelDB 189347 into
+the project as a library asset</strong> (S-0003-02)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+[t0003_simulator_library_survey](../../tasks/t0003_simulator_library_survey/)
+
+Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included demo, and
+register the resulting Python package as a library asset under `assets/library/`. This makes
+the DSGC reference implementation available to every downstream simulation task without
+re-download.
+
+</details>
+
+<details>
+<summary>📚 <strong>Scaffold a NetPyNE `Batch` sweep harness for DSGC parameter
+studies</strong> (S-0003-04)</summary>
+
+**Kind**: library | **Priority**: medium | **Date**: 2026-04-19 | **Source**:
+[t0003_simulator_library_survey](../../tasks/t0003_simulator_library_survey/)
+
+Build a small library that wraps NetPyNE's `Batch` class with the project's preferred sweep
+axes (morphology scale, channel densities, synaptic weights) and an Optuna backend. Output: an
+`assets/library/` entry plus a one-page usage example. This unblocks every downstream
+tuning-curve experiment that needs to run more than one parameter combination.
 
 </details>

@@ -1,8 +1,8 @@
 # Suggestions: `compartmental-modeling`
 
-8 suggestion(s) in category
-[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **8 open** (5
-high, 3 medium).
+13 suggestion(s) in category
+[`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) **13 open** (7
+high, 5 medium, 1 low).
 
 [Back to all suggestions](../README.md)
 
@@ -84,6 +84,27 @@ task types: write-library.
 </details>
 
 <details>
+<summary>📚 <strong>Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain on
+the local workstation</strong> (S-0003-01)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0003-01` |
+| **Kind** | library |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Create a task that `uv pip install neuron==8.2.7 netpyne==1.1.1` into the project's
+virtualenv, compiles the bundled Hodgkin-Huxley MOD files with `nrnivmodl`, runs a
+1-compartment sanity simulation, and records the installed versions, install-time warnings,
+and simulation wall-clock in a task asset. Rationale: the t0003 survey selected this toolchain
+but did not install it; the next simulation task needs a validated environment.
+
+</details>
+
+<details>
 <summary>🧪 <strong>Paired active-vs-passive dendrite experiment to reproduce the
 Schachter2010 DSI gain (~0.3 -> ~0.7)</strong> (S-0002-02)</summary>
 
@@ -104,6 +125,26 @@ Schachter2010 density), holding morphology, synapse placement, and stimulus iden
 report the DSI delta with 95% CI across synapse-placement seeds. This directly answers RQ4 and
 isolates the dendritic-conductance contribution from morphology and synaptic effects.
 Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Port the Poleg-Polsky & Diamond 2016 DSGC ModelDB 189347 into
+the project as a library asset</strong> (S-0003-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0003-02` |
+| **Kind** | library |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included demo, and
+register the resulting Python package as a library asset under `assets/library/`. This makes
+the DSGC reference implementation available to every downstream simulation task without
+re-download.
 
 </details>
 
@@ -133,6 +174,27 @@ code-reproduction.
 </details>
 
 ## Medium Priority
+
+<details>
+<summary>🧪 <strong>Benchmark NEURON vs Arbor on the project's actual DSGC
+morphology</strong> (S-0003-03)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0003-03` |
+| **Kind** | experiment |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/) |
+
+Once a DSGC model runs in NEURON (via S-0003-02), port the same morphology and channel set to
+Arbor 0.12.0 and measure single-cell simulation wall-clock on the project's workstation.
+Third-party benchmarks claim Arbor is 7-12x faster; this task validates that claim on our
+actual use case and records the real cost of the NMODL `modcc` translation that t0003 flagged
+as the main Arbor adoption risk.
+
+</details>
 
 <details>
 <summary>🧪 <strong>GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC
@@ -203,5 +265,49 @@ their spatial distributions on a DSGC) so downstream DSGC simulation tasks do no
 re-implement the presynaptic waveform construction. The asset should expose a pure-function
 API that takes (stimulus angle, velocity, asymmetry parameter) and returns per-synapse
 conductance time courses. Recommended task types: write-library, feature-engineering.
+
+</details>
+
+<details>
+<summary>📚 <strong>Scaffold a NetPyNE `Batch` sweep harness for DSGC parameter
+studies</strong> (S-0003-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0003-04` |
+| **Kind** | library |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Build a small library that wraps NetPyNE's `Batch` class with the project's preferred sweep
+axes (morphology scale, channel densities, synaptic weights) and an Optuna backend. Output: an
+`assets/library/` entry plus a one-page usage example. This unblocks every downstream
+tuning-curve experiment that needs to run more than one parameter combination.
+
+</details>
+
+## Low Priority
+
+<details>
+<summary>📊 <strong>Evaluate NEURON 9.0.x C++ MOD-file migration readiness for
+project adoption</strong> (S-0003-05)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0003-05` |
+| **Kind** | evaluation |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/) |
+
+NEURON 9.0.0 and 9.0.1 (Sep-Nov 2025) migrate MOD-file semantics to C++ and add Python 3.14
+wheels. The t0003 survey picked 8.2.7 for conservatism. Create a task that (1) installs 9.0.1
+into a sandbox venv, (2) rebuilds the Poleg-Polsky 189347 DSGC model from S-0003-02 under
+9.0.x, (3) runs the existing DSGC simulations under both 8.2.7 and 9.0.1, and (4) records any
+behavioural differences. This decides whether the project should upgrade before or after the
+first round of tuning-curve experiments.
 
 </details>

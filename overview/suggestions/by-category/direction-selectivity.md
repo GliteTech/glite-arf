@@ -1,8 +1,8 @@
 # Suggestions: `direction-selectivity`
 
-9 suggestion(s) in category
-[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **9 open** (4 high,
-5 medium).
+11 suggestion(s) in category
+[`direction-selectivity`](../../../meta/categories/direction-selectivity/) **11 open** (5
+high, 6 medium).
 
 [Back to all suggestions](../README.md)
 
@@ -80,6 +80,26 @@ Schachter2010 density), holding morphology, synapse placement, and stimulus iden
 report the DSI delta with 95% CI across synapse-placement seeds. This directly answers RQ4 and
 isolates the dendritic-conductance contribution from morphology and synaptic effects.
 Recommended task types: experiment-run, comparative-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Port the Poleg-Polsky & Diamond 2016 DSGC ModelDB 189347 into
+the project as a library asset</strong> (S-0003-02)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0003-02` |
+| **Kind** | library |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`retinal-ganglion-cell`](../../../meta/categories/retinal-ganglion-cell/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included demo, and
+register the resulting Python package as a library asset under `assets/library/`. This makes
+the DSGC reference implementation available to every downstream simulation task without
+re-download.
 
 </details>
 
@@ -227,5 +247,25 @@ in Hz, error bars, cell counts) so the model can be scored against measured data
 only against the analytic target in t0004. This gives the project a literature-grounded
 validation benchmark distinct from the canonical analytic target. Recommended task types:
 download-dataset, data-analysis.
+
+</details>
+
+<details>
+<summary>📚 <strong>Scaffold a NetPyNE `Batch` sweep harness for DSGC parameter
+studies</strong> (S-0003-04)</summary>
+
+| Field | Value |
+|---|---|
+| **ID** | `S-0003-04` |
+| **Kind** | library |
+| **Date added** | 2026-04-19 |
+| **Source task** | [`t0003_simulator_library_survey`](../../../overview/tasks/task_pages/t0003_simulator_library_survey.md) |
+| **Source paper** | — |
+| **Categories** | [`compartmental-modeling`](../../../meta/categories/compartmental-modeling/), [`direction-selectivity`](../../../meta/categories/direction-selectivity/) |
+
+Build a small library that wraps NetPyNE's `Batch` class with the project's preferred sweep
+axes (morphology scale, channel densities, synaptic weights) and an Optuna backend. Output: an
+`assets/library/` entry plus a one-page usage example. This unblocks every downstream
+tuning-curve experiment that needs to run more than one parameter combination.
 
 </details>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-19T01:44:52Z">
+<llm_context_archive preset_id="project-memory" generated_at_utc="2026-04-19T08:11:25Z">
   <archive_summary>
     <title>Project Memory</title>
     <description>Mid-size preset intended as a reusable working memory for ongoing chats.</description>
     <use_case>Keeping a durable project memory in medium-size chat sessions.</use_case>
     <section_count>9</section_count>
-    <char_count>40348</char_count>
-    <byte_count>40381</byte_count>
-    <estimated_tokens>10087</estimated_tokens>
+    <char_count>44871</char_count>
+    <byte_count>44905</byte_count>
+    <estimated_tokens>11217</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -118,9 +118,10 @@ target angle-to-AP-frequency tuning curve to use as the optimisation reference.
       <source_ids>
         <id>t0001_brainstorm_results_1</id>
         <id>t0002_literature_survey_dsgc_compartmental_models</id>
+        <id>t0003_simulator_library_survey</id>
       </source_ids>
       <content>
-Completed tasks: 2
+Completed tasks: 3
 
 ## Brainstorm results session 1
 ID: t0001_brainstorm_results_1
@@ -133,24 +134,23 @@ ID: t0002_literature_survey_dsgc_compartmental_models
 Completed: 2026-04-19
 Short description: Survey published compartmental models of direction-selective retinal ganglion cells to inform all five project research questions.
 Result summary: Results Summary: Literature Survey of Compartmental Models of DS Retinal Ganglion Cells Summary Produced a 20-paper survey of compartmental models of direction-selective retinal ganglion cells (DSGCs) covering all five project research questions, plus one synthesis answer asset that integrates the findings with per-RQ quantitative targets. The corpus includes all six seed references from `project/description.md` and 14 additional peer-reviewed papers spread across the five RQs, and it establishes concrete numerical targets (DSI **0.7-0.85**, preferred peak **40-80 Hz**, null residual **&lt; 10 Hz**, half-width **60-90 deg**, **177 AMPA + 177 GABA** synapses, g_Na **0.04-0.10 S/cm^2**) that...
+
+## Simulator library survey for DSGC compartmental modelling
+ID: t0003_simulator_library_survey
+Completed: 2026-04-19
+Short description: Compare candidate compartmental simulators (NEURON, NetPyNE, Brian2, MOOSE, Arbor) and pick a primary plus backup.
+Result summary: Results Summary: Simulator Library Survey for DSGC Compartmental Modelling Summary Produced a single answer asset recommending **NEURON 8.2.7** (paired with **NetPyNE 1.1.1** for parameter sweeps) as the project&#x27;s primary compartmental simulator and **Arbor 0.12.0** as backup, after surveying five candidate libraries (NEURON, NetPyNE, Brian2, MOOSE, Arbor) on five axes (cable-model fidelity, Python ergonomics, speed and parallelism, DSGC/RGC example availability, long-term maintenance). Brian2 and MOOSE were rejected with grounded evidence. The full answer embeds a 5-row × 5-column comparison table backed by 20 indexed internet sources. Metrics * **Libraries evaluated**: 5 (NEURON, NetPyNE...
       </content>
     </section>
     <section id="planned-tasks" source_kind="aggregator">
       <title>Planned Tasks</title>
       <source_name>aggregate_tasks_full</source_name>
       <source_ids>
-        <id>t0003_simulator_library_survey</id>
         <id>t0004_generate_target_tuning_curve</id>
         <id>t0005_download_dsgc_morphology</id>
       </source_ids>
       <content>
-Planned or active tasks: 3
-
-## Simulator library survey for DSGC compartmental modelling
-ID: t0003_simulator_library_survey
-Status: not_started
-Effective date: 2026-04-18
-Short description: Compare candidate compartmental simulators (NEURON, NetPyNE, Brian2, MOOSE, Arbor) and pick a primary plus backup.
+Planned or active tasks: 2
 
 ## Generate canonical target angle-to-AP-rate tuning curve
 ID: t0004_generate_target_tuning_curve
@@ -171,9 +171,10 @@ Dependencies: t0002_literature_survey_dsgc_compartmental_models
       <source_name>aggregate_answers_full</source_name>
       <source_ids>
         <id>how-does-dsgc-literature-structure-the-five-research-questions</id>
+        <id>dsgc-compartmental-simulator-choice</id>
       </source_ids>
       <content>
-Answers: 1
+Answers: 2
 
 ## How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?
 ID: how-does-dsgc-literature-structure-the-five-research-questions
@@ -182,6 +183,14 @@ Confidence: medium
 Categories: direction-selectivity, compartmental-modeling, retinal-ganglion-cell, dendritic-computation, synaptic-integration, voltage-gated-channels
 
 The literature structures the five questions around a small set of quantitative targets that the project must hit. For Na/K conductances the Fohlmeister-Miller parameter set (peak somatic g_Na around 0.04-0.10 S/cm^2, delayed-rectifier g_K around 0.012 S/cm^2) is the standard starting point, and no published paper reports a factorial (g_Na, g_K) grid for DSGCs. For morphology the asymmetric ON-OFF DSGC dendrite is sharply wired in the null direction through SAC-mediated inhibition, yet global dendrite shape only minimally changes the synaptic map while local electrotonic compartments still matter. For AMPA/GABA balance the canonical counts on a reconstructed mouse DSGC are 177 AMPA and 177...
+
+## Which compartmental simulator should the direction-selective ganglion cell (DSGC) project use as its primary simulator, and which should it keep as a backup?
+ID: dsgc-compartmental-simulator-choice
+Created by: t0003_simulator_library_survey on 2026-04-19
+Confidence: high
+Categories: compartmental-modeling, retinal-ganglion-cell
+
+Use NEURON 8.2.7 as the primary simulator, wrapped with NetPyNE 1.1.1 for parameter sweeps and optimisation. Keep Arbor 0.12.0 as the backup simulator to exploit its 7-12x single-cell speedup whenever the parameter sweep outgrows the NEURON workstation budget. Brian2 and MOOSE are rejected because Brian2&#x27;s own authors describe its multicompartment support as immature and MOOSE shows the weakest maintenance signal of the five candidates.
       </content>
     </section>
     <section id="open-suggestions" source_kind="aggregator">
@@ -193,14 +202,19 @@ The literature structures the five questions around a small set of quantitative 
         <id>S-0002-03</id>
         <id>S-0002-04</id>
         <id>S-0002-09</id>
+        <id>S-0003-01</id>
+        <id>S-0003-02</id>
         <id>S-0002-05</id>
         <id>S-0002-06</id>
         <id>S-0002-07</id>
         <id>S-0002-08</id>
         <id>S-0002-10</id>
+        <id>S-0003-03</id>
+        <id>S-0003-04</id>
+        <id>S-0003-05</id>
       </source_ids>
       <content>
-Open suggestions: 10
+Open suggestions: 15
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -237,6 +251,20 @@ Kind: library
 Source task: t0002_literature_survey_dsgc_compartmental_models
 The survey surfaces four concurrent numerical targets an optimised DSGC model must hit (DSI 0.7-0.85, preferred peak 40-80 Hz, null residual &lt; 10 Hz, HWHM 60-90 deg), and the project has four registered metrics (direction_selectivity_index, tuning_curve_hwhm_deg, tuning_curve_reliability, tuning_curve_rmse). Build a scoring library that takes a simulated angle-to-AP-rate tuning curve plus the canonical target curve from t0004 and returns a single scalar loss combining all four targets with documented weights (e.g., weighted Euclidean distance in normalised space), plus per-metric residuals. This is the tool every downstream optimisation task (Na/K grid, morphology sweep, E/I ratio scan) will...
 
+## Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain on the local workstation
+ID: S-0003-01
+Priority: high
+Kind: library
+Source task: t0003_simulator_library_survey
+Create a task that `uv pip install neuron==8.2.7 netpyne==1.1.1` into the project&#x27;s virtualenv, compiles the bundled Hodgkin-Huxley MOD files with `nrnivmodl`, runs a 1-compartment sanity simulation, and records the installed versions, install-time warnings, and simulation wall-clock in a task asset. Rationale: the t0003 survey selected this toolchain but did not install it; the next simulation task needs a validated environment.
+
+## Port the Poleg-Polsky &amp; Diamond 2016 DSGC ModelDB 189347 into the project as a library asset
+ID: S-0003-02
+Priority: high
+Kind: library
+Source task: t0003_simulator_library_survey
+Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included demo, and register the resulting Python package as a library asset under `assets/library/`. This makes the DSGC reference implementation available to every downstream simulation task without re-download.
+
 ## GABA/AMPA density ratio scan at fixed 3-5x null/preferred IPSC asymmetry
 ID: S-0002-05
 Priority: medium
@@ -271,6 +299,27 @@ Priority: medium
 Kind: dataset
 Source task: t0002_literature_survey_dsgc_compartmental_models
 Park2014 (paper 10.1523_JNEUROSCI.5017-13.2014) and Chen2009 (paper 10.1113_jphysiol.2008.161240) are the two papers that set the mouse ON-OFF DSGC RQ5 targets (DSI 0.6-0.9, peak 40-80 Hz, HWHM 60-90 deg). Park2014 is available open-access. Digitise the published tuning-curve figure(s) into a reusable dataset asset (angle in degrees, spike rate in Hz, error bars, cell counts) so the model can be scored against measured data rather than only against the analytic target in t0004. This gives the project a literature-grounded validation benchmark distinct from the canonical analytic target. Recommended task types: download-dataset, data-analysis.
+
+## Benchmark NEURON vs Arbor on the project&#x27;s actual DSGC morphology
+ID: S-0003-03
+Priority: medium
+Kind: experiment
+Source task: t0003_simulator_library_survey
+Once a DSGC model runs in NEURON (via S-0003-02), port the same morphology and channel set to Arbor 0.12.0 and measure single-cell simulation wall-clock on the project&#x27;s workstation. Third-party benchmarks claim Arbor is 7-12x faster; this task validates that claim on our actual use case and records the real cost of the NMODL `modcc` translation that t0003 flagged as the main Arbor adoption risk.
+
+## Scaffold a NetPyNE `Batch` sweep harness for DSGC parameter studies
+ID: S-0003-04
+Priority: medium
+Kind: library
+Source task: t0003_simulator_library_survey
+Build a small library that wraps NetPyNE&#x27;s `Batch` class with the project&#x27;s preferred sweep axes (morphology scale, channel densities, synaptic weights) and an Optuna backend. Output: an `assets/library/` entry plus a one-page usage example. This unblocks every downstream tuning-curve experiment that needs to run more than one parameter combination.
+
+## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
+ID: S-0003-05
+Priority: low
+Kind: evaluation
+Source task: t0003_simulator_library_survey
+NEURON 9.0.0 and 9.0.1 (Sep-Nov 2025) migrate MOD-file semantics to C++ and add Python 3.14 wheels. The t0003 survey picked 8.2.7 for conservatism. Create a task that (1) installs 9.0.1 into a sandbox venv, (2) rebuilds the Poleg-Polsky 189347 DSGC model from S-0003-02 under 9.0.x, (3) runs the existing DSGC simulations under both 8.2.7 and 9.0.1, and (4) records any behavioural differences. This decides whether the project should upgrade before or after the first round of tuning-curve experiments.
       </content>
     </section>
     <section id="paper-summaries" source_kind="aggregator">

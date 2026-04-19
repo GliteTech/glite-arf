@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-19T01:44:52Z">
+<llm_context_archive type_id="suggestions" generated_at_utc="2026-04-19T08:11:25Z">
   <archive_summary>
     <title>All Suggestions</title>
     <description>Complete suggestion list with full descriptions, priority, and status.</description>
     <section_count>1</section_count>
-    <char_count>11849</char_count>
-    <byte_count>11855</byte_count>
-    <estimated_tokens>2962</estimated_tokens>
+    <char_count>15325</char_count>
+    <byte_count>15331</byte_count>
+    <estimated_tokens>3831</estimated_tokens>
     <compatibility>131k-class, 200k-class, 1M-class</compatibility>
   </archive_summary>
   <included_content>
@@ -27,9 +27,14 @@
         <id>S-0002-08</id>
         <id>S-0002-09</id>
         <id>S-0002-10</id>
+        <id>S-0003-01</id>
+        <id>S-0003-02</id>
+        <id>S-0003-03</id>
+        <id>S-0003-04</id>
+        <id>S-0003-05</id>
       </source_ids>
       <content>
-Suggestions: 10
+Suggestions: 15
 
 ## Factorial (g_Na, g_K) grid search on a DSGC compartmental model to locate the DSI-maximising conductance ridge
 ID: S-0002-01
@@ -149,6 +154,61 @@ Categories: patch-clamp, direction-selectivity, retinal-ganglion-cell
 Date added: 2026-04-19
 
 Park2014 (paper 10.1523_JNEUROSCI.5017-13.2014) and Chen2009 (paper 10.1113_jphysiol.2008.161240) are the two papers that set the mouse ON-OFF DSGC RQ5 targets (DSI 0.6-0.9, peak 40-80 Hz, HWHM 60-90 deg). Park2014 is available open-access. Digitise the published tuning-curve figure(s) into a reusable dataset asset (angle in degrees, spike rate in Hz, error bars, cell counts) so the model can be scored against measured data rather than only against the analytic target in t0004. This gives the project a literature-grounded validation benchmark distinct from the canonical analytic target. Recommended task types: download-dataset, data-analysis.
+
+## Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain on the local workstation
+ID: S-0003-01
+Status: active
+Priority: high
+Kind: library
+Source task: t0003_simulator_library_survey
+Categories: compartmental-modeling, retinal-ganglion-cell
+Date added: 2026-04-19
+
+Create a task that `uv pip install neuron==8.2.7 netpyne==1.1.1` into the project&#x27;s virtualenv, compiles the bundled Hodgkin-Huxley MOD files with `nrnivmodl`, runs a 1-compartment sanity simulation, and records the installed versions, install-time warnings, and simulation wall-clock in a task asset. Rationale: the t0003 survey selected this toolchain but did not install it; the next simulation task needs a validated environment.
+
+## Port the Poleg-Polsky &amp; Diamond 2016 DSGC ModelDB 189347 into the project as a library asset
+ID: S-0003-02
+Status: active
+Priority: high
+Kind: library
+Source task: t0003_simulator_library_survey
+Categories: compartmental-modeling, retinal-ganglion-cell, direction-selectivity
+Date added: 2026-04-19
+
+Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included demo, and register the resulting Python package as a library asset under `assets/library/`. This makes the DSGC reference implementation available to every downstream simulation task without re-download.
+
+## Benchmark NEURON vs Arbor on the project&#x27;s actual DSGC morphology
+ID: S-0003-03
+Status: active
+Priority: medium
+Kind: experiment
+Source task: t0003_simulator_library_survey
+Categories: compartmental-modeling, retinal-ganglion-cell
+Date added: 2026-04-19
+
+Once a DSGC model runs in NEURON (via S-0003-02), port the same morphology and channel set to Arbor 0.12.0 and measure single-cell simulation wall-clock on the project&#x27;s workstation. Third-party benchmarks claim Arbor is 7-12x faster; this task validates that claim on our actual use case and records the real cost of the NMODL `modcc` translation that t0003 flagged as the main Arbor adoption risk.
+
+## Scaffold a NetPyNE `Batch` sweep harness for DSGC parameter studies
+ID: S-0003-04
+Status: active
+Priority: medium
+Kind: library
+Source task: t0003_simulator_library_survey
+Categories: compartmental-modeling, direction-selectivity
+Date added: 2026-04-19
+
+Build a small library that wraps NetPyNE&#x27;s `Batch` class with the project&#x27;s preferred sweep axes (morphology scale, channel densities, synaptic weights) and an Optuna backend. Output: an `assets/library/` entry plus a one-page usage example. This unblocks every downstream tuning-curve experiment that needs to run more than one parameter combination.
+
+## Evaluate NEURON 9.0.x C++ MOD-file migration readiness for project adoption
+ID: S-0003-05
+Status: active
+Priority: low
+Kind: evaluation
+Source task: t0003_simulator_library_survey
+Categories: compartmental-modeling
+Date added: 2026-04-19
+
+NEURON 9.0.0 and 9.0.1 (Sep-Nov 2025) migrate MOD-file semantics to C++ and add Python 3.14 wheels. The t0003 survey picked 8.2.7 for conservatism. Create a task that (1) installs 9.0.1 into a sandbox venv, (2) rebuilds the Poleg-Polsky 189347 DSGC model from S-0003-02 under 9.0.x, (3) runs the existing DSGC simulations under both 8.2.7 and 9.0.1, and (4) records any behavioural differences. This decides whether the project should upgrade before or after the first round of tuning-curve experiments.
       </content>
     </section>
   </sections>

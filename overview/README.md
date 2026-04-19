@@ -6,13 +6,13 @@
   <a href="models/"><img src="https://img.shields.io/badge/Models-0-FF8C00" alt="Models"></a>
   <a href="predictions/"><img src="https://img.shields.io/badge/Predictions-0-9370DB" alt="Predictions"></a>
   <a href="libraries/"><img src="https://img.shields.io/badge/Libraries-0-20B2AA" alt="Libraries"></a>
-  <a href="answers/"><img src="https://img.shields.io/badge/Answers-1-CD853F" alt="Answers"></a>
+  <a href="answers/"><img src="https://img.shields.io/badge/Answers-2-CD853F" alt="Answers"></a>
 </p>
 
 <p align="center">
   <a href="news/"><img src="https://img.shields.io/badge/News-0-FF6347" alt="News"></a>
   <a href="tasks/"><img src="https://img.shields.io/badge/Tasks-5-4682B4" alt="Tasks"></a>
-  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-10-DAA520" alt="Suggestions"></a>
+  <a href="suggestions/"><img src="https://img.shields.io/badge/Suggestions-15-DAA520" alt="Suggestions"></a>
   <a href="llm-context/"><img src="https://img.shields.io/badge/LLM%20Contexts-8-8B4513" alt="LLM Contexts"></a>
   <a href="metrics/"><img src="https://img.shields.io/badge/Metrics-4-708090" alt="Metrics"></a>
   <a href="metrics-results/"><img src="https://img.shields.io/badge/Results-0-DC143C" alt="Results"></a>
@@ -29,11 +29,11 @@
 [voltage-gated-channels](by-category/voltage-gated-channels.md)
 
 **[LLM Contexts](llm-context/README.md)**: [overview](llm-context/project-overview.xml) (3K) |
-[full](llm-context/full.xml) (17K) | [roadmap](llm-context/roadmap.xml) (7K) |
-[results](llm-context/results-deep-dive.xml) (7K) |
+[full](llm-context/full.xml) (25K) | [roadmap](llm-context/roadmap.xml) (7K) |
+[results](llm-context/results-deep-dive.xml) (11K) |
 [assets](llm-context/literature-and-assets.xml) (8K)
 
-*Last updated: 2026-04-19 01:44 UTC*
+*Last updated: 2026-04-19 08:11 UTC*
 
 * **Budget**: **$0** spent of $0
 * **Remaining**: **$0**
@@ -53,11 +53,10 @@ No tasks in progress.
 
 ---
 
-## [Ready to Start (3)](tasks/by-status/not_started.md)
+## [Ready to Start (2)](tasks/by-status/not_started.md)
 
 | # | Task | Description | Date Added |
 |---|------|-------------|------------|
-| 0003 | [Simulator library survey for DSGC compartmental modelling](../overview/tasks/task_pages/t0003_simulator_library_survey.md) | [`description`](../tasks/t0003_simulator_library_survey/task_description.md) | 2026-04-18 |
 | 0004 | [Generate canonical target angle-to-AP-rate tuning curve](../overview/tasks/task_pages/t0004_generate_target_tuning_curve.md) | [`description`](../tasks/t0004_generate_target_tuning_curve/task_description.md) | 2026-04-18 |
 | 0005 | [Download candidate DSGC morphology](../overview/tasks/task_pages/t0005_download_dsgc_morphology.md) | [`description`](../tasks/t0005_download_dsgc_morphology/task_description.md) | 2026-04-18 |
 
@@ -69,16 +68,17 @@ No blocked tasks.
 
 ---
 
-## [Recently Completed (2 total)](tasks/by-status/completed.md)
+## [Recently Completed (3 total)](tasks/by-status/completed.md)
 
 | # | Task | Results | Completed |
 |---|------|---------|-----------|
+| 0003 | [Simulator library survey for DSGC compartmental modelling](../overview/tasks/task_pages/t0003_simulator_library_survey.md) | [`results`](../tasks/t0003_simulator_library_survey/results/results_detailed.md) | 2026-04-19 08:05 |
 | 0002 | [Literature survey: compartmental models of DS retinal ganglion cells](../overview/tasks/task_pages/t0002_literature_survey_dsgc_compartmental_models.md) | [`results`](../tasks/t0002_literature_survey_dsgc_compartmental_models/results/results_detailed.md) | 2026-04-19 01:35 |
 | 0001 | [Brainstorm results session 1](../overview/tasks/task_pages/t0001_brainstorm_results_1.md) | [`results`](../tasks/t0001_brainstorm_results_1/results/results_detailed.md) | 2026-04-18 00:00 |
 
 ---
 
-## [Recent Suggestions (10 open)](suggestions/)
+## [Recent Suggestions (15 open)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
@@ -262,9 +262,11 @@ download-dataset, data-analysis.
 
 </details>
 
+*5 more open suggestions → [open suggestions](suggestions/)*
+
 ---
 
-## [High Priority Suggestions (5)](suggestions/)
+## [High Priority Suggestions (7)](suggestions/)
 
 <details>
 <summary>🧪 <strong>Factorial (g_Na, g_K) grid search on a DSGC compartmental model
@@ -358,9 +360,54 @@ task types: write-library.
 
 </details>
 
+<details>
+<summary>📚 <strong>Install and validate NEURON 8.2.7 + NetPyNE 1.1.1 toolchain on
+the local workstation</strong> (S-0003-01)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+[t0003_simulator_library_survey](../tasks/t0003_simulator_library_survey/)
+
+Create a task that `uv pip install neuron==8.2.7 netpyne==1.1.1` into the project's
+virtualenv, compiles the bundled Hodgkin-Huxley MOD files with `nrnivmodl`, runs a
+1-compartment sanity simulation, and records the installed versions, install-time warnings,
+and simulation wall-clock in a task asset. Rationale: the t0003 survey selected this toolchain
+but did not install it; the next simulation task needs a validated environment.
+
+</details>
+
+<details>
+<summary>📚 <strong>Port the Poleg-Polsky & Diamond 2016 DSGC ModelDB 189347 into
+the project as a library asset</strong> (S-0003-02)</summary>
+
+**Kind**: library | **Priority**: high | **Date**: 2026-04-19 | **Source**:
+[t0003_simulator_library_survey](../tasks/t0003_simulator_library_survey/)
+
+Download ModelDB 189347 (the only public DSGC NEURON model), re-run its included demo, and
+register the resulting Python package as a library asset under `assets/library/`. This makes
+the DSGC reference implementation available to every downstream simulation task without
+re-download.
+
+</details>
+
 ---
 
-## [Recent Answers (1 total)](answers/)
+## [Recent Answers (2 total)](answers/)
+
+<details>
+<summary><strong>Which compartmental simulator should the direction-selective
+ganglion cell (DSGC) project use as its primary simulator, and which should
+it keep as a backup?</strong></summary>
+
+**Confidence**: high | **Date**: 2026-04-19 | **Full answer**:
+[`dsgc-compartmental-simulator-choice`](../tasks/t0003_simulator_library_survey/assets/answer/dsgc-compartmental-simulator-choice/)
+
+Use NEURON 8.2.7 as the primary simulator, wrapped with NetPyNE 1.1.1 for parameter sweeps and
+optimisation. Keep Arbor 0.12.0 as the backup simulator to exploit its 7-12x single-cell
+speedup whenever the parameter sweep outgrows the NEURON workstation budget. Brian2 and MOOSE
+are rejected because Brian2's own authors describe its multicompartment support as immature
+and MOOSE shows the weakest maintenance signal of the five candidates.
+
+</details>
 
 <details>
 <summary><strong>How does the existing peer-reviewed literature on compartmental
