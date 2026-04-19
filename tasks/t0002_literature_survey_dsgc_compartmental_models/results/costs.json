@@ -1,0 +1,5 @@
+{
+  "total_cost_usd": 0,
+  "breakdown": {},
+  "note": "Zero external cost: local Claude Code CLI only, no paid APIs, no remote machines, all paper downloads from open-access mirrors."
+}

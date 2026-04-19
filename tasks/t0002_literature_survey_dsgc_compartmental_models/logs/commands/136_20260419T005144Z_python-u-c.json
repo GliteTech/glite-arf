@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "python -u -c \nimport urllib.request, ssl, os, time\n\noutput_dir = 'tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.04.041/files'\nos.makedirs(output_dir, exist_ok=True)\nout_path = os.path.join(output_dir, 'sethu_2016_ach-gaba.pdf')\n\n# Try the http version of the cell.com direct article PDF\nurls_to_try = [\n    'http://www.cell.com/article/S0896627316301556/pdf',\n    'https://www.cell.com/action/showPdf?pii=S0896-6273(16)30155-6',\n    'https://www.cell.com/neuron/pdfExtended/S0896-6273(16)30155-6',\n]\n\nctx = ssl.create_default_context()\nctx.check_hostname = False\nctx.verify_mode = ssl.CERT_NONE\n\nheaders = {\n    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',\n    'Accept': 'application/pdf,*/*',\n}\n\nfor url in urls_to_try:\n    try:\n        req = urllib.request.Request(url, headers=headers)\n        with urllib.request.urlopen(req, context=ctx, timeout=30) as resp:\n            data = resp.read()\n            ct = resp.headers.get('Content-Type', '')\n            final_url = resp.url\n            print(f'Tried: {url}')\n            print(f'Final URL: {final_url}')\n            print(f'Content-Type: {ct}, Size: {len(data)}')\n            print(f'First bytes: {data[:8]}')\n            if data[:4] == b'%PDF' and len(data) > 10000:\n                with open(out_path, 'wb') as f:\n                    f.write(data)\n                print(f'SUCCESS saved to {out_path}')\n                break\n        time.sleep(1)\n    except Exception as e:\n        print(f'Error {url}: {e}')\n",
+  "exit_code": 0,
+  "duration_seconds": 0.527,
+  "started_at": "2026-04-19T00:51:44Z",
+  "completed_at": "2026-04-19T00:51:44Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "136_20260419T005144Z_python-u-c.stdout.txt",
+  "stderr_file": "136_20260419T005144Z_python-u-c.stderr.txt",
+  "stdout_lines": 3,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0002_literature_survey_dsgc_compartmental_models\tasks\t0002_literature_survey_dsgc_compartmental_models\assets\paper\10.1016_j.neuron.2005.06.036
+
+[31m[1mERRORS:[0m
+[31m  PA-E008 error: Listed file does not exist: 'files/oesch_2005_direction-selective-dendritic-aps.pdf'[0m
+
+[31m[1mFAILED[0m — 1 error(s), 0 warning(s)

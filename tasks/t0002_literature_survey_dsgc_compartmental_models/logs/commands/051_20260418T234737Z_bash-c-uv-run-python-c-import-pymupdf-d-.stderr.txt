@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import pymupdf; d=pymupdf.open("tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1162_neco.1997.9.6.1179/files/hines_1997_neuron-simulation-environment.pdf"); print("PAGES:", len(d)); print(d[0].get_text()[:800])
+                                                                                                                                                                                                                   ~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\AppData\Roaming\uv\python\cpython-3.14-windows-x86_64-none\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\uf6d9' in position 329: character maps to <undefined>

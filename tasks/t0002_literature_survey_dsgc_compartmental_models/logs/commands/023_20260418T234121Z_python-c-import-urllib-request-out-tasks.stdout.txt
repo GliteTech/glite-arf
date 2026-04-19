@@ -1,0 +1,12 @@
+URL: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4795984/pdf/nihms766337.pdf
+Final URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC4795984/pdf/nihms766337.pdf
+Content-Type: text/html; charset=utf-8
+Size: 1817 bytes
+Starts with: b'\n\n\n\n<htm'
+Not PDF, content snippet: b'\n\n\n\n<html>\n  <head>\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Preparing to download ...</title>\n    <style type="text/css">\n      body{font-size:1rem;line-height:1.5;}\n      #main{width:100%;max-width:60em;max-height:100%;left:50%;top:50%;transform:transla'
+URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC4795984/pdf/nihms766337.pdf
+Final URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC4795984/pdf/nihms766337.pdf
+Content-Type: text/html; charset=utf-8
+Size: 1817 bytes
+Starts with: b'\n\n\n\n<htm'
+Not PDF, content snippet: b'\n\n\n\n<html>\n  <head>\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Preparing to download ...</title>\n    <style type="text/css">\n      body{font-size:1rem;line-height:1.5;}\n      #main{width:100%;max-width:60em;max-height:100%;left:50%;top:50%;transform:transla'

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "uv run python -u -m arf.scripts.aggregators.aggregate_categories --format json",
+  "exit_code": 0,
+  "duration_seconds": 0.321,
+  "started_at": "2026-04-18T23:39:09Z",
+  "completed_at": "2026-04-18T23:39:10Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "005_20260418T233909Z_uv-run-python.stdout.txt",
+  "stderr_file": "005_20260418T233909Z_uv-run-python.stderr.txt",
+  "stdout_lines": 60,
+  "stderr_lines": 0,
+  "truncated": false
+}

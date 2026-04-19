@@ -1,0 +1,53 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_nature09818",
+  "doi": "10.1038/nature09818",
+  "title": "Wiring specificity in the direction-selectivity circuit of the retina",
+  "url": "https://www.nature.com/articles/nature09818",
+  "pdf_url": "http://www.nature.com/articles/nature09818.pdf",
+  "date_published": "2011-03-10",
+  "year": 2011,
+  "authors": [
+    {
+      "name": "Kevin L. Briggman",
+      "country": "DE",
+      "institution": "Max Planck Institute for Medical Research",
+      "orcid": null
+    },
+    {
+      "name": "Moritz Helmstaedter",
+      "country": "DE",
+      "institution": "Max Planck Institute for Medical Research",
+      "orcid": null
+    },
+    {
+      "name": "Winfried Denk",
+      "country": "DE",
+      "institution": "Max Planck Institute for Medical Research",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Max Planck Institute for Medical Research",
+      "country": "DE"
+    }
+  ],
+  "journal": "Nature",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "synaptic-integration"
+  ],
+  "abstract": "The proper connectivity between neurons is essential for the implementation of the algorithms used in neural computations, such as the detection of directed motion by the retina. The analysis of neuronal connectivity is possible with electron microscopy, but technological limitations have impeded the acquisition of high-resolution data on a large enough scale. Here we show, using serial block-face electron microscopy and two-photon calcium imaging, that the dendrites of mouse starburst amacrine cells make highly specific synapses with direction-selective ganglion cells depending on the ganglion cell's preferred direction. Our findings indicate that a structural (wiring) asymmetry contributes to the computation of direction selectivity. The nature of this asymmetry supports some models of direction selectivity and rules out others. It also puts constraints on the developmental mechanisms behind the formation of synaptic connections. Our study demonstrates how otherwise intractable neurobiological questions can be addressed by combining functional imaging with the analysis of neuronal connectivity using large-scale electron microscopy.",
+  "citation_key": "Briggman2011",
+  "summary_path": "summary.md",
+  "files": [
+    "files/briggman_2011_sbem.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "date_added": "2026-04-19"
+}

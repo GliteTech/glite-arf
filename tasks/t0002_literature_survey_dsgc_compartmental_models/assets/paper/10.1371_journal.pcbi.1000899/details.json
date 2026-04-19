@@ -1,0 +1,67 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1371_journal.pcbi.1000899",
+  "doi": "10.1371/journal.pcbi.1000899",
+  "title": "Dendritic Spikes Amplify the Synaptic Signal to Enhance Detection of Motion in a Simulation of the Direction-Selective Ganglion Cell",
+  "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000899",
+  "pdf_url": "https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1000899&type=printable",
+  "date_published": "2010-08-19",
+  "year": 2010,
+  "authors": [
+    {
+      "name": "Michael J. Schachter",
+      "country": "US",
+      "institution": "University of Pennsylvania",
+      "orcid": null
+    },
+    {
+      "name": "Nicholas Oesch",
+      "country": "US",
+      "institution": "Oregon Health & Science University",
+      "orcid": "0000-0001-6972-0741"
+    },
+    {
+      "name": "Robert G. Smith",
+      "country": "US",
+      "institution": "University of Pennsylvania",
+      "orcid": null
+    },
+    {
+      "name": "W. Rowland Taylor",
+      "country": "US",
+      "institution": "Oregon Health & Science University",
+      "orcid": "0000-0002-6806-3249"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Pennsylvania",
+      "country": "US"
+    },
+    {
+      "name": "Oregon Health & Science University",
+      "country": "US"
+    }
+  ],
+  "journal": "PLoS Computational Biology",
+  "venue_type": "journal",
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "dendritic-computation",
+    "retinal-ganglion-cell",
+    "voltage-gated-channels",
+    "synaptic-integration",
+    "cable-theory"
+  ],
+  "abstract": "The On-Off direction-selective ganglion cell (DSGC) in mammalian retinas responds most strongly to a stimulus moving in a specific direction. The DSGC initiates spikes in its dendritic tree, which are thought to propagate to the soma with high probability. Both dendritic and somatic spikes in the DSGC display strong directional tuning, whereas somatic PSPs (postsynaptic potentials) are only weakly directional, indicating that spike generation includes marked enhancement of the directional signal. We used a realistic computational model based on anatomical and physiological measurements to determine the source of the enhancement. Our results indicate that the DSGC dendritic tree is partitioned into separate electrotonic regions, each summing its local excitatory and inhibitory synaptic inputs to initiate spikes. Within each local region the local spike threshold nonlinearly amplifies the preferred response over the null response on the basis of PSP amplitude. Using inhibitory conductances previously measured in DSGCs, the simulation results showed that inhibition is only sufficient to prevent spike initiation and cannot affect spike propagation. Therefore, inhibition will only act locally within the dendritic arbor. We identified the role of three mechanisms that generate directional selectivity (DS) in the local dendritic regions. First, a mechanism for DS intrinsic to the dendritic structure of the DSGC enhances DS on the null side of the cell's dendritic tree and weakens it on the preferred side. Second, spatially offset postsynaptic inhibition generates robust DS in the isolated dendritic tips but weak DS near the soma. Third, presynaptic DS is apparently necessary because it is more robust across the dendritic tree. The pre- and postsynaptic mechanisms together can overcome the local intrinsic DS. These local dendritic mechanisms can perform independent nonlinear computations to make a decision, and there could be analogous mechanisms within cortical circuitry.",
+  "citation_key": "Schachter2010",
+  "summary_path": "summary.md",
+  "files": [
+    "files/schachter_2010_dendritic-spikes-dsgc.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "date_added": "2026-04-19"
+}

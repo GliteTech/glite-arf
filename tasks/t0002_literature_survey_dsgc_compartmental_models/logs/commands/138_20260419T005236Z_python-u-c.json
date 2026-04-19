@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "python -u -c \nimport urllib.request, ssl, os\n\nout_path = 'tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.04.041/files/sethu_2016_ach-gaba.pdf'\nos.makedirs(os.path.dirname(out_path), exist_ok=True)\n\n# Try Internet Archive / Wayback Machine for a cached version\nurls_to_try = [\n    'https://web.archive.org/web/2016/https://www.cell.com/article/S0896627316301556/pdf',\n    'https://api.fatcat.wiki/v0/file/lookup?doi=10.1016%2Fj.neuron.2016.04.041',\n]\n\nctx = ssl.create_default_context()\nctx.check_hostname = False\nctx.verify_mode = ssl.CERT_NONE\n\nheaders = {'User-Agent': 'research-bot/1.0 mailto:a.nikolaev@sheffield.ac.uk'}\n\nfor url in urls_to_try:\n    try:\n        req = urllib.request.Request(url, headers=headers)\n        with urllib.request.urlopen(req, context=ctx, timeout=30) as resp:\n            data = resp.read()\n            ct = resp.headers.get('Content-Type', '')\n            print(f'URL: {url[:80]}')\n            print(f'Status: {resp.status}, Content-Type: {ct}, Size: {len(data)}')\n            if data[:4] == b'%PDF' and len(data) > 10000:\n                with open(out_path, 'wb') as f:\n                    f.write(data)\n                print('SUCCESS')\n                break\n            else:\n                print(f'Not PDF. First 200: {data[:200]}')\n    except Exception as e:\n        print(f'Error {url[:80]}: {e}')\n",
+  "exit_code": 0,
+  "duration_seconds": 24.804,
+  "started_at": "2026-04-19T00:52:36Z",
+  "completed_at": "2026-04-19T00:53:01Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "138_20260419T005236Z_python-u-c.stdout.txt",
+  "stderr_file": "138_20260419T005236Z_python-u-c.stderr.txt",
+  "stdout_lines": 4,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,10 @@
+=== https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.16.4658&rep=rep1&type=pdf ===
+Permissions-Policy: interest-cohort=()
+
+HTTP:404 CT:text/html SIZE:0
+=== https://web.archive.org/web/2021/https://www.neuron.yale.edu/neuron/static/papers/nc97.pdf ===
+Permissions-Policy: interest-cohort=()
+
+HTTP:404 CT:text/html SIZE:0
+=== https://www.neuron.yale.edu/neuron/static/papers/NeuralComputation-9-1179-1209.pdf ===
+HTTP:000 CT: SIZE:0

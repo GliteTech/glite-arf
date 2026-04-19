@@ -1,0 +1,6 @@
+Error for https://www.cell.com/article/S0896627316301556/pdf: HTTP Error 403: Forbidden
+URL: https://www.sciencedirect.com/science/article/pii/S0896627316301556/pdf
+Status: 200
+Content-Type: text/html
+Size: 52767 bytes
+Not a valid PDF. First bytes: b'<!doctype html>\n<htm'

@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import pymupdf; d=pymupdf.open("/tmp/nsim_wb.pdf"); print(d[0].get_text()[:500])
+                      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0002_literature_survey_dsgc_compartmental_models\.venv\Lib\site-packages\pymupdf\__init__.py", line 2990, in __init__
+    raise FileNotFoundError(f"no such file: '{filename}'")
+pymupdf.FileNotFoundError: no such file: '/tmp/nsim_wb.pdf'

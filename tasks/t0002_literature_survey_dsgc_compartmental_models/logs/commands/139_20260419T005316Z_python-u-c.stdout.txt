@@ -1,0 +1,8 @@
+Zenodo hits: 25
+STEAM INCLUSIVO E INNOVACIÓN CURRICULAR: PROTOTIPADO DE VEHÍCULOS ELÉCTRICOS COMO ESTRATEGIA EDUCATIVA INTERDISCIPLINAR
+Dataset for the Intronic Signaling Pathways System (ISPS): Structural and Interaction-Based Analysis of Intronic RNA Across Inflammatory Genes
+Analysis of Interrelationships of the Components of the Digital Economy and Society Index Based on the Cluster Dendrogram
+CrossRef links: 2
+{'URL': 'https://api.elsevier.com/content/article/PII:S0896627316301556?httpAccept=text/xml', 'content-type': 'text/xml', 'content-version': 'vor', 'intended-application': 'text-mining'}
+{'URL': 'https://api.elsevier.com/content/article/PII:S0896627316301556?httpAccept=text/plain', 'content-type': 'text/plain', 'content-version': 'vor', 'intended-application': 'text-mining'}
+Relations: {'has-review': [{'id-type': 'doi', 'id': '10.3410/f.726388199.793519810', 'asserted-by': 'object'}]}

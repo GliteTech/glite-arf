@@ -1,0 +1,10 @@
+pymupdf install: 1
+
+error: externally-managed-environment
+
+This environment is externally managed
+
+This Python installation is managed by uv and should not be modified.
+
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.

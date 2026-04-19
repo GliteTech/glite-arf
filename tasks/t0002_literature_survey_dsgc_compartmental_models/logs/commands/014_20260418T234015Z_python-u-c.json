@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "python -u -c \nimport urllib.request\nimport os\n\noutput_dir = 'tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.1965.sp007638/files'\nos.makedirs(output_dir, exist_ok=True)\n\nurls_to_try = [\n    ('https://cdn.ncbi.nlm.nih.gov/pmc/articles/instance/1357309/pdf/jphysiol01176-0094.pdf', 'cdn_ncbi'),\n    ('https://pmc.ncbi.nlm.nih.gov/articles/PMC1357309/pdf/', 'pmc_pdf_dir'),\n    ('https://www.cns.nyu.edu/~tony/vns/readings/barlow-levick-1965.pdf', 'nyu'),\n    ('https://www.hms.harvard.edu/bss/neuro/bornlab/nb204/papers2006/barlow-levick-1965.pdf', 'harvard'),\n]\n\noutput_path = os.path.join(output_dir, 'barlow_1965_ds-units-rabbit-retina.pdf')\n\nfor url, source in urls_to_try:\n    try:\n        print(f'Trying {source}: {url}')\n        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (compatible; ARF/1.0; mailto:a.nikolaev@sheffield.ac.uk)'})\n        with urllib.request.urlopen(req, timeout=30) as response:\n            data = response.read()\n            content_type = response.headers.get('Content-Type', '')\n            print(f'  Content-Type: {content_type}, Size: {len(data)} bytes')\n            if data[:5] == b'%PDF-' and len(data) > 10000:\n                with open(output_path, 'wb') as f:\n                    f.write(data)\n                print(f'  SUCCESS: saved to {output_path}')\n                break\n            else:\n                print(f'  SKIP: not a valid PDF (starts with {data[:10]})')\n    except Exception as e:\n        print(f'  FAIL: {e}')\n\nif os.path.exists(output_path):\n    print(f'File exists at {output_path}, size={os.path.getsize(output_path)}')\nelse:\n    print('No PDF downloaded.')\n",
+  "exit_code": 0,
+  "duration_seconds": 2.498,
+  "started_at": "2026-04-18T23:40:15Z",
+  "completed_at": "2026-04-18T23:40:17Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "014_20260418T234015Z_python-u-c.stdout.txt",
+  "stderr_file": "014_20260418T234015Z_python-u-c.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 0,
+  "truncated": false
+}

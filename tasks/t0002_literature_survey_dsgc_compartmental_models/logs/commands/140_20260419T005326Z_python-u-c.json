@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "python -u -c \nimport urllib.request, ssl, os\n\nctx = ssl.create_default_context()\nctx.check_hostname = False\nctx.verify_mode = ssl.CERT_NONE\nheaders = {'User-Agent': 'research-bot/1.0 mailto:a.nikolaev@sheffield.ac.uk', 'Accept': 'text/plain'}\n\nurl = 'https://api.elsevier.com/content/article/PII:S0896627316301556?httpAccept=text/plain'\ntry:\n    req = urllib.request.Request(url, headers=headers)\n    with urllib.request.urlopen(req, context=ctx, timeout=15) as resp:\n        data = resp.read()\n        print(f'Status: {resp.status}, CT: {resp.headers.get(\"Content-Type\")}, Size: {len(data)}')\n        print(f'First 500: {data[:500]}')\nexcept Exception as e:\n    print(f'Error: {e}')\n",
+  "exit_code": 0,
+  "duration_seconds": 1.695,
+  "started_at": "2026-04-19T00:53:26Z",
+  "completed_at": "2026-04-19T00:53:28Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "140_20260419T005326Z_python-u-c.stdout.txt",
+  "stderr_file": "140_20260419T005326Z_python-u-c.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

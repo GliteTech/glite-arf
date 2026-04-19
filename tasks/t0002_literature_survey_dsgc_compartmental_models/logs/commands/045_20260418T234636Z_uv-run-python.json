@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "uv run python -u -c \nimport textwrap, os\np = 'tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.1965.sp007638/summary.md'\nlines = [\n'---',\n'spec_version: \"3\"',\n'paper_id: \"10.1113_jphysiol.1965.sp007638\"',\n'citation_key: \"Barlow1965\"',\n'summarized_by_task: \"t0002_literature_survey_dsgc_compartmental_models\"',\n'date_summarized: \"2026-04-19\"',\n'---',\n'',\n'# The Mechanism of Directionally Selective Units in Rabbit'\\''s Retina',\n]\nwith open(p, 'w', encoding='utf-8') as f:\n    f.write('\\n'.join(lines))\nprint('frontmatter written, size=', os.path.getsize(p))\n",
+  "exit_code": 1,
+  "duration_seconds": 0.254,
+  "started_at": "2026-04-18T23:46:36Z",
+  "completed_at": "2026-04-18T23:46:36Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "045_20260418T234636Z_uv-run-python.stdout.txt",
+  "stderr_file": "045_20260418T234636Z_uv-run-python.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 4,
+  "truncated": false
+}

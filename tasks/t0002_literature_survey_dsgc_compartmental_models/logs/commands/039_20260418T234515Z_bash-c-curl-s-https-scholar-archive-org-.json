@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "bash -c curl -s \"https://scholar.archive.org/search?q=%22The+NEURON+Simulation+Environment%22+Hines+Carnevale+1997&format=json\" | head -c 3000",
+  "exit_code": 0,
+  "duration_seconds": 21.897,
+  "started_at": "2026-04-18T23:45:15Z",
+  "completed_at": "2026-04-18T23:45:37Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "039_20260418T234515Z_bash-c-curl-s-https-scholar-archive-org-.stdout.txt",
+  "stderr_file": "039_20260418T234515Z_bash-c-curl-s-https-scholar-archive-org-.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

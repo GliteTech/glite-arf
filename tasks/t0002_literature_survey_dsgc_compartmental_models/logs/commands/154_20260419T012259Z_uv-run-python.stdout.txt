@@ -1,0 +1,17 @@
+answer-question
+baseline-evaluation
+brainstorming
+build-model
+code-reproduction
+comparative-analysis
+correction
+data-analysis
+deduplication
+download-dataset
+download-paper
+experiment-run
+feature-engineering
+infrastructure-setup
+internet-research
+literature-survey
+write-library

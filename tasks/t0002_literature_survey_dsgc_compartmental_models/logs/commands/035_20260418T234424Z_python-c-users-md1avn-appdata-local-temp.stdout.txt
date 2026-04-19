@@ -1,0 +1,29 @@
+CORE results: 4
+  id: 8792404
+  title: Computational Properties of Cerebellar Nucleus Neurons: Effects of Stochastic Io
+  downloadUrl: https://core.ac.uk/download/305118071.pdf
+  link: {'type': 'download', 'url': 'https://core.ac.uk/download/305118071.pdf'}
+  link: {'type': 'reader', 'url': 'https://core.ac.uk/reader/305118071'}
+  link: {'type': 'thumbnail_m', 'url': 'https://core.ac.uk/image/305118071/large'}
+  link: {'type': 'thumbnail_l', 'url': 'https://core.ac.uk/image/305118071/large'}
+  link: {'type': 'display', 'url': 'https://core.ac.uk/works/8792404'}
+  id: 174774588
+  title: Enhancing visual signal fidelity in a mouse model of retinitis pigmentosa
+  downloadUrl: https://core.ac.uk/download/651354764.pdf
+  link: {'type': 'download', 'url': 'https://core.ac.uk/download/651354764.pdf'}
+  link: {'type': 'reader', 'url': 'https://core.ac.uk/reader/651354764'}
+  link: {'type': 'thumbnail_m', 'url': 'https://core.ac.uk/image/651354764/large'}
+  link: {'type': 'thumbnail_l', 'url': 'https://core.ac.uk/image/651354764/large'}
+  link: {'type': 'display', 'url': 'https://core.ac.uk/works/174774588'}
+  id: 192304752
+  title: Enhancing visual signal fidelity in a mouse model of retinitis pigmentosa
+  downloadUrl: https://core.ac.uk/download/651557750.pdf
+  link: {'type': 'download', 'url': 'https://core.ac.uk/download/651557750.pdf'}
+  link: {'type': 'reader', 'url': 'https://core.ac.uk/reader/651557750'}
+  link: {'type': 'thumbnail_m', 'url': 'https://core.ac.uk/image/651557750/large'}
+  link: {'type': 'thumbnail_l', 'url': 'https://core.ac.uk/image/651557750/large'}
+  link: {'type': 'display', 'url': 'https://core.ac.uk/works/192304752'}
+  id: 72793799
+  title: NMDA Receptors Multiplicatively Scale Visual Signals and Enhance Directional Mot
+  downloadUrl:
+  link: {'type': 'display', 'url': 'https://core.ac.uk/works/72793799'}

@@ -1,0 +1,3 @@
+Error http://www.cell.com/article/S0896627316301556/pdf: HTTP Error 403: Forbidden
+Error https://www.cell.com/action/showPdf?pii=S0896-6273(16)30155-6: HTTP Error 403: Forbidden
+Error https://www.cell.com/neuron/pdfExtended/S0896-6273(16)30155-6: HTTP Error 403: Forbidden

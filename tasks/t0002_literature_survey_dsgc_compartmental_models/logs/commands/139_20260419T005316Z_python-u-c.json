@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "python -u -c \nimport urllib.request, ssl, os, json\n\n# Check Zenodo and CORE for this paper\nctx = ssl.create_default_context()\nctx.check_hostname = False\nctx.verify_mode = ssl.CERT_NONE\nheaders = {'User-Agent': 'research-bot/1.0 mailto:a.nikolaev@sheffield.ac.uk'}\n\n# Zenodo search\nurl = 'https://zenodo.org/api/records?q=sethuramanujam+acetylcholine+GABA+direction+coding+retina&sort=mostrecent'\ntry:\n    req = urllib.request.Request(url, headers=headers)\n    with urllib.request.urlopen(req, context=ctx, timeout=15) as resp:\n        data = json.loads(resp.read())\n        hits = data.get('hits', {}).get('hits', [])\n        print(f'Zenodo hits: {len(hits)}')\n        for h in hits[:3]:\n            print(h.get('metadata', {}).get('title', 'no title'))\nexcept Exception as e:\n    print(f'Zenodo error: {e}')\n\n# Check crossref TDM links\nurl2 = 'https://api.crossref.org/works/10.1016/j.neuron.2016.04.041?mailto=a.nikolaev@sheffield.ac.uk'\ntry:\n    req = urllib.request.Request(url2, headers=headers)\n    with urllib.request.urlopen(req, context=ctx, timeout=15) as resp:\n        data = json.loads(resp.read())\n        msg = data.get('message', {})\n        links = msg.get('link', [])\n        print(f'CrossRef links: {len(links)}')\n        for l in links:\n            print(l)\n        relation = msg.get('relation', {})\n        print(f'Relations: {relation}')\nexcept Exception as e:\n    print(f'CrossRef error: {e}')\n",
+  "exit_code": 0,
+  "duration_seconds": 2.053,
+  "started_at": "2026-04-19T00:53:16Z",
+  "completed_at": "2026-04-19T00:53:18Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "139_20260419T005316Z_python-u-c.stdout.txt",
+  "stderr_file": "139_20260419T005316Z_python-u-c.stderr.txt",
+  "stdout_lines": 8,
+  "stderr_lines": 0,
+  "truncated": false
+}

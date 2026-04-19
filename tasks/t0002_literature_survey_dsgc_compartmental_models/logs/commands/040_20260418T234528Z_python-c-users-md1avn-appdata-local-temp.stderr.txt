@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "C:\Users\md1avn\AppData\Local\Temp\extract_text2.py", line 17, in <module>
+    with open('/tmp/paper_text.txt', 'w', encoding='utf-8') as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/paper_text.txt'

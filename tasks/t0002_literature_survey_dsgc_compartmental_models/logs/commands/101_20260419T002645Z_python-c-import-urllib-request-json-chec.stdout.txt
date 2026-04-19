@@ -1,0 +1,39 @@
+OA info: {
+  "is_oa": true,
+  "oa_status": "green",
+  "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/2669973",
+  "any_repository_has_fulltext": true
+}
+Best OA location: {
+  "id": "pmh:oai:pubmedcentral.nih.gov:2669973",
+  "is_oa": true,
+  "landing_page_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/2669973",
+  "pdf_url": null,
+  "source": {
+    "id": "https://openalex.org/S2764455111",
+    "display_name": "PubMed Central",
+    "issn_l": null,
+    "issn": null,
+    "is_oa": false,
+    "is_in_doaj": false,
+    "is_core": false,
+    "host_organization": "https://openalex.org/I1299303238",
+    "host_organization_name": "National Institutes of Health",
+    "host_organization_lineage": [
+      "https://openalex.org/I1299303238"
+    ],
+    "host_organization_lineage_names": [],
+    "type": "repository"
+  },
+  "license": null,
+  "license_id": null,
+  "version": "submittedVersion",
+  "is_accepted": false,
+  "is_published": false,
+  "raw_source_name": "J Physiol",
+  "raw_type": "Text"
+}
+Locations (3):
+  None https://doi.org/10.1113/jphysiol.2008.161240 The Journal of Physiology
+  None https://pubmed.ncbi.nlm.nih.gov/19103682 PubMed
+  None https://www.ncbi.nlm.nih.gov/pmc/articles/2669973 PubMed Central

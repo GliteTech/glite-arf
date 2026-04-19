@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "python -u -c \nimport urllib.request, ssl, os\n\noutput_dir = 'tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.04.041/files'\nos.makedirs(output_dir, exist_ok=True)\nout_path = os.path.join(output_dir, 'sethu_2016_ach-gaba.pdf')\n\nurls = [\n    'https://www.cell.com/article/S0896627316301556/pdf',\n    'https://www.sciencedirect.com/science/article/pii/S0896627316301556/pdf',\n]\n\nctx = ssl.create_default_context()\nctx.check_hostname = False\nctx.verify_mode = ssl.CERT_NONE\n\nheaders = {\n    'User-Agent': 'Mozilla/5.0 (compatible; research-downloader/1.0; mailto:a.nikolaev@sheffield.ac.uk)',\n    'Accept': 'application/pdf,*/*',\n}\n\nfor url in urls:\n    try:\n        req = urllib.request.Request(url, headers=headers)\n        with urllib.request.urlopen(req, context=ctx, timeout=30) as resp:\n            data = resp.read()\n            ct = resp.headers.get('Content-Type', '')\n            print(f'URL: {url}')\n            print(f'Status: {resp.status}')\n            print(f'Content-Type: {ct}')\n            print(f'Size: {len(data)} bytes')\n            if data[:4] == b'%PDF' and len(data) > 10000:\n                with open(out_path, 'wb') as f:\n                    f.write(data)\n                print(f'Saved to {out_path}')\n                break\n            else:\n                print(f'Not a valid PDF. First bytes: {data[:20]}')\n    except Exception as e:\n        print(f'Error for {url}: {e}')\n",
+  "exit_code": 0,
+  "duration_seconds": 1.47,
+  "started_at": "2026-04-19T00:50:58Z",
+  "completed_at": "2026-04-19T00:50:59Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "130_20260419T005058Z_python-u-c.stdout.txt",
+  "stderr_file": "130_20260419T005058Z_python-u-c.stderr.txt",
+  "stdout_lines": 6,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,4 @@
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0002_literature_survey_dsgc_compartmental_models\write_summary_temp.py", line 6
+    a("spec_version: \\"3\\"")
+                          ^
+SyntaxError: unexpected character after line continuation character

@@ -1,0 +1,8 @@
+[task/t0002_literature_survey_dsgc_compartmental_models 526ee74] t0002_literature_survey_dsgc_compartmental_models [results]: Write results files
+ 7 files changed, 249 insertions(+), 3 deletions(-)
+ create mode 100644 tasks/t0002_literature_survey_dsgc_compartmental_models/logs/steps/012_results/step_log.md
+ create mode 100644 tasks/t0002_literature_survey_dsgc_compartmental_models/results/costs.json
+ create mode 100644 tasks/t0002_literature_survey_dsgc_compartmental_models/results/metrics.json
+ create mode 100644 tasks/t0002_literature_survey_dsgc_compartmental_models/results/remote_machines_used.json
+ create mode 100644 tasks/t0002_literature_survey_dsgc_compartmental_models/results/results_detailed.md
+ create mode 100644 tasks/t0002_literature_survey_dsgc_compartmental_models/results/results_summary.md

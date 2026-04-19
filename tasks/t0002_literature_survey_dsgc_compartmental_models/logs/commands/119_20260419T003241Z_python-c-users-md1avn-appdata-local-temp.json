@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "python C:/Users/md1avn/AppData/Local/Temp/write_summary.py",
+  "exit_code": 0,
+  "duration_seconds": 0.06,
+  "started_at": "2026-04-19T00:32:41Z",
+  "completed_at": "2026-04-19T00:32:41Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "119_20260419T003241Z_python-c-users-md1avn-appdata-local-temp.stdout.txt",
+  "stderr_file": "119_20260419T003241Z_python-c-users-md1avn-appdata-local-temp.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 0,
+  "truncated": false
+}

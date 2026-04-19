@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "python -u -c \nimport urllib.request, ssl\n\nctx = ssl.create_default_context()\nctx.check_hostname = False\nctx.verify_mode = ssl.CERT_NONE\n\nreq = urllib.request.Request(\n    'https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4959608/fullTextXML',\n    headers={'User-Agent': 'research-tool mailto:a.nikolaev@sheffield.ac.uk', 'Accept': 'application/xml'}\n)\nwith urllib.request.urlopen(req, context=ctx, timeout=30) as r:\n    content = r.read()\n\noutpath = 'tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1038_nature18609/files/ding_2016_ds-network.xml'\nwith open(outpath, 'wb') as f:\n    f.write(content)\nprint(f'Saved {len(content)} bytes to {outpath}')\n",
+  "exit_code": 0,
+  "duration_seconds": 0.379,
+  "started_at": "2026-04-19T00:52:59Z",
+  "completed_at": "2026-04-19T00:53:00Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "138_20260419T005259Z_python-u-c.stdout.txt",
+  "stderr_file": "138_20260419T005259Z_python-u-c.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

@@ -1,0 +1,4 @@
+Downloaded: tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1002_cne.22678/files/hoshi_2011_on-dsgc.pdf
+Size: 1817 bytes (1.8 KB)
+PDF header: b'\n\n\n\n<'
+Valid PDF: False

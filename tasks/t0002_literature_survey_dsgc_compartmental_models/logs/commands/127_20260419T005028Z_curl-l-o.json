@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "curl -L -o tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1038_nature18609/files/ding_2016_ds-network.pdf https://pmc.ncbi.nlm.nih.gov/articles/PMC4959608/pdf/nihms802146.pdf",
+  "exit_code": 0,
+  "duration_seconds": 0.362,
+  "started_at": "2026-04-19T00:50:28Z",
+  "completed_at": "2026-04-19T00:50:28Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "127_20260419T005028Z_curl-l-o.stdout.txt",
+  "stderr_file": "127_20260419T005028Z_curl-l-o.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 8,
+  "truncated": false
+}

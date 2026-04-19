@@ -1,0 +1,4 @@
+usage: python.exe -m arf.scripts.verificators.verify_step [-h]
+                                                          [--step-number STEP_NUMBER]
+                                                          task_id [step_id]
+python.exe -m arf.scripts.verificators.verify_step: error: Provide step_id or --step-number

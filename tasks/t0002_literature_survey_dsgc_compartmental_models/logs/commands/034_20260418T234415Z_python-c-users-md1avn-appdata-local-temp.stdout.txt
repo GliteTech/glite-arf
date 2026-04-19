@@ -1,0 +1,2 @@
+URL https://core.ac.uk/download/305118071.pdf -> Error: HTTP Error 404: Not Found
+URL https://core.ac.uk/download/651354764.pdf -> Error: HTTP Error 404: Not Found

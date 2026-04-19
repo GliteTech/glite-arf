@@ -1,0 +1,4 @@
+OK 200 text/html; charset=utf-8 | b'\n\n\n\n<html>\n  <head>\n    <meta name="view' | https://pmc.ncbi.nlm.nih.gov/articles/PMC2669973/pdf/
+OK 200 text/html; charset=utf-8 | b'\n\n\n\n<html>\n  <head>\n    <meta name="view' | https://pmc.ncbi.nlm.nih.gov/articles/instance/2669973/pdf/tjp0587-0819.pdf
+OK 200 text/html; charset=utf-8 | b'\n\n\n\n<html>\n  <head>\n    <meta name="view' | https://www.ncbi.nlm.nih.gov/pmc/articles/instance/2669973/pdf/tjp0587-0819.pdf
+OK 200 text/html | b'[Error] : No result can be found. <BR><H' | https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_xml/PMC2669973/unicode

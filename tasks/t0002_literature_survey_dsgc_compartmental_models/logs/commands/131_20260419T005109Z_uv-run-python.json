@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "uv run python -c \nimport urllib.request\nimport os\n\nurl = 'https://pmc.ncbi.nlm.nih.gov/articles/PMC3265025/pdf/nihms349434.pdf'\nout_path = 'tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1002_cne.22678/files/hoshi_2011_on-dsgc.pdf'\n\nheaders = {\n    'User-Agent': 'Mozilla/5.0 (compatible; research-bot/1.0; mailto:a.nikolaev@sheffield.ac.uk)'\n}\n\nreq = urllib.request.Request(url, headers=headers)\nwith urllib.request.urlopen(req, timeout=30) as response:\n    data = response.read()\n\nwith open(out_path, 'wb') as f:\n    f.write(data)\n\nsize = os.path.getsize(out_path)\nprint(f'Downloaded: {out_path}')\nprint(f'Size: {size} bytes ({size/1024:.1f} KB)')\n\n# Check PDF magic bytes\nwith open(out_path, 'rb') as f:\n    header = f.read(5)\nprint(f'PDF header: {header}')\nprint(f'Valid PDF: {header == b\"%PDF-\"}')\n",
+  "exit_code": 0,
+  "duration_seconds": 0.604,
+  "started_at": "2026-04-19T00:51:09Z",
+  "completed_at": "2026-04-19T00:51:10Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "131_20260419T005109Z_uv-run-python.stdout.txt",
+  "stderr_file": "131_20260419T005109Z_uv-run-python.stderr.txt",
+  "stdout_lines": 4,
+  "stderr_lines": 0,
+  "truncated": false
+}

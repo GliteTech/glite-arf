@@ -1,0 +1,6 @@
+Article page status: 200
+Cookies: [Cookie(version=0, name='cloudpmc-viewer-csrftoken', value='pbjw1V01PhHat9olQzYYf5PkBemmbaoQ', port=None, port_specified=False, domain='pmc.ncbi.nlm.nih.gov', domain_specified=False, domain_initial_dot=False, path='/', path_specified=True, secure=False, expires=1808005334, discard=False, comment=None, comment_url=None, rest={'SameSite': 'Lax'}, rfc2109=False), Cookie(version=0, name='ncbi_sid', value='4F6D16C79E4138B3_11507SID', port=None, port_specified=False, domain='.nih.gov', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=1808091734, discard=False, comment=None, comment_url=None, rest={}, rfc2109=False)]
+PDF response Content-Type: text/html; charset=utf-8
+Size: 1817
+Starts: b'\n\n\n\n<htm'
+Not PDF: b'\n\n\n\n<html>\n  <head>\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Preparing to download ...</title>\n    <style type="text/css">\n      body{font-size:1rem;line-height:1.5;}\n      #main{width:100%;max-width:60em;max-height:100%;left:50%;top:50%;transform:transla'

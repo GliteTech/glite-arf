@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "python -c \nimport urllib.request, os\n\nurl = 'https://pmc.ncbi.nlm.nih.gov/pdf/tjp0587-0819.pdf'\nout = 'tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.2008.161240/files/chen_2009_dsgc-tuning.pdf'\n\nreq = urllib.request.Request(url, headers={\n    'User-Agent': 'Mozilla/5.0 (research; mailto:a.nikolaev@sheffield.ac.uk)',\n    'Accept': 'application/pdf,*/*',\n})\nwith urllib.request.urlopen(req, timeout=60) as resp, open(out, 'wb') as f:\n    data = resp.read()\n    f.write(data)\n\nsize = os.path.getsize(out)\nprint(f'Downloaded: {out}')\nprint(f'Size: {size:,} bytes ({size//1024} KB)')\nwith open(out, 'rb') as f:\n    magic = f.read(4)\nprint(f'Magic bytes: {magic}')\nprint('Valid PDF:', magic == b\"%PDF\")\n",
+  "exit_code": 1,
+  "duration_seconds": 0.352,
+  "started_at": "2026-04-19T00:24:49Z",
+  "completed_at": "2026-04-19T00:24:49Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "093_20260419T002449Z_python-c-import-urllib-request-os-url-ht.stdout.txt",
+  "stderr_file": "093_20260419T002449Z_python-c-import-urllib-request-os-url-ht.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 20,
+  "truncated": false
+}

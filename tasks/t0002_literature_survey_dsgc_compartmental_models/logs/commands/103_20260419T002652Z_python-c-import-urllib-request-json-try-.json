@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "python -c \nimport urllib.request, json\n\n# Try PMC efetch to get full text XML\nurl = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=PMC2669973&rettype=full&retmode=xml'\nreq = urllib.request.Request(url, headers={'User-Agent': 'research bot mailto:a.nikolaev@sheffield.ac.uk'})\ntry:\n    with urllib.request.urlopen(req, timeout=30) as resp:\n        data = resp.read()\n        print(f'Size: {len(data):,} bytes')\n        print(f'Content-Type: {resp.headers.get(\"Content-Type\",\"\")}')\n        print(f'First 300 bytes: {data[:300]}')\nexcept Exception as e:\n    print(f'Error: {e}')\n",
+  "exit_code": 0,
+  "duration_seconds": 0.595,
+  "started_at": "2026-04-19T00:26:52Z",
+  "completed_at": "2026-04-19T00:26:53Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "103_20260419T002652Z_python-c-import-urllib-request-json-try-.stdout.txt",
+  "stderr_file": "103_20260419T002652Z_python-c-import-urllib-request-json-try-.stderr.txt",
+  "stdout_lines": 3,
+  "stderr_lines": 0,
+  "truncated": false
+}

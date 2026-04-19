@@ -1,0 +1,62 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1113_jphysiol.2010.192716",
+  "doi": "10.1113/jphysiol.2010.192716",
+  "title": "Synaptic inputs and timing underlying the velocity tuning of direction-selective ganglion cells in rabbit retina",
+  "url": "https://doi.org/10.1113/jphysiol.2010.192716",
+  "pdf_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1113/jphysiol.2010.192716",
+  "date_published": "2010-07-13",
+  "year": 2010,
+  "authors": [
+    {
+      "name": "Benjamin Sivyer",
+      "country": "AU",
+      "institution": "University of Queensland",
+      "orcid": "0000-0002-4537-5768"
+    },
+    {
+      "name": "Michiel Van Wyk",
+      "country": "AU",
+      "institution": "University of Queensland",
+      "orcid": "0000-0003-3055-9721"
+    },
+    {
+      "name": "David I. Vaney",
+      "country": "AU",
+      "institution": "University of Queensland",
+      "orcid": "0000-0001-9830-4202"
+    },
+    {
+      "name": "W. Rowland Taylor",
+      "country": "US",
+      "institution": "Oregon Health & Science University",
+      "orcid": "0000-0002-6806-3249"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Queensland",
+      "country": "AU"
+    },
+    {
+      "name": "Oregon Health & Science University",
+      "country": "US"
+    }
+  ],
+  "journal": "The Journal of Physiology",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "synaptic-integration",
+    "patch-clamp"
+  ],
+  "abstract": "There are two types of direction-selective ganglion cells (DSGCs) identified in the rabbit retina, which can be readily distinguished both morphologically and physiologically. The well characterized ON-OFF DSGCs respond to a broad range of image velocities whereas the less common ON DSGCs are tuned to slower image velocities. This study examined how the synaptic inputs shape the velocity tuning of DSGCs in an isolated preparation of the rabbit retina. The receptive-field properties were mapped by extracellular spike recordings and compared with the light-evoked excitatory and inhibitory synaptic conductances that were measured under voltage-clamp. The synaptic mechanisms underlying the generation of direction selectivity appear to be similar in both cell types in that preferred-direction image motion elicits a greater excitatory input and null-direction image motion elicits a greater inhibitory input. To examine the temporal tuning of the DSGCs, the cells were stimulated with either a grating drifted over the receptive-field centre at a range of velocities or with a light spot flickered at different temporal frequencies. Whereas the excitatory and inhibitory inputs to the ON-OFF DSGCs are relatively constant over a wide range of temporal frequencies, the ON DSGCs receive less excitation and more inhibition at higher temporal frequencies. Moreover, transient inhibition precedes sustained excitation in the ON DSGCs, leading to slowly activating, sustained spike responses. Consequently, at higher temporal frequencies, weaker excitation combines with fast-rising inhibition resulting in lower spike output.",
+  "citation_key": "Sivyer2010",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "Paper is bronze open access (publisher-hosted free reading) but every direct PDF URL returned an interstitial challenge page rather than the PDF bytes. Attempted sources: (1) PMC PDF via pmc.ncbi.nlm.nih.gov/articles/PMC2976019/pdf/tjp0588-3243.pdf returned a proof-of-work JavaScript challenge page requiring the cloudpmc-viewer-pow cookie; (2) same URL under www.ncbi.nlm.nih.gov returned the same PoW interstitial; (3) pmc.ncbi.nlm.nih.gov/articles/instance/2976019/pdf/... also returned the PoW challenge; (4) europepmc.org/articles/PMC2976019/pdf returned HTTP 403; (5) europepmc.org/articles/PMC2976019?pdf=render returned a JSON error 'Failed to retrieve PDF for pmcid: PMC2976019'; (6) europepmc.org/backend/ptpmcrender.fcgi?accid=PMC2976019&blobtype=pdf returned an empty reply (curl exit 52); (7) www.ebi.ac.uk/europepmc/webservices/rest/PMC2976019/fullTextXML returned HTTP 404; (8) ncbi.nlm.nih.gov BioC XML endpoint reported the article is not in the PMC open-access subset; (9) onlinelibrary.wiley.com/doi/pdfdirect/10.1113/jphysiol.2010.192716 returned a Cloudflare 'Just a moment...' anti-bot interstitial requiring JavaScript; (10) content.openalex.org/works/W1515536779.pdf returned {'error':'API key required'}. Unpaywall confirms bronze OA status with only these Wiley/PMC locations, both of which require either an OpenAlex API key (not configured) or a JavaScript-capable browser to obtain the PDF bytes. The paper has no arXiv preprint, no bioRxiv entry, and no accessible institutional repository copy (the UQ eSpace entry returns a client-rendered JS page). Paper content is accessible via headful browser reading; re-run this task after provisioning an OPENALEX_API_KEY in .env to fetch content.openalex.org mirror.",
+  "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "date_added": "2026-04-19"
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "curl -L -A Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15 -H Accept: application/pdf,text/html,*/* -H Referer: https://pmc.ncbi.nlm.nih.gov/articles/PMC2976019/ -o tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.2010.192716/files/sivyer_2010_velocity.pdf https://pmc.ncbi.nlm.nih.gov/articles/instance/2976019/pdf/tjp0588-3243.pdf",
+  "exit_code": 0,
+  "duration_seconds": 0.277,
+  "started_at": "2026-04-19T00:26:46Z",
+  "completed_at": "2026-04-19T00:26:46Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "102_20260419T002646Z_curl-l-a.stdout.txt",
+  "stderr_file": "102_20260419T002646Z_curl-l-a.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 5,
+  "truncated": false
+}

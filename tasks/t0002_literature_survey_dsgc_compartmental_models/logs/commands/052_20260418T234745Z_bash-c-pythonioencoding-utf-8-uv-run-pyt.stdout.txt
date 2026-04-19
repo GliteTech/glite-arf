@@ -1,0 +1,11 @@
+PAGES: 24
+MS # 1427
+The NEURON Simulation Environment
+M.L. Hines1, 3 and N.T. Carnevale2, 3
+Departments of 1Computer Science and 2Psychology
+and 3Neuroengineering and Neuroscience Center
+Yale University
+michael.hines@yale.edu
+ted.carnevale@yale.edu
+To appear in Neural Computation, Volume 9, Number 6 (August 15, 1997),
+copyright ? 1997 by the Massachusetts Institute of Technology, all rights reserved.

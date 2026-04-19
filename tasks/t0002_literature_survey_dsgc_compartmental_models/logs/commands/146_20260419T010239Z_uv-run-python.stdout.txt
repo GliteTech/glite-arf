@@ -1,0 +1,7 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0002_literature_survey_dsgc_compartmental_models\tasks\t0002_literature_survey_dsgc_compartmental_models\assets\paper\10.1002_cne.22678
+
+[33m[1mWARNINGS:[0m
+[33m  PA-W004 warning: Summary section has 3 paragraphs (expected: 4)[0m
+
+[33m[1mPASSED[0m — 0 error(s), 1 warning(s)

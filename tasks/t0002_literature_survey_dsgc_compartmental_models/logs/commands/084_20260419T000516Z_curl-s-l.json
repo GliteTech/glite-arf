@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "curl -s -L -o tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2017.07.020/files/koren_2017_cross-compartmental-ds.xml https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5572825/fullTextXML",
+  "exit_code": 0,
+  "duration_seconds": 0.249,
+  "started_at": "2026-04-19T00:05:16Z",
+  "completed_at": "2026-04-19T00:05:16Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "084_20260419T000516Z_curl-s-l.stdout.txt",
+  "stderr_file": "084_20260419T000516Z_curl-s-l.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

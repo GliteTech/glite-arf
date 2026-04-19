@@ -1,0 +1,74 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1038_nature18609",
+  "doi": "10.1038/nature18609",
+  "title": "Species-specific wiring for direction selectivity in the mammalian retina",
+  "url": "https://www.nature.com/articles/nature18609",
+  "pdf_url": null,
+  "date_published": "2016-07-07",
+  "year": 2016,
+  "authors": [
+    {
+      "name": "Huayu Ding",
+      "country": "US",
+      "institution": "National Institute of Neurological Disorders and Stroke, NIH",
+      "orcid": null
+    },
+    {
+      "name": "Robert G. Smith",
+      "country": "US",
+      "institution": "University of Pennsylvania",
+      "orcid": null
+    },
+    {
+      "name": "Alon Poleg-Polsky",
+      "country": "US",
+      "institution": "National Institute of Neurological Disorders and Stroke, NIH",
+      "orcid": null
+    },
+    {
+      "name": "Jeffrey S. Diamond",
+      "country": "US",
+      "institution": "National Institute of Neurological Disorders and Stroke, NIH",
+      "orcid": null
+    },
+    {
+      "name": "Kevin L. Briggman",
+      "country": "DE",
+      "institution": "Max Planck Institute for Medical Research",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "National Institute of Neurological Disorders and Stroke, NIH",
+      "country": "US"
+    },
+    {
+      "name": "University of Pennsylvania",
+      "country": "US"
+    },
+    {
+      "name": "Max Planck Institute for Medical Research",
+      "country": "DE"
+    }
+  ],
+  "journal": "Nature",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "compartmental-modeling",
+    "synaptic-integration"
+  ],
+  "abstract": "Directionally tuned signaling in starburst amacrine cell (SAC) dendrites lies at the heart of the direction selective (DS) circuit in the mammalian retina. The relative contributions of intrinsic cellular properties and network connectivity to SAC DS remain unclear. We present a detailed connectomic reconstruction of SAC circuitry in mouse retina and describe previously unknown features of synapse distributions along SAC dendrites: 1) input and output synapses are segregated, with inputs restricted to proximal dendrites; 2) the distribution of inhibitory inputs is fundamentally different from that observed in rabbit retina. An anatomically constrained SAC network model suggests that SAC-SAC wiring differences between mouse and rabbit retina underlie distinct contributions of synaptic inhibition to velocity and contrast tuning and receptive field structure. In particular, the model indicates that mouse connectivity enables SACs to encode lower linear velocities that account for smaller eye diameter, thereby conserving angular velocity tuning.",
+  "citation_key": "Ding2016",
+  "summary_path": "summary.md",
+  "files": [
+    "files/ding_2016_ds-network.xml"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "date_added": "2026-04-19"
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "bash -c curl -sL \"https://scholar.archive.org/search?q=%22NEURON+Simulation+Environment%22+1997\" -o /tmp/scholar_search.html -w \"HTTP:%{http_code}\\n\"; grep -oE \"fatcat_release/[a-z0-9]+\" /tmp/scholar_search.html 2>/dev/null | head -5",
+  "exit_code": 0,
+  "duration_seconds": 13.519,
+  "started_at": "2026-04-18T23:45:43Z",
+  "completed_at": "2026-04-18T23:45:57Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "042_20260418T234543Z_bash-c-curl-sl-https-scholar-archive-org.stdout.txt",
+  "stderr_file": "042_20260418T234543Z_bash-c-curl-sl-https-scholar-archive-org.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

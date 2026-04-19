@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "python -u -c \nimport fitz  # pymupdf\n\npdf_path = 'tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.1965.sp007638/files/barlow_1965_ds-units-rabbit-retina.pdf'\ndoc = fitz.open(pdf_path)\nprint(f'Pages: {doc.page_count}')\nprint(f'PDF magic: valid')\nprint()\nprint('=== First page text ===')\nprint(doc[0].get_text()[:3000])\nprint()\nprint('=== Last page text ===')\nprint(doc[-1].get_text()[:1000])\n",
+  "exit_code": 1,
+  "duration_seconds": 0.171,
+  "started_at": "2026-04-18T23:40:33Z",
+  "completed_at": "2026-04-18T23:40:33Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "017_20260418T234033Z_python-u-c.stdout.txt",
+  "stderr_file": "017_20260418T234033Z_python-u-c.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 5,
+  "truncated": false
+}

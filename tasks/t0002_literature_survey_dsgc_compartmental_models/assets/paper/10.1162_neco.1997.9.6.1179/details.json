@@ -1,0 +1,47 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1162_neco.1997.9.6.1179",
+  "doi": "10.1162/neco.1997.9.6.1179",
+  "title": "The NEURON Simulation Environment",
+  "url": "https://direct.mit.edu/neco/article/9/6/1179-1209/6087",
+  "pdf_url": "https://direct.mit.edu/neco/article-pdf/9/6/1179/813733/neco.1997.9.6.1179.pdf",
+  "date_published": "1997-08-01",
+  "year": 1997,
+  "authors": [
+    {
+      "name": "Michael L. Hines",
+      "country": "US",
+      "institution": "Yale University",
+      "orcid": "0000-0003-1830-7433"
+    },
+    {
+      "name": "Nicholas T. Carnevale",
+      "country": "US",
+      "institution": "Yale University",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Yale University",
+      "country": "US"
+    }
+  ],
+  "journal": "Neural Computation",
+  "venue_type": "journal",
+  "categories": [
+    "compartmental-modeling",
+    "cable-theory",
+    "voltage-gated-channels"
+  ],
+  "abstract": "The moment-to-moment processing of information by the nervous system involves the propagation and interaction of electrical and chemical signals that are distributed in space and time. Biologically realistic modeling is needed to test hypotheses about the mechanisms that govern these signals and how nervous system function emerges from the operation of these mechanisms. The NEURON simulation program provides a powerful and flexible environment for implementing such models of individual neurons and small networks of neurons. It is particularly useful when membrane potential is nonuniform and membrane currents are complex. We present the basic ideas that would help informed users make the most efficient use of NEURON.",
+  "citation_key": "Hines1997",
+  "summary_path": "summary.md",
+  "files": [
+    "files/hines_1997_neuron-simulation-environment.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "date_added": "2026-04-19"
+}

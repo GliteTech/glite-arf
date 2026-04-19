@@ -1,0 +1,47 @@
+{
+  "spec_version": "2",
+  "answer_id": "how-does-dsgc-literature-structure-the-five-research-questions",
+  "question": "How does the existing peer-reviewed literature on compartmental models of direction-selective retinal ganglion cells structure the five project research questions (Na/K conductances, morphology sensitivity, AMPA/GABA balance, active vs passive dendrites, and angle-to-AP-frequency tuning curves), and what quantitative targets does it provide?",
+  "short_title": "DSGC literature structure of the five RQs",
+  "short_answer_path": "short_answer.md",
+  "full_answer_path": "full_answer.md",
+  "categories": [
+    "direction-selectivity",
+    "compartmental-modeling",
+    "retinal-ganglion-cell",
+    "dendritic-computation",
+    "synaptic-integration",
+    "voltage-gated-channels"
+  ],
+  "answer_methods": [
+    "papers",
+    "internet"
+  ],
+  "source_paper_ids": [
+    "10.1113_jphysiol.1965.sp007638",
+    "10.1162_neco.1997.9.6.1179",
+    "10.1038_nrn3165",
+    "10.1016_j.neuron.2016.02.013",
+    "10.1016_j.neuron.2005.06.036",
+    "10.1126_science.1189664",
+    "10.1371_journal.pcbi.1000899",
+    "10.1152_jn.00123.2009",
+    "10.1523_JNEUROSCI.22-17-07712.2002",
+    "10.1113_jphysiol.2008.161240",
+    "10.1523_JNEUROSCI.5017-13.2014",
+    "10.1038_nature09818",
+    "10.1038_nature18609",
+    "10.1113_jphysiol.2010.192716",
+    "10.1002_cne.22678",
+    "10.1016_j.neuron.2017.07.020",
+    "10.1523_ENEURO.0261-21.2021",
+    "10.7554_eLife.52949",
+    "10.7554_eLife.42392",
+    "10.1016_j.neuron.2016.04.041"
+  ],
+  "source_urls": [],
+  "source_task_ids": [],
+  "confidence": "medium",
+  "created_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "date_created": "2026-04-18"
+}

@@ -1,0 +1,57 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1016_j.neuron.2017.07.020",
+  "doi": "10.1016/j.neuron.2017.07.020",
+  "title": "Cross-compartmental Modulation of Dendritic Signals for Retinal Direction Selectivity",
+  "url": "https://doi.org/10.1016/j.neuron.2017.07.020",
+  "pdf_url": "https://www.cell.com/article/S0896627317306426/pdf",
+  "date_published": "2017-08-16",
+  "year": 2017,
+  "authors": [
+    {
+      "name": "David Koren",
+      "country": "US",
+      "institution": "University of Chicago",
+      "orcid": "0000-0001-6967-9072"
+    },
+    {
+      "name": "James C. R. Grove",
+      "country": "US",
+      "institution": "University of Chicago",
+      "orcid": "0000-0003-2356-1911"
+    },
+    {
+      "name": "Wei Wei",
+      "country": "US",
+      "institution": "University of Chicago",
+      "orcid": "0000-0002-7771-5974"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Chicago",
+      "country": "US"
+    }
+  ],
+  "journal": "Neuron",
+  "venue_type": "journal",
+  "categories": [
+    "dendritic-computation",
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "synaptic-integration",
+    "voltage-gated-channels",
+    "patch-clamp"
+  ],
+  "abstract": "Compartmentalized signaling in dendritic subdomains is critical for the function of many central neurons. In the retina, individual dendritic sectors of a starburst amacrine cell (SAC) are preferentially activated by different directions of linear motion, indicating limited signal propagation between the sectors. However, the mechanism that regulates this propagation is poorly understood. Here, we find that metabotropic glutamate receptor 2 (mGluR2) signaling, which acts on voltage-gated calcium channels in SACs, selectively restricts cross-sector signal propagation in SACs, but does not affect local dendritic computation within individual sectors. mGluR2 signaling ensures sufficient electrotonic isolation of dendritic sectors to prevent their depolarization during non-preferred motion, yet enables controlled multicompartmental signal integration that enhances responses to preferred motion. Furthermore, mGluR2-mediated dendritic compartmentalization in SACs is important for the functional output of direction-selective ganglion cells (DSGCs). Therefore, our results directly link modulation of dendritic compartmentalization to circuit-level encoding of motion direction in the retina.",
+  "citation_key": "Koren2017",
+  "summary_path": "summary.md",
+  "files": [
+    "files/koren_2017_cross-compartmental-ds.json",
+    "files/koren_2017_cross-compartmental-ds.md"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "date_added": "2026-04-19"
+}

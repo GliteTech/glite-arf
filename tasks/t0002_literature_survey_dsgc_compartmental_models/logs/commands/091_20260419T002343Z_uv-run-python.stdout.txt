@@ -1,0 +1,60 @@
+{
+  "categories": [
+    {
+      "category_id": "cable-theory",
+      "name": "Cable Theory",
+      "short_description": "Mathematical framework describing voltage spread in passive and active cables.",
+      "detailed_description": "Cable theory describes how voltage propagates along dendrites and axons as a function of geometry, passive membrane properties, and active conductances. The project uses it to reason about dendritic impedance gradients and sequence-direction selectivity, following the Rall and Branco-Clark-Hausser line of analysis.",
+      "version": 1
+    },
+    {
+      "category_id": "compartmental-modeling",
+      "name": "Compartmental Modeling",
+      "short_description": "Biophysical simulation of neurons split into discrete cable compartments.",
+      "detailed_description": "Compartmental modeling represents a neuron as a set of connected cable compartments with membrane capacitance, axial resistance, and voltage-gated conductances. This project's central methodology uses compartmental simulation (NEURON or an equivalent solver) to link morphology, channel distribution, and synaptic inputs to the cell's spiking output.",
+      "version": 1
+    },
+    {
+      "category_id": "dendritic-computation",
+      "name": "Dendritic Computation",
+      "short_description": "Signal processing that occurs in dendrites prior to somatic spike generation.",
+      "detailed_description": "Dendritic computation covers how dendritic morphology, cable properties, and active conductances transform synaptic inputs before they reach the soma. This project uses the category to tag work on active vs passive dendrites, dendritic spike contributions, and the cable-theory account of direction-selective input integration.",
+      "version": 1
+    },
+    {
+      "category_id": "direction-selectivity",
+      "name": "Direction Selectivity",
+      "short_description": "Neural responses that depend on the direction of a moving or spreading stimulus.",
+      "detailed_description": "Direction selectivity is a functional property in which a neuron's firing rate depends on the direction of a moving stimulus or the spatial sequence of synaptic activation. This project studies how the internal electrophysiological properties of a single retinal ganglion cell shape its direction-selective response, with the goal of matching a target angle-to-AP-frequency tuning curve.",
+      "version": 1
+    },
+    {
+      "category_id": "patch-clamp",
+      "name": "Patch Clamp",
+      "short_description": "Electrophysiological recording technique for measuring ionic currents in cells.",
+      "detailed_description": "Patch-clamp electrophysiology measures ionic currents and membrane potentials in single cells using a glass pipette sealed to the membrane. This project treats published patch-clamp data as the validation ground truth for its compartmental model, and this is the sole exception to the project's in-vivo-out-of-scope rule.",
+      "version": 1
+    },
+    {
+      "category_id": "retinal-ganglion-cell",
+      "name": "Retinal Ganglion Cell",
+      "short_description": "Output neurons of the retina whose axons form the optic nerve.",
+      "detailed_description": "Retinal ganglion cells (RGCs) are the output neurons of the retina, carrying visual information to the brain. This project targets direction-selective RGCs as the cell type to model, using their published morphology and electrophysiology as the substrate for parametric exploration of morphology, synaptic inputs, and voltage-gated conductances.",
+      "version": 1
+    },
+    {
+      "category_id": "synaptic-integration",
+      "name": "Synaptic Integration",
+      "short_description": "Summation and interaction of excitatory and inhibitory synaptic inputs.",
+      "detailed_description": "Synaptic integration covers how excitatory (AMPA) and inhibitory (GABA) inputs combine across space and time to drive the post-synaptic neuron. In this project the category tags work on AMPA/GABA input density, EPSP and IPSP amplitude and kinetics, and the spatiotemporal structure of wave stimuli used to probe directional tuning.",
+      "version": 1
+    },
+    {
+      "category_id": "voltage-gated-channels",
+      "name": "Voltage-Gated Channels",
+      "short_description": "Ion channels whose opening probability depends on membrane voltage.",
+      "detailed_description": "Voltage-gated channels — principally sodium and potassium species in this project — shape action potential generation at the soma and, when present in dendrites, shape local dendritic processing. The project optimises combinations of Na and K voltage-gated conductances to match a target angle-to-AP-frequency relationship.",
+      "version": 1
+    }
+  ]
+}

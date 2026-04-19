@@ -1,0 +1,74 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1016_j.neuron.2016.04.041",
+  "doi": "10.1016/j.neuron.2016.04.041",
+  "title": "A Central Role for Mixed Acetylcholine/GABA Transmission in Direction Coding in the Retina",
+  "url": "https://www.cell.com/neuron/fulltext/S0896-6273(16)30155-6",
+  "pdf_url": "https://www.cell.com/neuron/pdf/S0896-6273(16)30155-6.pdf",
+  "date_published": "2016-06-15",
+  "year": 2016,
+  "authors": [
+    {
+      "name": "Santhosh Sethuramanujam",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": "0000-0001-6199-1221"
+    },
+    {
+      "name": "Amanda J. McLaughlin",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": null
+    },
+    {
+      "name": "Geoffery deRosenroll",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": "0000-0002-5431-2814"
+    },
+    {
+      "name": "Alex Hoggarth",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": "0000-0002-7634-7989"
+    },
+    {
+      "name": "David J. Schwab",
+      "country": "US",
+      "institution": "Northwestern University",
+      "orcid": "0000-0003-2726-4527"
+    },
+    {
+      "name": "Gautam B. Awatramani",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": "0000-0002-0610-5271"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Victoria",
+      "country": "CA"
+    },
+    {
+      "name": "Northwestern University",
+      "country": "US"
+    }
+  ],
+  "journal": "Neuron",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "synaptic-integration",
+    "patch-clamp"
+  ],
+  "abstract": "A surprisingly large number of neurons throughout the brain are endowed with the ability to co-release both a fast excitatory and inhibitory transmitter. The computational benefits of dual transmitter release, however, remain poorly understood. Here, we address the role of co-transmission of acetylcholine (ACh) and GABA from starburst amacrine cells (SACs) to direction-selective ganglion cells (DSGCs). Using a combination of pharmacology, optogenetics, and linear regression methods, we estimated the spatiotemporal profiles of GABA, ACh, and glutamate receptor-mediated synaptic activity in DSGCs evoked by motion. We found that ACh initiates responses to motion in natural scenes or under low-contrast conditions. In contrast, classical glutamatergic pathways play a secondary role, amplifying cholinergic responses via NMDA receptor activation. Furthermore, under these conditions, the network of SACs differentially transmits ACh and GABA to DSGCs in a directional manner. Thus, mixed transmission plays a central role in shaping directional responses of DSGCs.",
+  "citation_key": "Sethuramanujam2016",
+  "summary_path": "summary.md",
+  "files": [],
+  "download_status": "failed",
+  "download_failure_reason": "The paper is published in Elsevier's Neuron (bronze OA). Unpaywall and OpenAlex both returned a Cell.com publisher PDF URL (http://www.cell.com/article/S0896627316301556/pdf and https://www.cell.com/neuron/pdf/S0896-6273(16)30155-6.pdf), but all requests returned HTTP 403 Forbidden. The Elsevier TDM API (https://api.elsevier.com/content/article/PII:S0896627316301556) requires an ELSEVIER_API_KEY which is not configured. No PMC version exists (PMCID lookup returned not found). No arXiv preprint found. Zenodo and CrossRef relation fields yielded no preprint. More than 10 distinct sources were attempted including: Unpaywall, OpenAlex, Semantic Scholar, CrossRef TDM, Cell.com direct PDF, ScienceDirect HTML, Wayback Machine, Zenodo, Europe PMC, biorxiv search.",
+  "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "date_added": "2026-04-19"
+}

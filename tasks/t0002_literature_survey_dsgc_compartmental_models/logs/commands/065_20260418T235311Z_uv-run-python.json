@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "uv run python -c \nfrom pathlib import Path\np = Path('tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1162_neco.1997.9.6.1179/summary.md')\ncontent = '''---\nspec_version: \"3\"\npaper_id: \"10.1162_neco.1997.9.6.1179\"\ncitation_key: \"Hines1997\"\nsummarized_by_task: \"t0002_literature_survey_dsgc_compartmental_models\"\ndate_summarized: \"2026-04-19\"\n---\n\n# The NEURON Simulation Environment\n\n## Metadata\n\n* File: `files/hines_1997_neuron-simulation-environment.pdf`\n* Published: 1997\n* Authors: Michael L. Hines \\U0001F1FA\\U0001F1F8, Nicholas T. Carnevale \\U0001F1FA\\U0001F1F8\n* Venue: Neural Computation 9(6):1179-1209\n* DOI: `10.1162/neco.1997.9.6.1179`\n\n## Abstract\n\nThe moment-to-moment processing of information by the nervous system involves the propagation and\ninteraction of electrical and chemical signals that are distributed in space and time.\nBiologically realistic modeling is needed to test hypotheses about the mechanisms that govern\nthese signals and how nervous system function emerges from the operation of these mechanisms.\nThe NEURON simulation program provides a powerful and flexible environment for implementing such\nmodels of individual neurons and small networks of neurons. It is particularly useful when\nmembrane potential is nonuniform and membrane currents are complex. We present the basic ideas\nthat would help informed users make the most efficient use of NEURON.\n'''\np.write_text(content, encoding='utf-8')\nprint('Wrote initial header, bytes:', len(content))\n",
+  "exit_code": 0,
+  "duration_seconds": 0.228,
+  "started_at": "2026-04-18T23:53:11Z",
+  "completed_at": "2026-04-18T23:53:11Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "065_20260418T235311Z_uv-run-python.stdout.txt",
+  "stderr_file": "065_20260418T235311Z_uv-run-python.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

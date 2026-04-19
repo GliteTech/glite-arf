@@ -1,0 +1,74 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1523_JNEUROSCI.5017-13.2014",
+  "doi": "10.1523/JNEUROSCI.5017-13.2014",
+  "title": "Excitatory Synaptic Inputs to Mouse On-Off Direction-Selective Retinal Ganglion Cells Lack Direction Tuning",
+  "url": "https://www.jneurosci.org/content/34/11/3976",
+  "pdf_url": "https://www.jneurosci.org/content/jneuro/34/11/3976.full.pdf",
+  "date_published": "2014-03-12",
+  "year": 2014,
+  "authors": [
+    {
+      "name": "Silvia J.H. Park",
+      "country": "US",
+      "institution": "Yale University School of Medicine",
+      "orcid": null
+    },
+    {
+      "name": "In-Jung Kim",
+      "country": "US",
+      "institution": "Yale University School of Medicine",
+      "orcid": "0000-0003-4554-4872"
+    },
+    {
+      "name": "Loren L. Looger",
+      "country": "US",
+      "institution": "Howard Hughes Medical Institute, Janelia Farm Research Campus",
+      "orcid": "0000-0002-7531-1757"
+    },
+    {
+      "name": "Jonathan B. Demb",
+      "country": "US",
+      "institution": "Yale University School of Medicine",
+      "orcid": "0000-0003-2227-9041"
+    },
+    {
+      "name": "Bart G. Borghuis",
+      "country": "US",
+      "institution": "University of Louisville School of Medicine",
+      "orcid": "0000-0001-9867-4940"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Yale University School of Medicine",
+      "country": "US"
+    },
+    {
+      "name": "Howard Hughes Medical Institute, Janelia Farm Research Campus",
+      "country": "US"
+    },
+    {
+      "name": "University of Louisville School of Medicine",
+      "country": "US"
+    }
+  ],
+  "journal": "The Journal of Neuroscience",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "synaptic-integration",
+    "patch-clamp"
+  ],
+  "abstract": "Direction selectivity represents a fundamental visual computation. In mammalian retina, On-Off direction-selective ganglion cells (DSGCs) respond strongly to motion in a preferred direction and weakly to motion in the opposite, null direction. Electrical recordings suggested three direction-selective (DS) synaptic mechanisms: DS GABA release during null-direction motion from starburst amacrine cells (SACs) and DS acetylcholine and glutamate release during preferred direction motion from SACs and bipolar cells. However, evidence for DS acetylcholine and glutamate release has been inconsistent and at least one bipolar cell type that contacts another DSGC (On-type) lacks DS release. Here, whole-cell recordings in mouse retina showed that cholinergic input to On-Off DSGCs lacked DS, whereas the remaining (glutamatergic) input showed apparent DS. Fluorescence measurements with the glutamate biosensor intensity-based glutamate-sensing fluorescent reporter (iGluSnFR) conditionally expressed in On-Off DSGCs showed that glutamate release in both On- and Off-layer dendrites lacked DS, whereas simultaneously recorded excitatory currents showed apparent DS. With GABA-A receptors blocked, both iGluSnFR signals and excitatory currents lacked DS. Our measurements rule out DS release from bipolar cells onto On-Off DSGCs and support a theoretical model suggesting that apparent DS excitation in voltage-clamp recordings results from inadequate voltage control of DSGC dendrites during null-direction inhibition. SAC GABA release is the apparent sole source of DS input onto On-Off DSGCs.",
+  "citation_key": "Park2014",
+  "summary_path": "summary.md",
+  "files": [
+    "files/park_2014_dsgc-ei.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "date_added": "2026-04-19"
+}

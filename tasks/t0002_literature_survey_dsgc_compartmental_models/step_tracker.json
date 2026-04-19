@@ -1,0 +1,140 @@
+{
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "steps": [
+    {
+      "step": 1,
+      "name": "create-branch",
+      "description": "Create task/t0002_literature_survey_dsgc_compartmental_models branch from main and set up the worktree.",
+      "status": "completed",
+      "started_at": "2026-04-18T23:05:41Z",
+      "completed_at": "2026-04-18T23:11:13Z",
+      "log_file": "logs/steps/001_create-branch/"
+    },
+    {
+      "step": 2,
+      "name": "check-deps",
+      "description": "Verify there are no dependencies to satisfy (task has an empty dependency list).",
+      "status": "completed",
+      "started_at": "2026-04-18T23:11:26Z",
+      "completed_at": "2026-04-18T23:12:28Z",
+      "log_file": "logs\\steps\\002_check-deps/"
+    },
+    {
+      "step": 3,
+      "name": "init-folders",
+      "description": "Create the mandatory task folder structure, including assets/paper/ and assets/answer/.",
+      "status": "completed",
+      "started_at": "2026-04-18T23:12:40Z",
+      "completed_at": "2026-04-18T23:13:50Z",
+      "log_file": "logs\\steps\\003_init-folders/"
+    },
+    {
+      "step": 4,
+      "name": "research-papers",
+      "description": "Review existing papers in the corpus (expected to be empty; skipped if so).",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/004_research-papers/"
+    },
+    {
+      "step": 5,
+      "name": "research-internet",
+      "description": "Search the internet for compartmental DSGC modelling papers and patch-clamp studies across the 5 research questions.",
+      "status": "completed",
+      "started_at": "2026-04-18T23:15:32Z",
+      "completed_at": "2026-04-18T23:28:51Z",
+      "log_file": "logs\\steps\\005_research-internet/"
+    },
+    {
+      "step": 6,
+      "name": "research-code",
+      "description": "Review prior task outputs (expected to be empty since t0002 is the first research task).",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/006_research-code/"
+    },
+    {
+      "step": 7,
+      "name": "planning",
+      "description": "Produce plan/plan.md covering paper selection strategy, answer-asset structure, and verification criteria.",
+      "status": "completed",
+      "started_at": "2026-04-18T23:29:08Z",
+      "completed_at": "2026-04-18T23:35:36Z",
+      "log_file": "logs\\steps\\007_planning/"
+    },
+    {
+      "step": 8,
+      "name": "implementation",
+      "description": "Download and summarize ~20 paper assets across the 5 RQs, then write the synthesis answer asset.",
+      "status": "completed",
+      "started_at": "2026-04-18T23:37:33Z",
+      "completed_at": "2026-04-19T01:14:19Z",
+      "log_file": "logs\\steps\\008_implementation/"
+    },
+    {
+      "step": 9,
+      "name": "setup-machines",
+      "description": "Skipped - no remote compute required for a literature survey.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/009_setup-machines/"
+    },
+    {
+      "step": 10,
+      "name": "teardown",
+      "description": "Skipped - no remote machines were provisioned.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/010_teardown/"
+    },
+    {
+      "step": 11,
+      "name": "creative-thinking",
+      "description": "Skipped - this task is a structured survey, not an exploratory analysis task.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/011_creative-thinking/"
+    },
+    {
+      "step": 12,
+      "name": "results",
+      "description": "Write results_summary.md, results_detailed.md, metrics.json, costs.json, and remote_machines_used.json.",
+      "status": "completed",
+      "started_at": "2026-04-19T01:14:31Z",
+      "completed_at": "2026-04-19T01:21:00Z",
+      "log_file": "logs\\steps\\012_results/"
+    },
+    {
+      "step": 13,
+      "name": "compare-literature",
+      "description": "Skipped - a pure literature survey does not produce comparable performance metrics.",
+      "status": "skipped",
+      "started_at": null,
+      "completed_at": null,
+      "log_file": "logs/steps/013_compare-literature/"
+    },
+    {
+      "step": 14,
+      "name": "suggestions",
+      "description": "Generate follow-up suggestions for downstream tasks based on the survey findings.",
+      "status": "completed",
+      "started_at": "2026-04-19T01:21:18Z",
+      "completed_at": "2026-04-19T01:27:28Z",
+      "log_file": "logs\\steps\\014_suggestions/"
+    },
+    {
+      "step": 15,
+      "name": "reporting",
+      "description": "Run all verificators, capture session transcripts, set task status to completed.",
+      "status": "completed",
+      "started_at": "2026-04-19T01:27:39Z",
+      "completed_at": "2026-04-19T01:36:15Z",
+      "log_file": "logs\\steps\\015_reporting/"
+    }
+  ]
+}

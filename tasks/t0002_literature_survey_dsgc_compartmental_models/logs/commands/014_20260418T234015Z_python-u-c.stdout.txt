@@ -1,0 +1,9 @@
+Trying cdn_ncbi: https://cdn.ncbi.nlm.nih.gov/pmc/articles/instance/1357309/pdf/jphysiol01176-0094.pdf
+  FAIL: HTTP Error 404: Not Found
+Trying pmc_pdf_dir: https://pmc.ncbi.nlm.nih.gov/articles/PMC1357309/pdf/
+  Content-Type: text/html; charset=utf-8, Size: 1817 bytes
+  SKIP: not a valid PDF (starts with b'\n\n\n\n<html>')
+Trying nyu: https://www.cns.nyu.edu/~tony/vns/readings/barlow-levick-1965.pdf
+  Content-Type: application/pdf, Size: 3573904 bytes
+  SUCCESS: saved to tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.1965.sp007638/files\barlow_1965_ds-units-rabbit-retina.pdf
+File exists at tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.1965.sp007638/files\barlow_1965_ds-units-rabbit-retina.pdf, size=3573904

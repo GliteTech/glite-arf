@@ -1,0 +1,4 @@
+  File "<string>", line 13
+    '# The Mechanism of Directionally Selective Units in Rabbit'\''s Retina',
+                                                                 ^
+SyntaxError: unexpected character after line continuation character

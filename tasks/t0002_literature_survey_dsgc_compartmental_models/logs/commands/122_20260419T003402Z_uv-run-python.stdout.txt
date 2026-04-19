@@ -1,0 +1,4 @@
+
+Verifying: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0002_literature_survey_dsgc_compartmental_models\tasks\t0002_literature_survey_dsgc_compartmental_models\assets\paper\10.1113_jphysiol.2008.161240
+
+[32m[1mPASSED[0m — no errors or warnings

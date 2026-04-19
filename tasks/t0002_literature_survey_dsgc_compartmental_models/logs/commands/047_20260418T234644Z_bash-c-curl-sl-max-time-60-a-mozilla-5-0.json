@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "bash -c curl -sL --max-time 60 -A \"Mozilla/5.0\" -o /dev/null -w \"HTTP:%{http_code} FINAL:%{url_effective}\\n\" \"https://www.cs.stir.ac.uk/~bpg/Teaching/31YF/Neuron/nsimenv.pdf\"",
+  "exit_code": 0,
+  "duration_seconds": 0.63,
+  "started_at": "2026-04-18T23:46:44Z",
+  "completed_at": "2026-04-18T23:46:44Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "047_20260418T234644Z_bash-c-curl-sl-max-time-60-a-mozilla-5-0.stdout.txt",
+  "stderr_file": "047_20260418T234644Z_bash-c-curl-sl-max-time-60-a-mozilla-5-0.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

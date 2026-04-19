@@ -1,0 +1,58 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1152_jn.00123.2009",
+  "doi": "10.1152/jn.00123.2009",
+  "title": "Mechanisms and Distribution of Ion Channels in Retinal Ganglion Cells: Using Temperature as an Independent Variable",
+  "url": "https://journals.physiology.org/doi/10.1152/jn.00123.2009",
+  "pdf_url": "https://europepmc.org/articles/PMC2887638?pdf=render",
+  "date_published": "2010-03",
+  "year": 2010,
+  "authors": [
+    {
+      "name": "J\u00fcrgen F. Fohlmeister",
+      "country": "US",
+      "institution": "University of Minnesota",
+      "orcid": null
+    },
+    {
+      "name": "Ethan D. Cohen",
+      "country": "US",
+      "institution": "U.S. Food and Drug Administration",
+      "orcid": null
+    },
+    {
+      "name": "Eric A. Newman",
+      "country": "US",
+      "institution": "University of Minnesota",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Minnesota",
+      "country": "US"
+    },
+    {
+      "name": "U.S. Food and Drug Administration",
+      "country": "US"
+    }
+  ],
+  "journal": "Journal of Neurophysiology",
+  "venue_type": "journal",
+  "categories": [
+    "retinal-ganglion-cell",
+    "compartmental-modeling",
+    "voltage-gated-channels",
+    "patch-clamp"
+  ],
+  "abstract": "Trains of action potentials of rat and cat retinal ganglion cells (RGCs) were recorded intracellularly across a temperature range of 7-37\u00b0C. Phase plots of the experimental impulse trains were precision fit using multicompartment simulations of anatomically reconstructed rat and cat RGCs. Action potential excitation was simulated with a \"Five-channel model\" [Na, K(delayed rectifier), Ca, K(A), and K(Ca-activated) channels] and the nonspace-clamped condition of the whole cell recording was exploited to determine the channels' distribution on the dendrites, soma, and proximal axon. At each temperature, optimal phase-plot fits for RGCs occurred with the same unique channel distribution. The \"waveform\" of the electrotonic current was found to be temperature dependent, which reflected the shape changes in the experimental action potentials and confirmed the channel distributions. The distributions are cell-type specific and adequate for soma and dendritic excitation with a safety margin. The highest Na-channel density was found on an axonal segment some 50-130 \u00b5m distal to the soma, as determined from the temperature-dependent \"initial segment-somadendritic (IS-SD) break.\" The voltage dependence of the gating rate constants remains invariant between 7 and 23\u00b0C and between 30 and 37\u00b0C, but undergoes a transition between 23 and 30\u00b0C. Both gating-kinetic and ion-permeability Q10s remain virtually constant between 23 and 37\u00b0C (kinetic Q10s ~ 1.9-1.95; permeability Q10s ~ 1.49-1.64). The Q10s systematically increase for T < 23\u00b0C (kinetic Q10 ~ 8 at T ~ 8\u00b0C). The Na channels were consistently \"sleepy\" (non-Arrhenius) for T < 8\u00b0C, with a loss of spiking for T < 7\u00b0C.",
+  "citation_key": "Fohlmeister2010",
+  "summary_path": "summary.md",
+  "files": [
+    "files/fohlmeister_2010_rgc-ion-channels-temperature.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "date_added": "2026-04-19"
+}

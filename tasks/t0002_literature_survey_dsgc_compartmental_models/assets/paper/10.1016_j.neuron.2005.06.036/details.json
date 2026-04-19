@@ -1,0 +1,59 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1016_j.neuron.2005.06.036",
+  "doi": "10.1016/j.neuron.2005.06.036",
+  "title": "Direction-Selective Dendritic Action Potentials in Rabbit Retina",
+  "url": "https://www.sciencedirect.com/science/article/pii/S089662730500646X",
+  "pdf_url": "http://www2.neuroscience.umn.edu/rfm/journal/neuron_ds_2005.pdf",
+  "date_published": "2005-09-01",
+  "year": 2005,
+  "authors": [
+    {
+      "name": "Nicholas Oesch",
+      "country": "US",
+      "institution": "Oregon Health and Sciences University",
+      "orcid": "0000-0001-6972-0741"
+    },
+    {
+      "name": "Thomas Euler",
+      "country": "DE",
+      "institution": "Max-Planck-Institute for Medical Research",
+      "orcid": "0000-0002-4567-6966"
+    },
+    {
+      "name": "W. Rowland Taylor",
+      "country": "US",
+      "institution": "Oregon Health and Sciences University",
+      "orcid": "0000-0002-6806-3249"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "Oregon Health and Sciences University",
+      "country": "US"
+    },
+    {
+      "name": "Max-Planck-Institute for Medical Research",
+      "country": "DE"
+    }
+  ],
+  "journal": "Neuron",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "dendritic-computation",
+    "voltage-gated-channels",
+    "retinal-ganglion-cell",
+    "patch-clamp"
+  ],
+  "abstract": "Dendritic spikes that propagate toward the soma are well documented, but their physiological role remains uncertain. Our in vitro patch-clamp recordings and two-photon calcium imaging show that direction-selective retinal ganglion cells (DSGCs) utilize orthograde dendritic spikes during physiological activity. DSGCs signal the direction of image motion. Excitatory subthreshold postsynaptic potentials are observed in DSGCs for motion in all directions and provide a weakly tuned directional signal. However, spikes are generated over only a narrow range of motion angles, indicating that spike generation greatly enhances directional tuning. Our results indicate that spikes are initiated at multiple sites within the dendritic arbors of DSGCs and that each dendritic spike initiates a somatic spike. We propose that dendritic spike failure, produced by local inhibitory inputs, might be a critical factor that enhances directional tuning of somatic spikes.",
+  "citation_key": "Oesch2005",
+  "summary_path": "summary.md",
+  "files": [
+    "files/oesch_2005_ds-dendritic-aps.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "date_added": "2026-04-19"
+}

@@ -1,0 +1,54 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1126_science.1189664",
+  "doi": "10.1126/science.1189664",
+  "title": "Dendritic Discrimination of Temporal Input Sequences in Cortical Neurons",
+  "url": "https://www.science.org/doi/10.1126/science.1189664",
+  "pdf_url": null,
+  "date_published": "2010-09-24",
+  "year": 2010,
+  "authors": [
+    {
+      "name": "Tiago Branco",
+      "country": "GB",
+      "institution": "University College London",
+      "orcid": null
+    },
+    {
+      "name": "Beverley A. Clark",
+      "country": "GB",
+      "institution": "University College London",
+      "orcid": null
+    },
+    {
+      "name": "Michael Häusser",
+      "country": "GB",
+      "institution": "University College London",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University College London",
+      "country": "GB"
+    }
+  ],
+  "journal": "Science",
+  "venue_type": "journal",
+  "categories": [
+    "cable-theory",
+    "compartmental-modeling",
+    "dendritic-computation",
+    "synaptic-integration"
+  ],
+  "abstract": "The detection and discrimination of temporal sequences is fundamental to brain function and underlies perception, cognition, and motor output. By applying patterned, two-photon glutamate uncaging, we found that single dendrites of cortical pyramidal neurons exhibit sensitivity to the sequence of synaptic activation. This sensitivity is encoded by both local dendritic calcium signals and somatic depolarization, leading to sequence-selective spike output. The mechanism involves dendritic impedance gradients and nonlinear synaptic N-methyl-D-aspartate receptor activation and is generalizable to dendrites in different neuronal types. This enables discrimination of patterns delivered to a single dendrite, as well as patterns distributed randomly across the dendritic tree. Pyramidal cell dendrites can thus act as processing compartments for the detection of synaptic sequences, thereby implementing a fundamental cortical computation.",
+  "citation_key": "Branco2010",
+  "summary_path": "summary.md",
+  "files": [
+    "files/branco_2010_dendritic-sequence-discrimination.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "date_added": "2026-04-19"
+}

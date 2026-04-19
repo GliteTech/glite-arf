@@ -1,0 +1,4 @@
+Final URL: https://linkinghub.elsevier.com/retrieve/pii/S0896-6273(16)00106-9
+Content-Type: text/html;charset=UTF-8
+Size: 3021
+Not PDF, content: b'\n\n\n\n\n\n\n\n\n<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">\n<html>\n<head>\n<meta charset="utf-8">\n<META http-equiv=Content-Type content="text/html">\n<meta HTTP-EQUIV="REFRESH" content="2; url=\'/retrieve/articleSelectPrefsTemp?Redirect=https%3A%2F%2Fcell.com%2Fneuron%2Fretrieve%2Fpii%2FS0896627316001069%3F_returnURL%3Dhttps%253A%252F%252Flinkinghub.elsevier.com%252Fretrieve%252Fpii%252FS0896627316001069%253Fshowall%253Dtrue&amp;key=28ac71dd093a9'

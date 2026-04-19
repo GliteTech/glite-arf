@@ -1,0 +1,9 @@
+URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC4795984/pdf/
+  CT: text/html; charset=utf-8, Size: 1817, Starts: b'\n\n\n\n<htm'
+  Not valid PDF: b'\n\n\n\n<html>\n  <head>\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <'
+URL: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4795984/pdf/nihms766337.pdf?downloa
+  CT: text/html; charset=utf-8, Size: 1816, Starts: b'\n\n\n\n<htm'
+  Not valid PDF: b'\n\n\n\n<html>\n  <head>\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <'
+URL: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=4795984&rett
+  CT: text/plain; charset=UTF-8, Size: 127744, Starts: b'<?xml ve'
+  Not valid PDF: b'<?xml version="1.0"  ?><!DOCTYPE pmc-articleset PUBLIC "-//NLM//DTD ARTICLE SET 2.0//EN" "https://dt'

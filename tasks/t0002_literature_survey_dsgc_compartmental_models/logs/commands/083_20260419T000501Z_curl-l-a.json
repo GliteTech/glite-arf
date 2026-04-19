@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "curl -L -A Mozilla/5.0 (compatible; academic-research; a.nikolaev@sheffield.ac.uk) -o tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2017.07.020/files/koren_2017_cross-compartmental-ds.pdf https://www.cell.com/article/S0896627317306426/pdf",
+  "exit_code": 0,
+  "duration_seconds": 0.262,
+  "started_at": "2026-04-19T00:05:01Z",
+  "completed_at": "2026-04-19T00:05:01Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "083_20260419T000501Z_curl-l-a.stdout.txt",
+  "stderr_file": "083_20260419T000501Z_curl-l-a.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 5,
+  "truncated": false
+}

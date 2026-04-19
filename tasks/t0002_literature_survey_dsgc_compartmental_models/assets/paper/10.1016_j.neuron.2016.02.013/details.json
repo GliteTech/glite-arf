@@ -1,0 +1,49 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1016_j.neuron.2016.02.013",
+  "doi": "10.1016/j.neuron.2016.02.013",
+  "title": "NMDA Receptors Multiplicatively Scale Visual Signals and Enhance Directional Motion Discrimination in Retinal Ganglion Cells",
+  "url": "https://www.sciencedirect.com/science/article/pii/S0896627316001069",
+  "pdf_url": "http://www.cell.com/article/S0896627316001069/pdf",
+  "date_published": "2016-03-16",
+  "year": 2016,
+  "authors": [
+    {
+      "name": "Alon Poleg-Polsky",
+      "country": "US",
+      "institution": "National Institute of Neurological Disorders and Stroke, NIH",
+      "orcid": "0000-0003-1327-5129"
+    },
+    {
+      "name": "Jeffrey S. Diamond",
+      "country": "US",
+      "institution": "National Institute of Neurological Disorders and Stroke, NIH",
+      "orcid": "0000-0002-1770-2629"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "National Institute of Neurological Disorders and Stroke, NIH",
+      "country": "US"
+    }
+  ],
+  "journal": "Neuron",
+  "venue_type": "journal",
+  "categories": [
+    "compartmental-modeling",
+    "direction-selectivity",
+    "synaptic-integration",
+    "dendritic-computation",
+    "retinal-ganglion-cell"
+  ],
+  "abstract": "Postsynaptic responses in many CNS neurons are typically small and variable, often making it difficult to distinguish physiologically relevant signals from background noise. To extract salient information, neurons are thought to integrate multiple synaptic inputs and/or selectively amplify specific synaptic activation patterns. Here, we present evidence for a third strategy: directionally selective ganglion cells (DSGCs) in the mouse retina multiplicatively scale visual signals via a mechanism that requires both nonlinear NMDA receptor (NMDAR) conductances in DSGC dendrites and directionally tuned inhibition provided by the upstream retinal circuitry. Postsynaptic multiplication enables DSGCs to discriminate visual motion more accurately in noisy visual conditions without compromising directional tuning. These findings demonstrate a novel role for NMDARs in synaptic processing and provide new insights into how synaptic and network features interact to accomplish physiologically relevant neural computations.",
+  "citation_key": "PolegPolsky2016",
+  "summary_path": "summary.md",
+  "files": [
+    "files/poleg-polsky_2016_nmda-dsgc-multiplicative.xml"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "date_added": "2026-04-19"
+}

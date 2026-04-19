@@ -1,0 +1,80 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.7554_eLife.52949",
+  "doi": "10.7554/eLife.52949",
+  "title": "The functional organization of excitation and inhibition in the dendrites of mouse direction-selective ganglion cells",
+  "url": "https://elifesciences.org/articles/52949",
+  "pdf_url": "https://cdn.elifesciences.org/articles/52949/elife-52949-v2.pdf",
+  "date_published": "2020-02-25",
+  "year": 2020,
+  "authors": [
+    {
+      "name": "Varsha Jain",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": "0000-0002-1620-4177"
+    },
+    {
+      "name": "Benjamin L Murphy-Baum",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": "0000-0001-6746-3091"
+    },
+    {
+      "name": "Geoff deRosenroll",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": "0000-0002-5431-2814"
+    },
+    {
+      "name": "Santhosh Sethuramanujam",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": null
+    },
+    {
+      "name": "Mike Delsey",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": null
+    },
+    {
+      "name": "Kerry R Delaney",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": null
+    },
+    {
+      "name": "Gautam Bhagwan Awatramani",
+      "country": "CA",
+      "institution": "University of Victoria",
+      "orcid": "0000-0002-0610-5271"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Victoria",
+      "country": "CA"
+    }
+  ],
+  "journal": "eLife",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "dendritic-computation",
+    "synaptic-integration",
+    "compartmental-modeling",
+    "patch-clamp"
+  ],
+  "abstract": "Recent studies indicate that the precise timing and location of excitation and inhibition (E/I) within active dendritic trees can significantly impact neuronal function. How synaptic inputs are functionally organized at the subcellular level in intact circuits remains unclear. To address this issue, we took advantage of the retinal direction-selective ganglion cell circuit, where directionally tuned inhibition is known to shape non-directional excitatory signals. We combined two-photon calcium imaging with genetic, pharmacological, and single-cell ablation methods to examine the extent to which inhibition 'vetoes' excitation at the level of individual dendrites of direction-selective ganglion cells. We demonstrate that inhibition shapes direction selectivity independently within small dendritic segments (<10um) with remarkable accuracy. The data suggest that the parallel processing schemes proposed for direction encoding could be more fine-grained than previously envisioned.",
+  "citation_key": "Jain2020",
+  "summary_path": "summary.md",
+  "files": [
+    "files/jain_2020_dsgc-ca.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "date_added": "2026-04-19"
+}

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "bash -c for u in \"https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.16.4658&rep=rep1&type=pdf\" \"https://web.archive.org/web/2021/https://www.neuron.yale.edu/neuron/static/papers/nc97.pdf\" \"https://www.neuron.yale.edu/neuron/static/papers/NeuralComputation-9-1179-1209.pdf\"; do echo \"=== $u ===\"; curl -s -L --max-time 25 -I -w \"HTTP:%{http_code} CT:%{content_type} SIZE:%{size_download}\\n\" \"$u\" 2>&1 | tail -3; done",
+  "exit_code": 0,
+  "duration_seconds": 38.679,
+  "started_at": "2026-04-18T23:44:19Z",
+  "completed_at": "2026-04-18T23:44:58Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "035_20260418T234419Z_bash-c-for-u-in-https-citeseerx-ist-psu-.stdout.txt",
+  "stderr_file": "035_20260418T234419Z_bash-c-for-u-in-https-citeseerx-ist-psu-.stderr.txt",
+  "stdout_lines": 10,
+  "stderr_lines": 0,
+  "truncated": false
+}

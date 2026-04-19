@@ -1,0 +1,3 @@
+Written: tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1113_jphysiol.1965.sp007638/summary.md
+Bytes: 12802
+Words: 1726

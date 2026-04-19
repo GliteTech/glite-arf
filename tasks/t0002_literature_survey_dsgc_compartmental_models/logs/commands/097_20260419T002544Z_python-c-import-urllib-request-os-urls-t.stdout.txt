@@ -1,0 +1,8 @@
+URL: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2669973/pdf/tjp0587-0819.pdf
+Status: 200, Content-Type: text/html; charset=utf-8
+Size: 1,817 bytes, First bytes: b'\n\n\n\n<htm'
+Not a PDF
+URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC2669973/pdf/tjp0587-0819.pdf
+Status: 200, Content-Type: text/html; charset=utf-8
+Size: 1,816 bytes, First bytes: b'\n\n\n\n<htm'
+Not a PDF

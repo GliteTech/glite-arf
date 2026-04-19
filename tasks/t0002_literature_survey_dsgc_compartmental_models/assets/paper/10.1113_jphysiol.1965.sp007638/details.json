@@ -1,0 +1,55 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1113_jphysiol.1965.sp007638",
+  "doi": "10.1113/jphysiol.1965.sp007638",
+  "title": "The mechanism of directionally selective units in rabbit's retina.",
+  "url": "https://physoc.onlinelibrary.wiley.com/doi/10.1113/jphysiol.1965.sp007638",
+  "pdf_url": "https://physoc.onlinelibrary.wiley.com/doi/pdf/10.1113/jphysiol.1965.sp007638",
+  "date_published": "1965-06",
+  "year": 1965,
+  "authors": [
+    {
+      "name": "H. B. Barlow",
+      "country": "GB",
+      "institution": "Physiological Laboratory, University of Cambridge",
+      "orcid": null
+    },
+    {
+      "name": "W. R. Levick",
+      "country": "AU",
+      "institution": "Neurosensory Laboratory, School of Optometry, University of California, Berkeley",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Cambridge",
+      "country": "GB"
+    },
+    {
+      "name": "University of California, Berkeley",
+      "country": "US"
+    },
+    {
+      "name": "University of Sydney",
+      "country": "AU"
+    }
+  ],
+  "journal": "The Journal of Physiology",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "synaptic-integration"
+  ],
+  "abstract": "Directionally selective single units in the retinae of rabbits respond vigorously to a stimulus object moved through the receptive field in one (preferred) direction, but give little or no response to motion in the reverse (null) direction. The present paper investigates the mechanism of this directional selectivity by showing: (1) it is not caused by optical aberrations or progressive latency differences across the receptive field; (2) the directionally selective property resides in small subunits distributed across the entire receptive field, each subtending 0.25-0.5 degrees; (3) these subunits discriminate the sequence of excitation of pairs of neighbouring retinal regions; (4) the sequence-discrimination is based primarily on an inhibitory mechanism that vetoes responses to null sequences, rather than on the detection of excitatory conjunctions. A tentative circuit is proposed in which horizontal cells conduct laterally to inhibit bipolar cells, preventing their responses to null-direction sequences, while ganglion cells pool selectively from bipolars responding to preferred-direction sequences.",
+  "citation_key": "Barlow1965",
+  "summary_path": "summary.md",
+  "files": [
+    "files/barlow_1965_ds-units-rabbit-retina.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "date_added": "2026-04-19"
+}

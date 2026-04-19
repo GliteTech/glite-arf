@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "uv run python -c import subprocess, sys; subprocess.run([sys.executable, 'tasks/t0002_literature_survey_dsgc_compartmental_models/code/write_summary.py'])",
+  "exit_code": 0,
+  "duration_seconds": 0.345,
+  "started_at": "2026-04-18T23:55:25Z",
+  "completed_at": "2026-04-18T23:55:25Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "068_20260418T235525Z_uv-run-python.stdout.txt",
+  "stderr_file": "068_20260418T235525Z_uv-run-python.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 1,
+  "truncated": false
+}

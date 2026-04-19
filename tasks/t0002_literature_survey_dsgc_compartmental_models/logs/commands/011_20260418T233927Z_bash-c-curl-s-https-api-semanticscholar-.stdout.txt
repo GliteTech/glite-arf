@@ -1,0 +1,1 @@
+{"paperId": "30978748fd810cd5b0f72eaf0ffa3bef468f8cf3", "externalIds": {"MAG": "2117120818", "DBLP": "journals/neco/HinesC97", "DOI": "10.1162/neco.1997.9.6.1179", "CorpusId": 3164387, "PubMed": "9248061"}, "title": "The NEURON Simulation Environment", "isOpenAccess": false, "openAccessPdf": {"url": "", "status": "CLOSED", "license": null}}

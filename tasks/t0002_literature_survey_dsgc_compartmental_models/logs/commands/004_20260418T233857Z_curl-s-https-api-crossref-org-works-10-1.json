@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "curl -s https://api.crossref.org/works/10.1162/neco.1997.9.6.1179 -o C:/Users/md1avn/AppData/Local/Temp/crossref_neco.json",
+  "exit_code": 0,
+  "duration_seconds": 1.984,
+  "started_at": "2026-04-18T23:38:57Z",
+  "completed_at": "2026-04-18T23:38:59Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "004_20260418T233857Z_curl-s-https-api-crossref-org-works-10-1.stdout.txt",
+  "stderr_file": "004_20260418T233857Z_curl-s-https-api-crossref-org-works-10-1.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 0,
+  "truncated": false
+}

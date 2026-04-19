@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "python -c \nimport urllib.request\n\n# Try Internet Archive / Wayback for cached PDF\nurls = [\n    'https://web.archive.org/web/2024/https://onlinelibrary.wiley.com/doi/pdfdirect/10.1113/jphysiol.2008.161240',\n    'https://scholar.archive.org/search?q=doi:10.1113/jphysiol.2008.161240',\n    'https://api.fatcat.wiki/v0/release/lookup?doi=10.1113/jphysiol.2008.161240',\n]\nheaders = {'User-Agent': 'research bot mailto:a.nikolaev@sheffield.ac.uk'}\nfor url in urls:\n    try:\n        req = urllib.request.Request(url, headers=headers)\n        with urllib.request.urlopen(req, timeout=15) as resp:\n            print(f'URL: {url}')\n            print(f'Status: {resp.status}, Content-Type: {resp.headers.get(\"Content-Type\",\"\")}')\n            data = resp.read(2000)\n            print(data[:500])\n            print()\n    except Exception as e:\n        print(f'URL: {url} -> Error: {e}')\n        print()\n",
+  "exit_code": 0,
+  "duration_seconds": 17.317,
+  "started_at": "2026-04-19T00:26:15Z",
+  "completed_at": "2026-04-19T00:26:32Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "100_20260419T002615Z_python-c-import-urllib-request-try-inter.stdout.txt",
+  "stderr_file": "100_20260419T002615Z_python-c-import-urllib-request-try-inter.stderr.txt",
+  "stdout_lines": 6,
+  "stderr_lines": 0,
+  "truncated": false
+}

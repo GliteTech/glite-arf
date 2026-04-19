@@ -1,0 +1,15 @@
+URL: https://pmc.ncbi.nlm.nih.gov/articles/PMC4795984/pdf/
+Content-Type: text/html; charset=utf-8
+Size: 1817 bytes
+Starts with: b'\n\n\n\n<htm'
+Not PDF
+URL: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4795984/pdf/
+Content-Type: text/html; charset=utf-8
+Size: 1817 bytes
+Starts with: b'\n\n\n\n<htm'
+Not PDF
+URL: https://pmc.ncbi.nlm.nih.gov/articles/instance/4795984/pdf/main.pdf
+Content-Type: text/html; charset=utf-8
+Size: 1817 bytes
+Starts with: b'\n\n\n\n<htm'
+Not PDF

@@ -5,10 +5,10 @@
   "name": "Literature survey: compartmental models of DS retinal ganglion cells",
   "short_description": "Survey published compartmental models of direction-selective retinal ganglion cells to inform all five project research questions.",
   "long_description_file": "task_description.md",
-  "status": "in_progress",
+  "status": "completed",
   "dependencies": [],
   "start_time": "2026-04-18T22:28:59Z",
-  "end_time": null,
+  "end_time": "2026-04-19T01:35:00Z",
   "expected_assets": {
     "paper": 20,
     "answer": 1

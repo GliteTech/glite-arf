@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "uv run python -u -m arf.scripts.verificators.verify_paper_asset 10.1126_science.1189664 --task-id t0002_literature_survey_dsgc_compartmental_models",
+  "exit_code": 1,
+  "duration_seconds": 0.183,
+  "started_at": "2026-04-18T23:51:07Z",
+  "completed_at": "2026-04-18T23:51:08Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "058_20260418T235107Z_uv-run-python.stdout.txt",
+  "stderr_file": "058_20260418T235107Z_uv-run-python.stderr.txt",
+  "stdout_lines": 0,
+  "stderr_lines": 1,
+  "truncated": false
+}

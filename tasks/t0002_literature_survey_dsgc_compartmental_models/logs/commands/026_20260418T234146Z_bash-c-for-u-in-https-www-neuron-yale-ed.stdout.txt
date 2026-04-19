@@ -1,0 +1,10 @@
+=== https://www.neuron.yale.edu/neuron/static/papers/nc97.pdf ===
+HTTP:000 CT:
+=== https://www.neuron.yale.edu/neuron/static/papers/NC97.pdf ===
+HTTP:000 CT:
+=== https://neuron.yale.edu/ftp/ted/neuron/nc97.pdf ===
+Content-Type: text/html; charset=iso-8859-1
+
+HTTP:404 CT:text/html; charset=iso-8859-1
+=== https://www.neuron.yale.edu/ftp/ted/neuron/nc97.pdf ===
+HTTP:000 CT:

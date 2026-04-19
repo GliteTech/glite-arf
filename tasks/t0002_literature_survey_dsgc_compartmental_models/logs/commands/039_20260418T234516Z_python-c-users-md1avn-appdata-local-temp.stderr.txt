@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\md1avn\AppData\Local\Temp\extract_text.py", line 21, in <module>
+    print(plain[i:i+3000])
+    ~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\md1avn\AppData\Roaming\uv\python\cpython-3.14-windows-x86_64-none\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2212' in position 2148: character maps to <undefined>

@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "python -c \nimport urllib.request, json\n\nout = 'tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/files/poleg-polsky_2016_nmda-dsgc-multiplicative.pdf'\n\n# eLink PubMed to get free full-text links\nurl = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/elink.fcgi?dbfrom=pubmed&id=26948896&cmd=llinks&retmode=json'\nheaders = {'User-Agent': 'ResearchBot/1.0 (mailto:a.nikolaev@sheffield.ac.uk)'}\nreq = urllib.request.Request(url, headers=headers)\nwith urllib.request.urlopen(req, timeout=30) as r:\n    data = r.read().decode('utf-8')\n    print(data[:3000])\n",
+  "exit_code": 0,
+  "duration_seconds": 0.687,
+  "started_at": "2026-04-18T23:43:05Z",
+  "completed_at": "2026-04-18T23:43:06Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "030_20260418T234305Z_python-c-import-urllib-request-json-out-.stdout.txt",
+  "stderr_file": "030_20260418T234305Z_python-c-import-urllib-request-json-out-.stderr.txt",
+  "stdout_lines": 2,
+  "stderr_lines": 0,
+  "truncated": false
+}

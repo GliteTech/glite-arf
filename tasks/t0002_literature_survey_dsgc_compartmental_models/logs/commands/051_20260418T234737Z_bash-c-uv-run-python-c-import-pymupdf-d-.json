@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "bash -c uv run python -c \"import pymupdf; d=pymupdf.open(\\\"tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1162_neco.1997.9.6.1179/files/hines_1997_neuron-simulation-environment.pdf\\\"); print(\\\"PAGES:\\\", len(d)); print(d[0].get_text()[:800])\"",
+  "exit_code": 1,
+  "duration_seconds": 0.595,
+  "started_at": "2026-04-18T23:47:37Z",
+  "completed_at": "2026-04-18T23:47:37Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "051_20260418T234737Z_bash-c-uv-run-python-c-import-pymupdf-d-.stdout.txt",
+  "stderr_file": "051_20260418T234737Z_bash-c-uv-run-python-c-import-pymupdf-d-.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 8,
+  "truncated": false
+}

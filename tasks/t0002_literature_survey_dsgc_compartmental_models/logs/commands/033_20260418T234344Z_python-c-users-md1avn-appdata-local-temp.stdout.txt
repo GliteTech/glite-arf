@@ -1,0 +1,4 @@
+Fatcat error: <urlopen error [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond>
+CORE results: 4
+  downloadUrl: https://core.ac.uk/download/305118071.pdf
+  downloadUrl: https://core.ac.uk/download/651354764.pdf

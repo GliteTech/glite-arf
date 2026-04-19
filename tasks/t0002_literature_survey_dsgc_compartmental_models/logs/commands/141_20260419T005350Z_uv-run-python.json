@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "uv run python -c \nimport urllib.request, ssl, re, xml.etree.ElementTree as ET\n\nurl = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=3265025&rettype=full&retmode=xml'\nheaders = {'User-Agent': 'research-bot/1.0 (mailto:a.nikolaev@sheffield.ac.uk)'}\nctx = ssl.create_default_context(); ctx.check_hostname = False; ctx.verify_mode = ssl.CERT_NONE\nreq = urllib.request.Request(url, headers=headers)\nwith urllib.request.urlopen(req, timeout=60, context=ctx) as resp:\n    xml_data = resp.read()\n\nprint(f'Downloaded {len(xml_data)} bytes of XML')\n\n# Parse and extract text\nroot = ET.fromstring(xml_data)\n\ndef get_text_recursive(elem, depth=0):\n    parts = []\n    if elem.text and elem.text.strip():\n        parts.append(elem.text.strip())\n    for child in elem:\n        tag = child.tag.split('}')[-1] if '}' in child.tag else child.tag\n        child_text = get_text_recursive(child, depth+1)\n        if child_text.strip():\n            parts.append(child_text)\n        if child.tail and child.tail.strip():\n            parts.append(child.tail.strip())\n    return ' '.join(parts)\n\n# Extract just the article body text\nbody_parts = []\nfor section in root.iter('sec'):\n    title_elem = section.find('title')\n    title = title_elem.text if title_elem is not None else 'Untitled'\n    body_parts.append(f'### {title}')\n    # Get paragraph text\n    for p in section.findall('.//p'):\n        p_text = get_text_recursive(p)\n        if p_text.strip():\n            body_parts.append(p_text[:2000])  # Cap per paragraph\n    body_parts.append('')\n\nfull_text = '\\n'.join(body_parts)\nprint(f'Extracted {len(full_text)} chars of body text')\nprint('--- FIRST 3000 chars ---')\nprint(full_text[:3000])\n",
+  "exit_code": 0,
+  "duration_seconds": 1.028,
+  "started_at": "2026-04-19T00:53:50Z",
+  "completed_at": "2026-04-19T00:53:51Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "141_20260419T005350Z_uv-run-python.stdout.txt",
+  "stderr_file": "141_20260419T005350Z_uv-run-python.stderr.txt",
+  "stdout_lines": 9,
+  "stderr_lines": 0,
+  "truncated": false
+}

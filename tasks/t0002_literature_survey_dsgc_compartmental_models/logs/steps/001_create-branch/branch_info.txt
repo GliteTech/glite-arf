@@ -1,0 +1,5 @@
+branch: task/t0002_literature_survey_dsgc_compartmental_models
+base_branch: main
+base_commit: 813149d32f72786c26ef946b9d4f4841bf233ca1
+worktree_path: C:/Users/md1avn/Documents/GitHub/neuron-channels-worktrees/t0002_literature_survey_dsgc_compartmental_models
+created_at: 2026-04-18T23:05:41Z

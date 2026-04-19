@@ -1,0 +1,2 @@
+{"url": "www.cs.stir.ac.uk/~bpg/Teaching/31YF/Neuron/nsimenv.pdf", "archived_snapshots": {"closest": {"status": "200", "available": true, "url": "http://web.archive.org/web/20240723085920/https://www.cs.stir.ac.uk/~bpg/Teaching/31YF/Neuron/nsimenv.pdf", "timestamp": "20240723085920"}}}
+{"url": "neuron.yale.edu/neuron/static/papers/nc97/nsimenv.pdf", "archived_snapshots": {}}

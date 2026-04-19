@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "bash -c curl -s \"https://api.semanticscholar.org/graph/v1/paper/DOI:10.1162/neco.1997.9.6.1179?fields=openAccessPdf,isOpenAccess,externalIds,title\"",
+  "exit_code": 0,
+  "duration_seconds": 0.795,
+  "started_at": "2026-04-18T23:39:27Z",
+  "completed_at": "2026-04-18T23:39:28Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "011_20260418T233927Z_bash-c-curl-s-https-api-semanticscholar-.stdout.txt",
+  "stderr_file": "011_20260418T233927Z_bash-c-curl-s-https-api-semanticscholar-.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

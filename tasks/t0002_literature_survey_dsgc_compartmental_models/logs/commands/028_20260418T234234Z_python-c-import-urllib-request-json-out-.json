@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "python -c \nimport urllib.request, json\n\nout = 'tasks/t0002_literature_survey_dsgc_compartmental_models/assets/paper/10.1016_j.neuron.2016.02.013/files/poleg-polsky_2016_nmda-dsgc-multiplicative.pdf'\n\n# Check Internet Archive Wayback for this PDF\nwayback_check = 'https://archive.org/wayback/available?url=www.ncbi.nlm.nih.gov/pmc/articles/PMC4795984/pdf/nihms766337.pdf'\nheaders = {'User-Agent': 'ResearchBot/1.0 (mailto:a.nikolaev@sheffield.ac.uk)'}\n\nreq = urllib.request.Request(wayback_check, headers=headers)\nwith urllib.request.urlopen(req, timeout=30) as r:\n    data = json.loads(r.read())\n    print('Wayback result:', json.dumps(data, indent=2))\n",
+  "exit_code": 0,
+  "duration_seconds": 5.837,
+  "started_at": "2026-04-18T23:42:34Z",
+  "completed_at": "2026-04-18T23:42:40Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "028_20260418T234234Z_python-c-import-urllib-request-json-out-.stdout.txt",
+  "stderr_file": "028_20260418T234234Z_python-c-import-urllib-request-json-out-.stderr.txt",
+  "stdout_lines": 4,
+  "stderr_lines": 0,
+  "truncated": false
+}

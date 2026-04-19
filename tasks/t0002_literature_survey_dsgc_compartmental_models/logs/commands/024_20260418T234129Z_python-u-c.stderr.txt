@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "<string>", line 2, in <module>
+    import pymupdf
+ModuleNotFoundError: No module named 'pymupdf'

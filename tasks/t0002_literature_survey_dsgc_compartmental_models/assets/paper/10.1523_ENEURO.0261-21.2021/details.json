@@ -1,0 +1,49 @@
+{
+  "spec_version": "3",
+  "paper_id": "10.1523_ENEURO.0261-21.2021",
+  "doi": "10.1523/ENEURO.0261-21.2021",
+  "title": "Dendrite Morphology Minimally Influences the Synaptic Distribution of Excitation and Inhibition in Retinal Direction-Selective Ganglion Cells",
+  "url": "https://www.eneuro.org/content/8/5/ENEURO.0261-21.2021",
+  "pdf_url": "https://www.eneuro.org/content/eneuro/8/5/ENEURO.0261-21.2021.full.pdf",
+  "date_published": "2021-08-11",
+  "year": 2021,
+  "authors": [
+    {
+      "name": "Malak El-Quessny",
+      "country": "US",
+      "institution": "University of California, Berkeley",
+      "orcid": "0000-0001-8260-4171"
+    },
+    {
+      "name": "Marla B. Feller",
+      "country": "US",
+      "institution": "University of California, Berkeley",
+      "orcid": "0000-0002-9137-5849"
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of California, Berkeley",
+      "country": "US"
+    }
+  ],
+  "journal": "eNeuro",
+  "venue_type": "journal",
+  "categories": [
+    "direction-selectivity",
+    "retinal-ganglion-cell",
+    "synaptic-integration",
+    "dendritic-computation",
+    "patch-clamp"
+  ],
+  "abstract": "Throughout the nervous system, the organization of excitatory and inhibitory synaptic inputs within a neuron's receptive field shapes its output computation. In some cases, multiple motifs of synaptic organization can contribute to a single computation. Here, we compare two of these mechanisms performed by two morphologically distinct retinal direction-selective ganglion cells (DSGCs): directionally tuned inhibition and spatially offset inhibition. Using drifting stimuli, we found that DSGCs that have asymmetric dendrites exhibited stronger directionally tuned inhibition than symmetric DSGCs. Using stationary stimuli to map receptive fields, we found that DSGCs with both symmetric and asymmetric dendrites exhibited similar spatially offset inhibition. Interestingly, we observed that excitatory and inhibitory synapses for both cell types were locally correlated in strength. This result indicates that in the mouse retina, dendritic morphology influences the amount of tuned inhibition attained through asymmetric wiring but does not dictate the synaptic organization of excitation relative to inhibition.",
+  "citation_key": "ElQuessny2021",
+  "summary_path": "summary.md",
+  "files": [
+    "files/el-quessny_2021_dsgc-morph.pdf"
+  ],
+  "download_status": "success",
+  "download_failure_reason": null,
+  "added_by_task": "t0002_literature_survey_dsgc_compartmental_models",
+  "date_added": "2026-04-19"
+}

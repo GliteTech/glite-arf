@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "curl -sS -L -A Mozilla/5.0 (research; mailto:a.nikolaev@sheffield.ac.uk) https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1113/jphysiol.2010.192716&resultType=core&format=json",
+  "exit_code": 0,
+  "duration_seconds": 0.222,
+  "started_at": "2026-04-19T00:27:20Z",
+  "completed_at": "2026-04-19T00:27:20Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "107_20260419T002720Z_curl-ss-l.stdout.txt",
+  "stderr_file": "107_20260419T002720Z_curl-ss-l.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

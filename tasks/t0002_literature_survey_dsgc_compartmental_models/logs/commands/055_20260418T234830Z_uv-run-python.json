@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "uv run python -u -c \nimport os, base64\n\n# Encode the full summary content as base64 to safely pass through command line\nsummary_b64 = 'LS0tCnNwZWNfdmVyc2lvbjogIjMiCnBhcGVyX2lkOiAiMTAuMTExM19qcGh5c2lvbC4xOTY1LnNwMDA3NjM4IgpjaXRhdGlvbl9rZXk6ICJCYXJsb3cxOTY1IgpzdW1tYXJpemVkX2J5X3Rhc2s6ICJ0MDAwMl9saXRlcmF0dXJlX3N1cnZleV9kc2djX2NvbXBhcnRtZW50YWxfbW9kZWxzIgpkYXRlX3N1bW1hcml6ZWQ6ICIyMDI2LTA0LTE5IgotLS0'\nprint(len(summary_b64), 'chars')\n",
+  "exit_code": 0,
+  "duration_seconds": 0.187,
+  "started_at": "2026-04-18T23:48:30Z",
+  "completed_at": "2026-04-18T23:48:30Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "055_20260418T234830Z_uv-run-python.stdout.txt",
+  "stderr_file": "055_20260418T234830Z_uv-run-python.stderr.txt",
+  "stdout_lines": 1,
+  "stderr_lines": 0,
+  "truncated": false
+}

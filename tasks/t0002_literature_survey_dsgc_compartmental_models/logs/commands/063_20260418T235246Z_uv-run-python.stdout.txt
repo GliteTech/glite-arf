@@ -1,0 +1,15 @@
+  File files/barlow_1965_ds-units-rabbit-retina.pdf: 3573904 bytes
+details.json: spec_version=3, paper_id=10.1113_jphysiol.1965.sp007638
+  download_status=success, venue_type=journal
+  categories=['direction-selectivity', 'retinal-ganglion-cell', 'synaptic-integration']
+  abstract words=154
+summary.md: 1726 words
+  Results bullets: 11
+  Main Ideas bullets: 5
+  Summary paragraphs: 4
+
+ERRORS: none
+
+WARNINGS: none
+
+RESULT: PASS
