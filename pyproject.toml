@@ -41,6 +41,9 @@ dependencies = [
     "types-tqdm>=4.67.3.20260303",
     "pymupdf>=1.27.2.2",
     "vastai>=1.0.1",
+    "matplotlib>=3.10.8",
+    "pandas>=3.0.2",
+    "numpy>=2.4.4",
 ]
 
 [project.urls]

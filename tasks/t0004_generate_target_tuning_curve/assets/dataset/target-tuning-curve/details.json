@@ -1,0 +1,62 @@
+{
+  "spec_version": "2",
+  "dataset_id": "target-tuning-curve",
+  "name": "Target Direction Tuning Curve (synthetic)",
+  "version": "1.0.0",
+  "short_description": "Synthetic cosine-raised-to-power direction tuning curve sampled at 12 angles with 20 noisy trials per angle, used as the canonical optimisation target for every later tuning-curve fit in this project.",
+  "description_path": "description.md",
+  "source_paper_id": null,
+  "url": null,
+  "download_url": null,
+  "year": 2026,
+  "date_published": "2026-04-19",
+  "authors": [
+    {
+      "name": "Anton Nikolaev",
+      "country": "GB",
+      "institution": "University of Sheffield",
+      "orcid": null
+    }
+  ],
+  "institutions": [
+    {
+      "name": "University of Sheffield",
+      "country": "GB"
+    }
+  ],
+  "license": "CC0-1.0",
+  "access_kind": "public",
+  "size_description": "12 angles (30 deg spacing) with 20 synthetic noisy trials per angle = 12 mean rates and 240 per-trial rates.",
+  "files": [
+    {
+      "path": "files/curve_mean.csv",
+      "description": "Mean firing rate per direction, one row per sampled angle (columns: angle_deg, mean_rate_hz).",
+      "format": "csv"
+    },
+    {
+      "path": "files/curve_trials.csv",
+      "description": "Per-trial firing rates, one row per (angle, trial) with Gaussian noise (sd=3 Hz) added and clipped to >= 0 Hz (columns: angle_deg, trial_index, rate_hz).",
+      "format": "csv"
+    },
+    {
+      "path": "files/generator_params.json",
+      "description": "Explicit generator parameters used to produce the curve: theta_pref_deg, r_base_hz, r_peak_hz, n, n_angles, n_trials, noise_sd_hz, random_seed.",
+      "format": "json"
+    }
+  ],
+  "categories": [
+    "direction-selectivity"
+  ],
+  "generator_params": {
+    "theta_pref_deg": 90.0,
+    "r_base_hz": 2.0,
+    "r_peak_hz": 32.0,
+    "n": 2.0,
+    "n_angles": 12,
+    "n_trials": 20,
+    "noise_sd_hz": 3.0,
+    "random_seed": 42,
+    "functional_form": "r(theta) = r_base + (r_peak - r_base) * ((1 + cos(theta - theta_pref)) / 2) ** n",
+    "dsi_closed_form": 0.8824
+  }
+}

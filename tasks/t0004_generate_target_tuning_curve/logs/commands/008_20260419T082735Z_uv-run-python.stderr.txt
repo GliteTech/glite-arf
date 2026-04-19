@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0004_generate_target_tuning_curve\tasks\t0004_generate_target_tuning_curve\code\generate_target.py", line 6, in <module>
+    import matplotlib
+ModuleNotFoundError: No module named 'matplotlib'

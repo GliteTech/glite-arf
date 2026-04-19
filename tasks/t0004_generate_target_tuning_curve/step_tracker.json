@@ -77,10 +77,10 @@
       "step": 9,
       "name": "implementation",
       "description": "Generate the canonical cosine tuning curve (mean + noisy trials), register the dataset asset, and save the target_tuning_curve.png plot.",
-      "status": "pending",
-      "started_at": null,
+      "status": "in_progress",
+      "started_at": "2026-04-19T08:25:41Z",
       "completed_at": null,
-      "log_file": null
+      "log_file": "logs\\steps\\009_implementation/"
     },
     {
       "step": 10,

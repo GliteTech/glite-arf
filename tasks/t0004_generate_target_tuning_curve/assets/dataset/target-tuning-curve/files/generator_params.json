@@ -1,0 +1,10 @@
+{
+  "theta_pref_deg": 90.0,
+  "r_base_hz": 2.0,
+  "r_peak_hz": 32.0,
+  "n": 2.0,
+  "n_angles": 12,
+  "n_trials": 20,
+  "noise_sd_hz": 3.0,
+  "random_seed": 42
+}

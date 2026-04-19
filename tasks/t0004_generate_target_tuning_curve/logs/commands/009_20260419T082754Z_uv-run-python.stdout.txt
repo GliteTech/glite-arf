@@ -1,0 +1,7 @@
+DSI=0.8824
+rows: mean_csv=12 trials_csv=240 (expected 12 / 240)
+per-angle mean |sample - closed|: max=1.063 Hz, mean=0.419 Hz
+wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0004_generate_target_tuning_curve\tasks\t0004_generate_target_tuning_curve\assets\dataset\target-tuning-curve\files\curve_mean.csv
+wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0004_generate_target_tuning_curve\tasks\t0004_generate_target_tuning_curve\assets\dataset\target-tuning-curve\files\curve_trials.csv
+wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0004_generate_target_tuning_curve\tasks\t0004_generate_target_tuning_curve\assets\dataset\target-tuning-curve\files\generator_params.json
+wrote: C:\Users\md1avn\Documents\GitHub\neuron-channels-worktrees\t0004_generate_target_tuning_curve\tasks\t0004_generate_target_tuning_curve\results\images\target_tuning_curve.png
