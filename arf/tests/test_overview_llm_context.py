@@ -204,6 +204,7 @@ def _build_metrics() -> list[MetricInfoFull]:
             unit="score",
             value_type="float",
             version=1,
+            higher_is_better=True,
             datasets=["raganato_all"],
             is_key=False,
             emoji=None,

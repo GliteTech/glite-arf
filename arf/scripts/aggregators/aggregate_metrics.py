@@ -3,7 +3,7 @@
 Reads every metric folder under meta/metrics/ and outputs
 structured data about each registered metric definition.
 
-Aggregator version: 1.0
+Aggregator version: 2
 """
 
 import argparse
@@ -37,6 +37,7 @@ NAME_FIELD: str = "name"
 DESCRIPTION_FIELD: str = "description"
 UNIT_FIELD: str = "unit"
 VALUE_TYPE_FIELD: str = "value_type"
+HIGHER_IS_BETTER_FIELD: str = "higher_is_better"
 DATASETS_FIELD: str = "datasets"
 IS_KEY_FIELD: str = "is_key"
 EMOJI_FIELD: str = "emoji"
@@ -52,6 +53,7 @@ class MetricInfoShort:
     name: str
     unit: str
     value_type: str
+    higher_is_better: bool
     is_key: bool
     emoji: str | None
 
@@ -64,6 +66,7 @@ class MetricInfoFull:
     unit: str
     value_type: str
     version: int
+    higher_is_better: bool
     datasets: list[str]
     is_key: bool
     emoji: str | None
@@ -107,6 +110,11 @@ def _load_metric(*, metric_key: str) -> MetricInfoFull | None:
     if not isinstance(value_type, str):
         return None
 
+    higher_is_better_raw: object = data.get(HIGHER_IS_BETTER_FIELD)
+    if not isinstance(higher_is_better_raw, bool):
+        return None
+    higher_is_better: bool = higher_is_better_raw
+
     datasets_list: list[str] = []
     if datasets is not None:
         if not isinstance(datasets, list):
@@ -129,6 +137,7 @@ def _load_metric(*, metric_key: str) -> MetricInfoFull | None:
         unit=unit,
         value_type=value_type,
         version=version,
+        higher_is_better=higher_is_better,
         datasets=datasets_list,
         is_key=is_key,
         emoji=emoji,
@@ -151,6 +160,7 @@ def _to_short(*, metric: MetricInfoFull) -> MetricInfoShort:
         name=metric.name,
         unit=metric.unit,
         value_type=metric.value_type,
+        higher_is_better=metric.higher_is_better,
         is_key=metric.is_key,
         emoji=metric.emoji,
     )
