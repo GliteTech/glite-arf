@@ -1,0 +1,15 @@
+{
+  "spec_version": "1",
+  "task_id": "t0002_literature_survey_dsgc_compartmental_models",
+  "command": "git commit -m t0002_literature_survey_dsgc_compartmental_models [results]: Add command logs",
+  "exit_code": 0,
+  "duration_seconds": 6.657,
+  "started_at": "2026-04-19T01:20:18Z",
+  "completed_at": "2026-04-19T01:20:25Z",
+  "working_directory": "C:\\Users\\md1avn\\Documents\\GitHub\\neuron-channels-worktrees\\t0002_literature_survey_dsgc_compartmental_models",
+  "stdout_file": "152_20260419T012018Z_git-commit-m.stdout.txt",
+  "stderr_file": "152_20260419T012018Z_git-commit-m.stderr.txt",
+  "stdout_lines": 5,
+  "stderr_lines": 7,
+  "truncated": false
+}
