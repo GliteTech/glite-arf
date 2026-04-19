@@ -4,7 +4,7 @@ description: "Create a new not-started task folder with task.json and task_descr
 ---
 # Create Task
 
-**Version**: 5
+**Version**: 6
 
 ## Goal
 
@@ -73,7 +73,10 @@ Read before starting:
 2. **Derive metadata fields from `$TASK_DESCRIPTION`.** Extract:
 
    * `name` — concise human-readable name (under 80 characters)
-   * `short_description` — one-sentence summary (under 200 characters)
+   * `short_description` — one-sentence summary, **strictly under 200 characters**. This limit is
+     enforced by `verify_task_file.py` (`TF-W001`). Count the characters before writing `task.json`;
+     if the sentence is longer, tighten it first — do not rely on the verificator to catch the
+     overrun afterwards.
    * `slug` — lowercase underscore-separated identifier derived from the name (e.g.,
      `download_semcor_dataset`). Must use only lowercase letters, digits, and underscores.
    * `dependencies` — task IDs mentioned or implied as prerequisites. Validate each against the
@@ -146,6 +149,8 @@ tasks (download-dataset, literature-survey).
 
 **Scope and completeness**:
 
+* `short_description` is under 200 characters (enforced by `verify_task_file.py` as `TF-W001`). Trim
+  the description before writing `task.json`, not after the verificator flags it.
 * Motivation stated: why this task matters for the project's research questions
 * All runs/configurations listed explicitly (do not say "run on all models" — name each model)
 * (\*) All registered metrics computed for every run (not just one run). Check available metrics
