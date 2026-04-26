@@ -14,72 +14,63 @@ cd <project-name>
 
 ## Step 2: Set Up the Environment
 
-Run `/setup-project` in Claude Code (or its Codex equivalent). The skill captures the safety
-acknowledgement, detects or installs `uv`, runs `uv sync`, installs pre-commit hooks, allows
-`direnv`, initializes Git LFS, and runs `doctor.py`. API keys for paid services (OpenAI, vast.ai)
-are provisioned later in Phase 4 of the skill, only for services your project actually declares in
-`project/budget.json`.
+Run `/setup-project` in Claude Code, or `$setup-project` in Codex. This is the canonical onboarding
+path for every new fork. The skill:
 
-## Step 3: Customize Project Identity
+* Shows the safety acknowledgement and stops unless you accept it exactly
+* Detects or installs `uv`, runs `uv sync`, installs pre-commit hooks, allows `direnv`, initializes
+  Git LFS, and runs `doctor.py`
+* Runs `/create-project-description` inline to create `project/description.md` and
+  `project/budget.json`
+* Provisions only the paid services declared in `project/budget.json`
+* Runs `/add-category`, `/add-metric`, `/add-task-type`, and `/add-asset-type` to populate `meta/`
+* Replaces the template `README.md` with a project-specific README
+* Runs `/human-brainstorm` to plan the first tasks
 
-Update these files for your specific research topic:
+Do not run the lower-level setup skills first. They are still available for later repairs and
+incremental changes, but `/setup-project` owns the initial project creation flow.
 
-* **`pyproject.toml`** -- Change `name`, `description`, and `version`. Add domain-specific
-  dependencies as needed.
-* **`CLAUDE.md`** -- Update the project description and any domain-specific context at the top. The
-  structure, rules, and style sections remain unchanged.
+## Step 3: Review Project Identity
 
-## Step 4: Create Project Description
+After `/setup-project` finishes, review what it wrote:
 
-Create `project/description.md` to define the project's goals, scope, and research questions. This
-file is read by all skills to understand project-level context.
+* `project/description.md`
+* `project/budget.json`
+* `README.md`
+* `meta/categories/`, `meta/metrics/`, `meta/task_types/`, and any extra `meta/asset_types/`
 
-Run the `/create-project-description` skill for an interactive guided workflow, or create the file
-manually following the specification in `arf/specifications/project_description_specification.md`.
+If the project needs domain dependencies, update `pyproject.toml` and `uv.lock` intentionally. If
+the root `CLAUDE.md` needs project-specific context beyond `project/description.md`, add it at the
+top without changing the framework rules.
 
-Required sections:
+## Step 4: Verify Setup
 
-* **Goal** -- 2-3 sentences: the overarching research objective
-* **Scope** -- In Scope / Out of Scope bulleted lists
-* **Research Questions** -- 3-7 numbered, testable questions
-* **Success Criteria** -- measurable completion criteria (at least 3)
-* **Key References** -- anchor papers, datasets, benchmarks (at least 3)
-* **Current Phase** -- 1-2 sentences on where the project is now
-
-Validate with:
+Run the same checks `/setup-project` uses if you need to confirm the final state:
 
 ```bash
+python3 doctor.py
 uv run python -u -m arf.scripts.verificators.verify_project_description
+uv run python -u -m arf.scripts.verificators.verify_project_budget
+uv run python -m arf.scripts.aggregators.aggregate_categories --format ids
+uv run python -m arf.scripts.aggregators.aggregate_metrics --format ids
+uv run python -m arf.scripts.aggregators.aggregate_task_types --format ids
 ```
 
-Update this file as the project evolves -- particularly Current Phase and Research Questions after
-each checkpoint.
+## Step 5: Execute the First Task
 
-## Step 5: Define Asset Types
+`/setup-project` ends by running `/human-brainstorm`, so a new project should already have at least
+one planned task or an explicit decision to defer task creation. List queued tasks:
 
-Review the predefined asset types in `meta/asset_types/` (paper, dataset, library, answer). Add
-domain-specific asset types as needed (e.g., `model/`, `feature/`, `benchmark/`). Each asset type
-subfolder must contain a `specification.md` that defines the expected format and metadata.
+```bash
+uv run python -m arf.scripts.aggregators.aggregate_tasks --status not_started --format ids
+```
 
-## Step 6: Define Categories and Metrics
+Then run one:
 
-In `meta/categories/`, create folders for the initial set of tags relevant to your research domain.
-Categories are like tags that can be assigned to tasks and assets for filtering.
-
-In `meta/metrics/`, define the project-wide metrics that all tasks should report against, so results
-are comparable across tasks. Using consistent metrics from the start is critical -- it enables
-cross-task comparison and aggregation.
-
-## Step 7: Launch the Project Agent
-
-Task creation is handled by the project initialization AI agent, not manually. The agent analyzes
-the research topic, creates the initial set of tasks (starting with a literature survey), and sets
-up the correct folder structure, branches, and task metadata automatically.
-
-The agent follows the ARF task lifecycle: it creates tasks via the suggestions chooser, populates
-`task.json` and `step_tracker.json`, creates the appropriate git branches (`new_tasks/...` for
-creation, `task/...` for execution), and hands off to task subagents for execution through the stage
-sequence: research, plan, execute, analyze, report.
+```text
+/execute-task <task_id>   # Claude Code
+$execute-task <task_id>   # Codex
+```
 
 ## Checklist
 
@@ -87,10 +78,9 @@ Before starting research tasks, verify:
 
 * [ ] Git LFS is installed (`git lfs install`)
 * [ ] `doctor.py` passes all checks
-* [ ] `pyproject.toml` name and description updated for your project
-* [ ] `CLAUDE.md` project description updated
-* [ ] `project/description.md` created (run `/create-project-description`)
-* [ ] Asset types reviewed and domain-specific types added
-* [ ] Initial categories defined in `meta/categories/`
-* [ ] Project-wide metrics defined in `meta/metrics/`
-* [ ] Project agent launched to create initial tasks
+* [ ] `/setup-project` completed or exited with a clear blocker
+* [ ] `project/description.md` and `project/budget.json` exist and pass verification
+* [ ] `README.md` is project-specific, not the template README
+* [ ] `meta/` entries were reviewed after `/setup-project` populated them
+* [ ] Paid services in `project/budget.json` match the credentials you actually configured
+* [ ] First tasks were planned by `/human-brainstorm`, or task creation was explicitly deferred

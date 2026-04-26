@@ -27,6 +27,7 @@ Format: `arf/specifications/agent_skills_specification.md`.
 | [research-code](../../skills/research-code/SKILL.md) | Review libraries and prior tasks to write implementation-oriented code research. | `research/research_code.md` |
 | [research-internet](../../skills/research-internet/SKILL.md) | Conduct structured internet research and write `research/research_internet.md`. | `research/research_internet.md` |
 | [research-papers](../../skills/research-papers/SKILL.md) | Review downloaded papers and write `research/research_papers.md`. | `research/research_papers.md` |
+| [setup-project](../../skills/setup-project/SKILL.md) | One-shot interactive onboarding for a newly forked Glite ARF template. | `project/`, `meta/`, project README, initial task plan |
 | [setup-remote-machine](../../skills/setup-remote-machine/SKILL.md) | Provision, validate, monitor, and tear down remote GPU machines for task execution. | Provisioned remote machine |
 
 ## Skill File Layout

@@ -107,16 +107,16 @@ CITATION.cff    Academic citation metadata
 ## Bootstrap a new project
 
 1. **Fork** this repo on GitHub, clone locally.
-2. **Run `/setup-project`** in Claude Code (or its Codex equivalent). The skill shows the safety
+2. **Run `/setup-project`** in Claude Code, or `$setup-project` in Codex. The skill shows the safety
    acknowledgement, installs everything it needs (`uv`, Python dependencies, pre-commit hooks, git
    LFS) with explicit consent for each installer, validates the environment with `doctor.py`, guides
-   you through `project/description.md` and `project/budget.json`, and populates `meta/` with the
-   project's categories, metrics, task types, and any extra asset types.
+   you through `project/description.md` and `project/budget.json`, provisions the paid services the
+   project declares, populates `meta/`, replaces this template README with a project-specific
+   README, and runs `/human-brainstorm` to plan first tasks.
 
-When setup finishes, run `/create-task` for your first task (typically a literature survey), then
-`/execute-task <task_id>`. Use `/human-brainstorm` after each completed task to turn its
-`suggestions.json` into new task folders, and open `overview/README.md` to inspect aggregated
-results.
+When setup finishes, execute one of the planned tasks with `/execute-task <task_id>`. Use
+`/human-brainstorm` after each completed task to turn its `suggestions.json` into new task folders,
+and open `overview/README.md` to inspect aggregated results.
 
 Follow the full walkthrough at [`arf/docs/tutorial/`](arf/docs/tutorial/).
 
