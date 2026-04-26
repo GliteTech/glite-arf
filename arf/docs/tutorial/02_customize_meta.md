@@ -1,9 +1,8 @@
-# 2. Customize meta/
+# 2. Review meta/
 
-The ARF fork ships with a default set of asset types, categories, metrics, and task types under
-[`meta/`](../../../meta/). Everything in `meta/` is **project-specific**. The defaults exist so you
-can run tasks on day one, but they were written for a generic research project and do not match
-yours yet. Adjust them before you start real work.
+The `/setup-project` skill populated asset types, categories, metrics, and task types under
+[`meta/`](../../../meta/). Everything in `meta/` is **project-specific**. Review what setup created
+before you start real work, and adjust anything that does not match the project.
 
 ## Why Customize Before Running Tasks
 
@@ -17,7 +16,7 @@ task-type-specific instructions. Assets are validated against
 If you start running tasks with the wrong set, every result will need a correction later. Cheap
 twenty minutes now, expensive backlog later.
 
-## Step 1: Review What Ships
+## Step 1: Review What Setup Created
 
 Open each subdirectory and read what is there:
 
@@ -33,8 +32,9 @@ Read at least one `description.json` from each to see the shape. Then ask yourse
 
 ## Step 2: Asset Types
 
-The defaults are `paper`, `dataset`, `library`, `model`, `answer`, `predictions`. Most research
-projects keep all six.
+The built-in asset types are `paper`, `dataset`, `library`, `model`, `answer`, `predictions`. Most
+research projects keep all six. `/setup-project` may also have added project-specific asset types
+through `/add-asset-type`.
 
 * **paper** — academic papers downloaded and summarized during research. Each paper asset holds
   structured metadata (`details.json`), the PDF or markdown source, and a detailed summary written
@@ -78,7 +78,7 @@ your project's subfields. For the tutorial project (image augmentation on CIFAR-
 * `architecture` — model architecture work
 * `survey` — literature surveys and reading lists
 
-Delete any category the template shipped that does not apply. Add the ones you need via
+Delete any category setup added that does not apply. Add missing categories via
 [How to add a category](../howto/add_a_category.md).
 
 ## Step 4: Metrics
@@ -91,7 +91,7 @@ unregistered key, verification fails. For MyResearch you need at least:
 * `efficiency_inference_time_per_item_seconds` — per-item inference time (likely already in the
   defaults)
 
-Add missing metrics via [How to add a metric](../howto/add_a_metric.md). Delete defaults you will
+Add missing metrics via [How to add a metric](../howto/add_a_metric.md). Delete metrics you will
 never use.
 
 ## Step 5: Task Types
@@ -149,4 +149,5 @@ Each should list exactly the set you intend. No more, no less.
 ## Next
 
 Meta is tuned to the project. Continue to [3. Run Your First Task](03_run_your_first_task.md) to
-create and execute a literature-survey task end-to-end.
+execute the first task planned by `/setup-project`, or create a literature-survey task if setup
+explicitly deferred task creation.
