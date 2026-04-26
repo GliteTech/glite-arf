@@ -8,6 +8,10 @@ task, a refreshed dashboard, and a results page on GitHub.
 A tiny project called **MyResearch** that studies image augmentation. This part lays the skeleton:
 GitHub repo, environment, description, budget, project-specific metadata, and the first task plan.
 
+If you want to see the destination before starting, browse the public
+[GliteTech/research-ace-cefr](https://github.com/GliteTech/research-ace-cefr) demo. It is a complete
+ARF project with setup files, task history, artifacts, and generated dashboards already committed.
+
 ## Step 1: Fork the ARF Repository
 
 ARF lives in a single GitHub repository. Fork it on github.com — click **Fork**, name the new repo

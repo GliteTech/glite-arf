@@ -241,22 +241,28 @@ If any of this sounds like something you'd try, here is the practical path.
 [github.com/GliteTech/glite-arf](https://github.com/GliteTech/glite-arf). Fork it — it's an
 Apache-2.0 template that's meant to be forked, not installed.
 
-**2. Read the docs in this order.** Start with `arf/README.md` for the fundamental principles and
+**2. Browse a completed demo.** The public
+[GliteTech/research-ace-cefr](https://github.com/GliteTech/research-ace-cefr) repo shows what an ARF
+project looks like after setup, task execution, artifact registration, and dashboard
+materialization. It uses ARF for conversational-text CEFR difficulty prediction on the Ace-CEFR
+benchmark.
+
+**3. Read the docs in this order.** Start with `arf/README.md` for the fundamental principles and
 glossary. Then the top-level `CLAUDE.md` for the hard rules every task has to follow. Then
 `arf/docs/explanation/concepts.md` for the longer conceptual walkthrough of tasks, assets, and
 suggestions. The skill files under `arf/skills/*/SKILL.md` are where the day-to-day task flow lives
 — read `execute-task` and `human-brainstorm` first.
 
-**3. Set up the project.** Run `/setup-project` (or `$setup-project` in Codex). It's an interactive
+**4. Set up the project.** Run `/setup-project` (or `$setup-project` in Codex). It's an interactive
 skill that handles the whole first-run sequence: safety acknowledgement, dependency setup,
 `doctor.py`, `project/description.md`, `project/budget.json`, declared paid-service credentials,
 project-specific `meta/`, a project README, and the first `/human-brainstorm` session.
 
-**4. Kick off your first task.** Pick one of the tasks planned by `/setup-project`, then run
+**5. Kick off your first task.** Pick one of the tasks planned by `/setup-project`, then run
 `/execute-task t0001_your_slug`. The skill runs that task end to end through all mandatory stages
 and opens a PR.
 
-**5. Babysit the first few tasks, then let go.** For the first two or three tasks, sit with the
+**6. Babysit the first few tasks, then let go.** For the first two or three tasks, sit with the
 agent. Read the step logs. Verify the pull requests before you merge. The deterministic scripts will
 catch the big mistakes, but you need to build an intuition for where this particular project's
 agents drift most. After that — three tasks, maybe five — you can start spawning them in parallel
