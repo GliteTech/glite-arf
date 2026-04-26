@@ -4,7 +4,7 @@ Walks task folders, reads results/metrics.json, normalizes both
 legacy flat and explicit variant formats, and groups metric values
 by metric key.
 
-Aggregator version: 1.0
+Aggregator version: 2
 """
 
 import argparse
@@ -66,6 +66,7 @@ class MetricResultsFull:
     metric_name: str
     unit: str
     value_type: str
+    higher_is_better: bool
     is_key: bool
     emoji: str | None
     result_count: int
@@ -194,6 +195,7 @@ def aggregate_metric_results_full(
                 metric_name=(definition.name if definition is not None else metric_key),
                 unit=definition.unit if definition is not None else "none",
                 value_type=(definition.value_type if definition is not None else "float"),
+                higher_is_better=(definition.higher_is_better if definition is not None else True),
                 is_key=(definition.is_key if definition is not None else False),
                 emoji=(definition.emoji if definition is not None else None),
                 result_count=len(entries),

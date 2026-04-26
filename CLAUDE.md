@@ -7,9 +7,10 @@ Template repository for starting a research project using the Glite Autonomous R
 
 ```bash
 # Setup
+# New fork onboarding: run /setup-project in Claude Code or $setup-project in Codex
 uv sync                                            # Install deps
-uv run pre-commit install                           # Activate git hooks
-python3 doctor.py                                   # Validate environment
+uv run pre-commit install                          # Activate git hooks
+python3 doctor.py                                  # Validate environment
 
 # Development
 uv run python -u <script.py>                        # Run a script
@@ -25,6 +26,7 @@ uv run pytest                                        # Run framework tests in ar
 ## Key References
 
 * Project description and goals: create `project/description.md` in your fork
+* New project onboarding: @arf/skills/setup-project/SKILL.md
 * ARF architecture and glossary: @arf/README.md
 * Python style guide: @arf/styleguide/python_styleguide.md
 * Markdown style guide: @arf/styleguide/markdown_styleguide.md

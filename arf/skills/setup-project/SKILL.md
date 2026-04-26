@@ -9,7 +9,7 @@ description: >-
 ---
 # Setup Project
 
-**Version**: 6
+**Version**: 7
 
 ## Goal
 
@@ -27,12 +27,13 @@ categories, metrics, task types, and any extra asset types.
 Read before starting:
 
 * `arf/docs/explanation/safety.md` — autonomy and safety document quoted verbatim in Phase 1.
-* `README.md` "Bootstrap a new project" section — the manual flow this skill replaces.
+* `README.md` "Bootstrap a new project" section — the canonical onboarding flow this skill
+  implements.
 * `arf/specifications/project_description_specification.md` — required for Phase 3 verification.
 * `arf/specifications/project_budget_specification.md` — required for Phase 3 verification.
 * `arf/skills/create-project-description/SKILL.md` — the skill chained in Phase 3.
 * `arf/skills/add-category/SKILL.md`, `arf/skills/add-metric/SKILL.md`,
-  `arf/skills/add-task-type/SKILL.md`, `arf/skills/add-asset-type/SKILL.md` — chained in Phase 4.
+  `arf/skills/add-task-type/SKILL.md`, `arf/skills/add-asset-type/SKILL.md` — chained in Phase 5.
 * `arf/styleguide/agent_instructions_styleguide.md` — governs how this skill is written.
 * `doctor.py` — the environment validator run in Phase 2.
 
@@ -94,8 +95,8 @@ Read before starting:
      * `Darwin` → propose `brew install git-lfs`
      * `Linux` (check `/etc/os-release` for `ID=ubuntu` or `ID=debian`) → propose
        `sudo apt-get install -y git-lfs`
-     * Any other platform → print the manual instructions from <https://git-lfs.com/> and exit with
-       `Install git-lfs manually, then re-run /setup-project.`
+    * Any other platform → print <https://git-lfs.com/> instructions and exit with
+      `Install git-lfs manually, then re-run /setup-project.`
    * Show the user the exact command and ask: "Install git-lfs with `<command>`? Type `yes` to run
      it or anything else to cancel." Run the command only on the exact string `yes`.
    * After install, run `git lfs install` to register hooks.
@@ -216,18 +217,20 @@ project when they do not want to provide credentials.
     * `## Research Questions` — the numbered list from `project/description.md`.
     * `## Success Criteria` — the bulleted list from `project/description.md`.
     * `## Current Phase` — from `project/description.md`.
-    * `## Results Dashboard` — one line:
-      `See [overview/README.md](overview/README.md) for the latest aggregated results, metrics, and task status.`
-    * `## Getting Started` — for new contributors: clone the repo, run `uv sync`, then run
-      `/setup-project` in Claude Code or Codex. 3-5 lines.
-    * `## Daily Workflow` — quick reference to `/create-task`, `/execute-task`, `/human-brainstorm`,
-      and regenerating `overview/README.md`. Keep under 10 lines.
-    * `## Key Rules` — the verificator-enforced rules that apply to anyone working in the repo: CLI
+    * `## Results Dashboard` — one line linking to `overview/README.md` for aggregated results,
+      metrics, and task status.
+    * `## Getting Started` — for new contributors to the configured project: clone the repo, run
+      `uv sync`, install hooks if needed, and run `python3 doctor.py`. Tell them not to run
+      `/setup-project` again unless they intentionally want to re-initialize a fresh fork. 3-6
+      lines.
+    * `## Daily Workflow` — quick links to `/create-task`, `/execute-task`, brainstorming, and
+      regenerating `overview/README.md`. Keep under 10 lines.
+    * `## Key Rules` — the verificator-enforced rules for anyone working in the repo: CLI
       wrapping with `run_with_logs`, task isolation, commit per step, immutability + corrections,
       read through aggregators, register metrics before reporting. Copy these from the template
       README's "Key rules" section.
     * `## Project Structure` — the top-level directory layout tree from the template README.
-    * `## Categories` — bulleted list of every slug under `meta/categories/` with its display name.
+    * `## Categories` — bulleted list of category slugs with display names.
     * `## Metrics` — bulleted list of every key under `meta/metrics/` with its display name and
       unit.
     * `## Task Types` — bulleted list of every slug under `meta/task_types/` with its display name

@@ -37,7 +37,7 @@ frozen so later runs can build on it without breaking it.
 Five pages. One small project. Read in order.
 
 1. [Set Up a Project](tutorial/01_set_up_a_project.md)
-2. [Customize meta/](tutorial/02_customize_meta.md)
+2. [Review meta/](tutorial/02_customize_meta.md)
 3. [Run Your First Task](tutorial/03_run_your_first_task.md)
 4. [Brainstorm Next Tasks](tutorial/04_brainstorm_next_tasks.md)
 5. [Inspect Results](tutorial/05_inspect_results.md)

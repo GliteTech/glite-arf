@@ -247,16 +247,14 @@ glossary. Then the top-level `CLAUDE.md` for the hard rules every task has to fo
 suggestions. The skill files under `arf/skills/*/SKILL.md` are where the day-to-day task flow lives
 — read `execute-task` and `human-brainstorm` first.
 
-**3. Describe your project.** Run `/create-project-description`. It's an interactive skill that
-walks you through filling in `project/description.md` and `project/budget.json` for your research —
-goals, scope, research questions, compute budget, the works. Bring whatever notes you already have
-(pasted text, an existing doc, a rough brief) and the skill will shape it into the format every
-other skill reads from.
+**3. Set up the project.** Run `/setup-project` (or `$setup-project` in Codex). It's an interactive
+skill that handles the whole first-run sequence: safety acknowledgement, dependency setup,
+`doctor.py`, `project/description.md`, `project/budget.json`, declared paid-service credentials,
+project-specific `meta/`, a project README, and the first `/human-brainstorm` session.
 
-**4. Kick off your first task.** Run `/human-brainstorm` for an interactive session that turns
-project state into a batch of tasks, or `/create-task` to create a single not-started task from a
-free-text description. Then `/execute-task t0001_your_slug` runs that task end to end through all
-mandatory stages and opens a PR.
+**4. Kick off your first task.** Pick one of the tasks planned by `/setup-project`, then run
+`/execute-task t0001_your_slug`. The skill runs that task end to end through all mandatory stages
+and opens a PR.
 
 **5. Babysit the first few tasks, then let go.** For the first two or three tasks, sit with the
 agent. Read the step logs. Verify the pull requests before you merge. The deterministic scripts will

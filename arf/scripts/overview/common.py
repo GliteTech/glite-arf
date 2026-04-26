@@ -470,8 +470,9 @@ def rewrite_embedded_paths(
 
 def write_file(*, file_path: Path, content: str) -> None:
     file_path.parent.mkdir(parents=True, exist_ok=True)
+    normalized: str = content.rstrip("\n") + "\n"
     file_path.write_text(
-        data=content + "\n",
+        data=normalized,
         encoding="utf-8",
     )
     print(f"  Wrote {_display_path(path=file_path)}")

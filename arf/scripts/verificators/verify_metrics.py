@@ -50,6 +50,7 @@ FIELD_NAME: str = "name"
 FIELD_DESCRIPTION: str = "description"
 FIELD_UNIT: str = "unit"
 FIELD_VALUE_TYPE: str = "value_type"
+FIELD_HIGHER_IS_BETTER: str = "higher_is_better"
 FIELD_DATASETS: str = "datasets"
 FIELD_IS_KEY: str = "is_key"
 FIELD_EMOJI: str = "emoji"
@@ -60,6 +61,7 @@ REQUIRED_FIELDS: list[str] = [
     FIELD_DESCRIPTION,
     FIELD_UNIT,
     FIELD_VALUE_TYPE,
+    FIELD_HIGHER_IS_BETTER,
 ]
 
 ALLOWED_UNITS: set[str] = {
@@ -133,6 +135,11 @@ MT_E008: DiagnosticCode = DiagnosticCode(
     prefix=_PREFIX,
     severity=Severity.ERROR,
     number=8,
+)
+MT_E009: DiagnosticCode = DiagnosticCode(
+    prefix=_PREFIX,
+    severity=Severity.ERROR,
+    number=9,
 )
 
 MT_W001: DiagnosticCode = DiagnosticCode(
@@ -309,6 +316,20 @@ def _check_fields(
                                 file_path=file_path,
                             ),
                         )
+
+    # E009: higher_is_better must be a bool when present. The field is
+    # required, so absence is reported by the upstream MT-E002 check;
+    # here we only catch the wrong-type case. `isinstance(x, int)` is
+    # True for bools in Python, so the bool check must come first.
+    higher_is_better: object = data.get(FIELD_HIGHER_IS_BETTER)
+    if higher_is_better is not None and not isinstance(higher_is_better, bool):
+        diagnostics.append(
+            Diagnostic(
+                code=MT_E009,
+                message=f"'{FIELD_HIGHER_IS_BETTER}' is present but not a boolean",
+                file_path=file_path,
+            ),
+        )
 
     # W003: is_key must be a bool if present
     is_key: object = data.get(FIELD_IS_KEY)

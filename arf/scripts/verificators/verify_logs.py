@@ -15,6 +15,7 @@ import argparse
 import json
 import re
 import sys
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -178,6 +179,15 @@ STEP_TRACKER_FIELD_LOG_FILE: str = "log_file"
 
 COMPLETED_STATUSES: set[str] = {"completed", "failed", "skipped"}
 SESSION_LOGS_RELATIVE_PREFIX: str = "logs/sessions"
+
+# A brainstorm task that captures its own live session may finish
+# `capture_task_sessions.py` before the in-flight JSONL transcript has
+# been flushed to disk, so the report legitimately records zero copies.
+# Within this window we trust the capture report and do not emit
+# LG-W007. Older tasks (capture far in the past) still warn: the
+# transcript should have appeared long ago.
+LIVE_SESSION_CAPTURE_WINDOW_SECONDS: float = 600.0
+STEP_TRACKER_FIELD_COMPLETED_AT: str = "completed_at"
 
 # ---------------------------------------------------------------------------
 # Diagnostic codes
@@ -870,6 +880,59 @@ def _check_session_capture_report(
     return diagnostics
 
 
+def _parse_iso_timestamp(*, value: object) -> datetime | None:
+    if not isinstance(value, str) or len(value) == 0:
+        return None
+    text: str = value[:-1] + "+00:00" if value.endswith("Z") else value
+    try:
+        parsed: datetime = datetime.fromisoformat(text)
+    except ValueError:
+        return None
+    if parsed.tzinfo is None:
+        return parsed.replace(tzinfo=UTC)
+    return parsed
+
+
+def _latest_step_completed_at(*, task_id: str) -> datetime | None:
+    steps: dict[int, dict[str, Any]] = _load_tracker_steps(task_id=task_id)
+    latest: datetime | None = None
+    for step_data in steps.values():
+        timestamp: datetime | None = _parse_iso_timestamp(
+            value=step_data.get(STEP_TRACKER_FIELD_COMPLETED_AT),
+        )
+        if timestamp is None:
+            continue
+        if latest is None or timestamp > latest:
+            latest = timestamp
+    return latest
+
+
+def _is_fresh_empty_capture(*, task_id: str) -> bool:
+    report_path: Path = session_capture_report_path(task_id=task_id)
+    if not report_path.exists():
+        return False
+    report_data: dict[str, Any] | None = load_json_file(file_path=report_path)
+    if report_data is None:
+        return False
+
+    copied_sessions: object = report_data.get(FIELD_COPIED_SESSIONS)
+    if not isinstance(copied_sessions, list) or len(copied_sessions) != 0:
+        return False
+
+    captured_at: datetime | None = _parse_iso_timestamp(
+        value=report_data.get(FIELD_CAPTURED_AT),
+    )
+    if captured_at is None:
+        return False
+
+    latest_completed: datetime | None = _latest_step_completed_at(task_id=task_id)
+    if latest_completed is None:
+        return False
+
+    delta_seconds: float = abs((latest_completed - captured_at).total_seconds())
+    return delta_seconds <= LIVE_SESSION_CAPTURE_WINDOW_SECONDS
+
+
 def _check_session_logs(
     *,
     task_id: str,
@@ -877,15 +940,17 @@ def _check_session_logs(
 ) -> list[Diagnostic]:
     diagnostics: list[Diagnostic] = []
     sessions_dir: Path = session_logs_dir(task_id=task_id)
+    fresh_empty_capture: bool = _is_fresh_empty_capture(task_id=task_id)
 
     if sessions_dir.is_dir() is False:
-        diagnostics.append(
-            Diagnostic(
-                code=LG_W007,
-                message="logs/sessions/ directory does not exist",
-                file_path=file_path,
-            ),
-        )
+        if fresh_empty_capture is False:
+            diagnostics.append(
+                Diagnostic(
+                    code=LG_W007,
+                    message="logs/sessions/ directory does not exist",
+                    file_path=file_path,
+                ),
+            )
         diagnostics.extend(
             _check_session_capture_report(
                 task_id=task_id,
@@ -896,7 +961,7 @@ def _check_session_logs(
         return diagnostics
 
     transcript_files: list[Path] = _session_transcript_files(task_id=task_id)
-    if len(transcript_files) == 0:
+    if len(transcript_files) == 0 and fresh_empty_capture is False:
         diagnostics.append(
             Diagnostic(
                 code=LG_W007,

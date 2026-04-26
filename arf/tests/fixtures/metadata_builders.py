@@ -54,6 +54,7 @@ def build_metric(
     description: str = DEFAULT_METRIC_DESCRIPTION,
     unit: str = DEFAULT_METRIC_UNIT,
     value_type: str = DEFAULT_METRIC_VALUE_TYPE,
+    higher_is_better: bool | None = True,
     is_key: bool | None = None,
     emoji: str | None = None,
     overrides: dict[str, object] | None = None,
@@ -65,6 +66,11 @@ def build_metric(
         "unit": unit,
         "value_type": value_type,
     }
+    # Pass `higher_is_better=None` to deliberately omit the field so tests
+    # can exercise the required-field-missing code path. Any bool writes
+    # the field through.
+    if higher_is_better is not None:
+        data["higher_is_better"] = higher_is_better
     if is_key is not None:
         data["is_key"] = is_key
     if emoji is not None:

@@ -3,7 +3,7 @@
 Reads every task type folder under meta/task_types/ and outputs
 structured data about each task type.
 
-Aggregator version: 1.0
+Aggregator version: 2
 """
 
 import argparse
@@ -37,6 +37,8 @@ OPTIONAL_STEPS_FIELD: str = "optional_steps"
 HAS_EXTERNAL_COSTS_FIELD: str = "has_external_costs"
 
 OUTPUT_KEY_TASK_TYPES: str = "task_types"
+OUTPUT_FIELD_TASK_TYPE_ID: str = "task_type_id"
+OUTPUT_FIELD_SLUG: str = "slug"
 
 
 # ---------------------------------------------------------------------------
@@ -139,8 +141,14 @@ def aggregate_task_types() -> list[TaskTypeInfo]:
 # ---------------------------------------------------------------------------
 
 
+def _task_type_to_dict(*, task_type: TaskTypeInfo) -> dict[str, Any]:
+    record: dict[str, Any] = asdict(task_type)
+    record[OUTPUT_FIELD_SLUG] = record[OUTPUT_FIELD_TASK_TYPE_ID]
+    return record
+
+
 def _format_json(*, task_types: list[TaskTypeInfo]) -> str:
-    records: list[dict[str, Any]] = [asdict(t) for t in task_types]
+    records: list[dict[str, Any]] = [_task_type_to_dict(task_type=t) for t in task_types]
     output: dict[str, Any] = {OUTPUT_KEY_TASK_TYPES: records}
     return json.dumps(output, indent=2, ensure_ascii=False)
 

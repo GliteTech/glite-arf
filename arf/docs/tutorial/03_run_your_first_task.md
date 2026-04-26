@@ -1,14 +1,23 @@
 # 3. Run Your First Task
 
-In [part 2](02_customize_meta.md) you tuned the `meta/` defaults. The right first task in any new
-ARF project is a **literature survey**: find and download the relevant papers before committing to
-any experiments. This part walks one through end to end.
+In [part 2](02_customize_meta.md) you reviewed the `meta/` entries that `/setup-project` created.
+The right first task in many new ARF projects is a **literature survey**: find and download the
+relevant papers before committing to any experiments. This part walks one through end to end.
 
 ## Step 1: Create a Literature Survey Task
 
-Tasks are never created by hand. The [`create-task`](../../skills/create-task/SKILL.md) skill builds
-the folder, writes [`task.json`](../../specifications/task_file_specification.md), and drafts
-`task_description.md`. Invoke it:
+Tasks are never created by hand. `/setup-project` already ran
+[`human-brainstorm`](../../skills/human-brainstorm/SKILL.md), so first check whether it created a
+literature-survey task:
+
+```bash
+uv run python -m arf.scripts.aggregators.aggregate_tasks --status not_started --format ids
+```
+
+If a suitable literature-survey task already exists, use that task ID in the rest of this tutorial.
+If setup explicitly deferred task creation, invoke
+[`create-task`](../../skills/create-task/SKILL.md) to build the folder, write
+[`task.json`](../../specifications/task_file_specification.md), and draft `task_description.md`:
 
 ```text
 /create-task   # Claude Code
@@ -23,9 +32,8 @@ When prompted, use:
   small-dataset image classification. Cover the standard techniques (flip, crop, mixup, cutout,
   randaugment) and recent work on CIFAR-10 and similar benchmarks.
 
-The skill creates `tasks/t0001_survey_image_augmentation_papers/` with just two files: `task.json`
-and `task_description.md`. No branch, no worktree, no subdirectories — that all happens later when
-you execute the task.
+The task folder starts with just two files: `task.json` and `task_description.md`. No branch, no
+worktree, no subdirectories — that all happens later when you execute the task.
 
 Why a literature survey first? Two reasons. You learn what the field already tried before spending
 compute on it. And the paper assets the survey produces become the input for every later task's
@@ -156,9 +164,10 @@ Your first task is in the project history, and the project now has its first bat
 
 ## What Just Happened
 
-Two skills split the work. `create-task` wrote the task folder and metadata. `execute-task` handled
-the branch, worktree, stages, logging, verification, and the PR. For the mental model behind stages,
-sub-agents, and verificators, read the [task lifecycle](../explanation/task_lifecycle.md) doc.
+Two skills split the work. `human-brainstorm` or `create-task` wrote the task folder and metadata.
+`execute-task` handled the branch, worktree, stages, logging, verification, and the PR. For the
+mental model behind stages, sub-agents, and verificators, read the
+[task lifecycle](../explanation/task_lifecycle.md) doc.
 
 ## Next
 

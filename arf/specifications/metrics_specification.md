@@ -1,6 +1,6 @@
 # Metrics Specification
 
-**Version**: 4
+**Version**: 5
 
 * * *
 
@@ -67,6 +67,7 @@ as `_seconds`, `_usd`, `_per_item`, or a dataset/subset suffix.
 | `description` | string | yes | What this metric measures, including dataset or scope details |
 | `unit` | string | yes | Unit of measurement (see allowed values) |
 | `value_type` | string | yes | JSON value type (see allowed values) |
+| `higher_is_better` | bool | yes | Direction of improvement. `true` when numerically larger values rank better (F1, accuracy, correlation, throughput); `false` when smaller values rank better (MAE, MSE, latency, cost, error rate). Required — there is no default because silently defaulting to `true` would mis-rank error-style metrics |
 | `datasets` | list[string] | no | Dataset asset IDs this metric applies to (must exist in task assets) |
 | `is_key` | bool | no | Whether this is a key/headline metric for project leaderboards. Defaults to `false` when absent |
 | `emoji` | string | no | Single emoji character displayed alongside this metric in overviews. Only meaningful when `is_key` is `true` |
@@ -90,7 +91,8 @@ as `_seconds`, `_usd`, `_per_item`, or a dataset/subset suffix.
   "name": "Training Time",
   "description": "Total wall-clock training or fine-tuning time for the primary model or system produced by a task, measured in seconds.",
   "unit": "seconds",
-  "value_type": "float"
+  "value_type": "float",
+  "higher_is_better": false
 }
 ```
 
@@ -139,6 +141,7 @@ task. Task-specific operational data (corpus sizes, download stats, verificator 
 | `MT-E006` | File name does not match `snake_case` pattern |
 | `MT-E007` | `datasets` is not a list of strings |
 | `MT-E008` | A dataset ID in `datasets` does not exist in any task's `assets/dataset/` |
+| `MT-E009` | `higher_is_better` is present but not a boolean |
 
 ### Warnings
 

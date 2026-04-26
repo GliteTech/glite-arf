@@ -1,7 +1,15 @@
 # Aggregators Reference
 
-Aggregators collect data across tasks into unified views. They live in `arf/scripts/aggregators/`.
-Every aggregator supports filtering and applies correction overlays from `corrections/` folders.
+Aggregators collect data across tasks into unified views. They are exposed under
+`arf/scripts/aggregators/` and applied uniformly with `--format` and `--detail` flags. Every
+aggregator supports filtering and applies correction overlays from `corrections/` folders.
+
+The six asset-type aggregators (`aggregate_answers`, `aggregate_papers`, `aggregate_datasets`,
+`aggregate_libraries`, `aggregate_models`, `aggregate_predictions`) are thin shim modules under
+`arf/scripts/aggregators/`. Each shim re-exports the `main` entry point from the real implementation
+at `meta/asset_types/<kind>/aggregator.py`, so the asset-type code stays co-located with its
+specification while the invocation path stays uniform. Both module paths work; prefer
+`arf.scripts.aggregators.*` in scripts and docs.
 
 ## All Aggregators
 

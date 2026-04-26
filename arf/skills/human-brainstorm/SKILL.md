@@ -4,7 +4,7 @@ description: "Run an interactive brainstorming session to review state and choos
 ---
 # Human Brainstorm
 
-**Version**: 8
+**Version**: 9
 
 ## Goal
 
@@ -165,6 +165,12 @@ completed" without mentioning its key findings are insufficient.
     Adapt questions to the current project state. Skip questions whose answers are obvious from
     context. The goal is to avoid assumptions about the researcher's priorities and knowledge level.
 
+    Before printing the clarifier list, remove every question that has already been answered in the
+    current conversation — explicit researcher statements (e.g., "use GPT-5.4"), the selected plan,
+    or a prior accepted default all count as answers. Re-asking a resolved question wastes a round
+    trip and erodes trust. If every clarifier you would have asked is already resolved, skip Phase
+    1.5 entirely and advance to Phase 2.
+
 ### Phase 2: Discuss (Structured Rounds)
 
 The discussion covers three topic areas. Rounds may overlap if the researcher's input naturally
@@ -206,6 +212,12 @@ Round 3: Confirm
     * Suggestions rejected
     * Suggestions reprioritized
     * Tasks cancelled or updated
+
+    Cross-check every numeric count mentioned in the narrative against the count derivable from the
+    structured list in the same message. Approximations like "about 17" are a bug when the table
+    lists 19 — state the verified numbers explicitly (e.g., "rejections: 19 — verified against the
+    correction-file table"). This one-line discipline catches a class of summary-vs-list drift that
+    the researcher otherwise has to catch manually.
 
 18. Wait for explicit confirmation before creating anything.
 
