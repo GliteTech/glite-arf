@@ -9,6 +9,10 @@ human-readable markdown pages generated from the aggregators: a top-level summar
 task, one page per metric, one page per paper, daily news digests, and more. GitHub renders all of
 it natively. This is how researchers and reviewers actually look at the project.
 
+For a fully populated public example, open the
+[`overview/` dashboard in GliteTech/research-ace-cefr](https://github.com/GliteTech/research-ace-cefr/tree/main/overview).
+It shows the same dashboard structure on a real ARF demo project.
+
 ## Step 1: The Dashboard Is Already Up to Date
 
 The `execute-task` skill regenerates the dashboard automatically after merging each task PR. It runs

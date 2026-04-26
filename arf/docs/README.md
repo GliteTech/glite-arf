@@ -18,6 +18,12 @@ frozen so later runs can build on it without breaking it.
   framework: what went wrong running 200 AI agents on a real research project, and how rigid rules
   fixed it
 
+## Public Demo
+
+* [GliteTech/research-ace-cefr](https://github.com/GliteTech/research-ace-cefr) — a complete public
+  ARF demo project for conversational-text CEFR difficulty prediction on the Ace-CEFR benchmark,
+  including task history, artifacts, and a generated `overview/` dashboard
+
 ## How It Works
 
 * [Core Concepts](explanation/concepts.md) — the six fundamental principles and the problem ARF

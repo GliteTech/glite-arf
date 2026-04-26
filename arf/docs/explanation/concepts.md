@@ -159,3 +159,5 @@ in a completely different research project? If no, it belongs somewhere else.
 * [Corrections](corrections.md) — how immutability and change coexist
 * [Reference documentation](../reference/) — exact file formats and field definitions
 * [Tutorial](../tutorial/) — a guided first task
+* [GliteTech/research-ace-cefr](https://github.com/GliteTech/research-ace-cefr) — a complete public
+  ARF demo project showing tasks, assets, suggestions, and generated dashboards in context

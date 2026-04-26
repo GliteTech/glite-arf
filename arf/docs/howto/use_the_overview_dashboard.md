@@ -6,6 +6,11 @@ Read project state through the [`overview/`](../../../overview/) dashboard inste
 files in `tasks/`. The dashboard is the day-to-day surface for tasks, metrics, papers, suggestions,
 costs, and daily news.
 
+For a populated example, browse the
+[`overview/` dashboard in GliteTech/research-ace-cefr](https://github.com/GliteTech/research-ace-cefr/tree/main/overview),
+the public ARF demo project for conversational-text CEFR difficulty prediction on the Ace-CEFR
+benchmark.
+
 ## Prerequisites
 
 * You are on `main` (or any branch) with merged tasks

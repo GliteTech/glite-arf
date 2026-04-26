@@ -38,6 +38,13 @@ baseline replication, experiment tracking, and the final reporting pass.
 If you find Glite ARF useful, we would love to hear about it. If you want to work on problems like
 this full-time, [we are hiring](https://jobs.glite.ai).
 
+## Public demo
+
+Browse [GliteTech/research-ace-cefr](https://github.com/GliteTech/research-ace-cefr) to see a
+complete public ARF project. It is a conversational-text CEFR difficulty prediction demo on the
+Ace-CEFR benchmark, with the project description, `meta/` definitions, task history, research
+artifacts, and generated `overview/` dashboard all committed for inspection.
+
 ## Is Glite ARF right for me?
 
 **Yes, if you:**
