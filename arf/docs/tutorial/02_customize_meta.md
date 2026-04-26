@@ -1,10 +1,11 @@
 # 2. Review meta/
 
-The `/setup-project` skill populated asset types, categories, metrics, and task types under
-[`meta/`](../../../meta/). Everything in `meta/` is **project-specific**. Review what setup created
-before you start real work, and adjust anything that does not match the project.
+The `/setup-project` skill already populated asset types, categories, metrics, and task types under
+[`meta/`](../../../meta/). Everything in `meta/` is **project-specific**. This page is a review
+checklist, not a second setup procedure: read what setup created, then adjust only entries that do
+not match the project.
 
-## Why Customize Before Running Tasks
+## Why Review Before Running Tasks
 
 Every task you run will tag its outputs with these values. Metrics reported in
 `results/metrics.json` must be registered in [`meta/metrics/`](../../../meta/metrics/). Papers and
@@ -34,7 +35,7 @@ Read at least one `description.json` from each to see the shape. Then ask yourse
 
 The built-in asset types are `paper`, `dataset`, `library`, `model`, `answer`, `predictions`. Most
 research projects keep all six. `/setup-project` may also have added project-specific asset types
-through `/add-asset-type`.
+through `/add-asset-type`; keep those if they describe outputs the project will really produce.
 
 * **paper** — academic papers downloaded and summarized during research. Each paper asset holds
   structured metadata (`details.json`), the PDF or markdown source, and a detailed summary written
@@ -60,26 +61,29 @@ through `/add-asset-type`.
   the model and dataset that produced them, per-instance outputs, and metrics computed at creation
   time. Enables reproducible comparison and error analysis across models.
 
-Reasons to customize:
+Change asset types only when:
 
 * **Remove** a type your project will never produce (a survey project may not need `model`)
 * **Add** a type for outputs the defaults do not cover (e.g., `experiment-log` for wet-lab projects,
   `figure` for a paper-writing project)
 
-To add one, follow [How to add an asset type](../howto/add_an_asset_type.md).
+To add one later, use `/add-asset-type` or follow
+[How to add an asset type](../howto/add_an_asset_type.md).
 
 ## Step 3: Categories
 
-Categories tag papers, tasks, and assets for filtering. Edit `meta/categories/` so the set matches
-your project's subfields. For the tutorial project (image augmentation on CIFAR-10), you might want:
+Categories tag papers, tasks, and assets for filtering. Check that setup chose categories matching
+your project's subfields. For the tutorial project (image augmentation on CIFAR-10), useful
+categories might include:
 
 * `augmentation` — any work on data augmentation
 * `baseline` — reference/baseline experiments
 * `architecture` — model architecture work
 * `survey` — literature surveys and reading lists
 
-Delete any category setup added that does not apply. Add missing categories via
-[How to add a category](../howto/add_a_category.md).
+If setup already created equivalent categories, do not add duplicates. Add missing categories with
+`/add-category` or [How to add a category](../howto/add_a_category.md). Remove an incorrect category
+only before any task or asset uses it, then run the verificator.
 
 ## Step 4: Metrics
 
@@ -91,8 +95,9 @@ unregistered key, verification fails. For MyResearch you need at least:
 * `efficiency_inference_time_per_item_seconds` — per-item inference time (likely already in the
   defaults)
 
-Add missing metrics via [How to add a metric](../howto/add_a_metric.md). Delete metrics you will
-never use.
+If setup already registered equivalent metrics, keep them. Add missing metrics with `/add-metric` or
+[How to add a metric](../howto/add_a_metric.md). Remove unused metrics only before tasks start
+reporting them.
 
 ## Step 5: Task Types
 
@@ -122,11 +127,14 @@ Usually the defaults are fine. Reasons to add one:
   projects, `annotation-batch` for dataset-curation projects)
 * An existing task type has instructions that conflict with your project's conventions — fork it
 
-See [How to add a task type](../howto/add_a_task_type.md) for the recipe.
+If setup already added a project-specific task type that covers the workflow, keep it. Add missing
+task types with `/add-task-type` or [How to add a task type](../howto/add_a_task_type.md).
 
-## Step 6: Commit the Changes
+## Step 6: Persist Follow-up Changes
 
-The how-tos run the relevant verificators but do not commit for you. After editing `meta/`:
+`/setup-project` and the `add-*` skills commit confirmed additions themselves. If `git status` is
+clean after review, there is nothing else to commit. If you made manual edits by following a how-to
+or by deleting an incorrect entry, commit those follow-up changes:
 
 ```bash
 git add meta/
