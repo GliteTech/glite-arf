@@ -7,7 +7,7 @@ description: >-
 ---
 # Add Metric
 
-**Version**: 1
+**Version**: 2
 
 ## Goal
 
@@ -54,6 +54,9 @@ Read before starting:
    * Recommended `unit` (from the allowed set: `f1`, `accuracy`, `precision`, `recall`, `ratio`,
      `count`, `usd`, `seconds`, `bytes`, `instances_per_second`, `none`).
    * Recommended `value_type` (`float`, `int`, `bool`, `string`).
+   * Recommended `higher_is_better` (`true` when larger values rank better — F1, accuracy,
+     correlation, throughput; `false` when smaller values rank better — MAE, MSE, latency, cost,
+     error rate).
 
 5. Ask the user which candidates to accept, edit, drop, or add. Accept "none for now".
 
@@ -61,6 +64,9 @@ Read before starting:
    * `name` — one line, human-readable (≤ 80 characters).
    * `description` — what it measures, including dataset or scope (≥ 20 characters).
    * `unit` and `value_type` from the allowed values.
+   * `higher_is_better` — required boolean. Never guess; ask the user explicitly and state the
+     consequence (leaderboards and per-task "best variant" selection rank values in the direction
+     this flag chooses).
    * Optional: `is_key: true` for headline metrics and a single `emoji` character.
    * Optional: `datasets` — list of dataset asset IDs the metric applies to. Leave empty if unsure;
      the field can be added later.
@@ -73,7 +79,8 @@ Read before starting:
      "name": "<Display Name>",
      "description": "<what it measures>",
      "unit": "<allowed value>",
-     "value_type": "<allowed value>"
+     "value_type": "<allowed value>",
+     "higher_is_better": <true or false>
    }
    ```
 
